@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>microbs - Getting Started</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability."/>
+    <meta property="og:title" content="microbs - Microservices Observability"/>
+    <meta property="og:description" content="Demo, test, or learn about microservices observability."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://microbs.io/"/>
+    <meta name="twitter:title" content="microbs - Microservices Observability"/>
+    <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
+    <link rel="stylesheet" href="/css/all.css?id=347735081"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5K0NJLJTD5');
+      var to = function(uri, event_category) {
+        gtag('event', 'click', {
+          'event_category': event_category,
+          'event_label': uri,
+          'transport_type': 'beacon',
+          'event_callback': function(){document.location = uri;}
+        });
+      };
+    </script></head>
+  <body>
+    <div id="app">
+      <div id="top" class="ui inverted menu">
+  <div id="nav" class="ui container">
+    <a href="/">
+      <div aria-label="microbs" class="ui inverted header huge">
+        microbs
+      </div>
+    </a>
+    <div id="buttons">
+      <a href="/docs" title="Docs">
+        <button type="button" class="ui button inverted" aria-label="Docs">
+          Docs
+        </button>
+      </a>
+      <a href="/docs/overview/getting-started" title="Get Started">
+        <button type="button" class="ui button inverted" aria-label="Get Started">
+          Get Started
+        </button>
+      </a>
+      <a href="https://github.com/microbs-io/microbs" title="Github" onclick="to('https://github.com/microbs-io/microbs');">
+        <button type="button" class="ui button inverted" aria-label="Github">
+          Github
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+      <div id="main" class="ui container "><div class="ui two grid" id="docs"><div class="four wide column computer only">
+  <div class="ui menu vertical">
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/overview">
+          Overview
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item active" href="/docs/overview/getting-started">
+          Getting Started
+        </a>
+        <a class="item" href="/docs/overview/concepts">
+          Concepts
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/usage">
+          Usage
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/usage/configuration">
+          Configuration
+        </a>
+        <a class="item" href="/docs/usage/cli">
+          CLI
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/apps">
+          Apps
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/apps/ecommerce">
+          ecommerce
+        </a>
+        <a class="item" href="/docs/apps/templates">
+          templates
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/plugins">
+          Plugins
+        </a>
+      </div>
+      <div class="menu">
+        <div class="item">
+          <a class="header " href="/docs/plugins/kubernetes">
+            Kubernetes
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/kubernetes/gke">
+              gke
+            </a>
+            <a class="item " href="/docs/plugins/kubernetes/minikube">
+              minikube
+            </a>
+            <a class="item " href="/docs/plugins/kubernetes/template">
+              template
+            </a>
+          </div>
+        </div>
+        <div class="item">
+          <a class="header " href="/docs/plugins/observability">
+            Observability
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/observability/elastic_cloud">
+              elastic_cloud
+            </a>
+            <a class="item " href="/docs/plugins/observability/grafana_cloud">
+              grafana_cloud
+            </a>
+            <a class="item " href="/docs/plugins/observability/template">
+              template
+            </a>
+          </div>
+        </div>
+        <div class="item">
+          <a class="header " href="/docs/plugins/alerts">
+            Alerts
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/alerts/slack">
+              slack
+            </a>
+            <a class="item " href="/docs/plugins/alerts/template">
+              template
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/development">
+          Development
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/development/apps">
+          Apps
+        </a>
+        <a class="item" href="/docs/development/plugins">
+          Plugins
+        </a>
+        <a class="item" href="/docs/development/versioning">
+          Versioning
+        </a>
+        <a class="item" href="/docs/development/contributing">
+          Contributing
+        </a>
+      </div>
+    </div>
+  </div>
+</div><div class="content column" style="flex:1;">
+            <h1 class='ui header'><a name="getting-started"></a>Getting Started</h1><p><div class="ui info message tiny"><p>👋 Hello! microbs is a new project with an amibtious scope. Its configurations and interfaces might change until its GA release. Be sure to check these docs for changes whenever you pull the latest version of microbs. And if you like the project, consider <a href="http://github.com/microbs-io/microbs" onclick="to('http://github.com/microbs-io/microbs', 'outbound');" class="external">contributing</a> on GitHub!</p>
+</div></p>
+<h2 class='ui header'><a name="quick-start"></a>Quick start</h2><p>You can install microbs in three basic steps:</p>
+<ol>
+<li><a href="#step-1" onclick="to(window.location.pathname + '#step-1', 'internal');">Prepare your environment</a></li>
+<li><a href="#step-2" onclick="to(window.location.pathname + '#step-2', 'internal');">Clone the repo</a></li>
+<li><a href="#step-3" onclick="to(window.location.pathname + '#step-3', 'internal');">Install microbs</a></li>
+</ol>
+<p>Once installed, you can proceed to the <a href="/docs/usage/configuration">configuration</a> and <a href="/docs/usage/cli">CLI</a>.</p>
+<h2 class='ui header'><a name="step-1"></a>Step 1. Prepare your environment</h2><h3 class='ui header dividing'>Operating system</h3><p>microbs has been tested on <strong>MacOS 12.1</strong>. Your mileage may vary on other operating systems.</p>
+<h3 class='ui header dividing'>Software dependencies</h3><p><div class="ui warning message tiny"><p><a href="/docs/plugins">Plugins</a> may require additional dependencies. Be sure to read the docs for the plugins you wish to use.</p>
+</div></p>
+<p>You will need to install <a href="https://nodejs.org/en/download/" onclick="to('https://nodejs.org/en/download/', 'outbound');" class="external">node</a>, <a href="https://github.com/nvm-sh/nvm" onclick="to('https://github.com/nvm-sh/nvm', 'outbound');" class="external">nvm</a>, <a href="https://kubernetes.io/docs/tasks/tools/" onclick="to('https://kubernetes.io/docs/tasks/tools/', 'outbound');" class="external">kubectl</a>, and <a href="https://skaffold.dev/docs/install/" onclick="to('https://skaffold.dev/docs/install/', 'outbound');" class="external">skaffold</a> before installing microbs.</p>
+<p>microbs has been tested with the following software versions:</p>
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><a href="https://kubernetes.io/docs/tasks/tools/" onclick="to('https://kubernetes.io/docs/tasks/tools/', 'outbound');" class="external">kubectl</a></td>
+  <td>1.23.4</td>
+</tr>
+<tr>
+  <td><a href="https://nodejs.org/en/download/" onclick="to('https://nodejs.org/en/download/', 'outbound');" class="external">node</a></td>
+  <td>17.5.0</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/nvm-sh/nvm" onclick="to('https://github.com/nvm-sh/nvm', 'outbound');" class="external">nvm</a></td>
+  <td>17.5.0</td>
+</tr>
+<tr>
+  <td><a href="https://skaffold.dev/docs/install/" onclick="to('https://skaffold.dev/docs/install/', 'outbound');" class="external">skaffold</a></td>
+  <td>1.36.0</td>
+</tr>
+</tbody>
+</table>
+<h2 class='ui header'><a name="step-2"></a>Step 2. Clone the repo</h2>
+            <div class="code">
+              <button class="ui labeled icon button teal tiny" data-clipboard-target="#ab'b7c548c30b5b42f8'">
+                <i class="icon">
+                  <span style="font-size:2rem;">&#x2398</span>
+                </i>
+                Copy to clipboard
+               </button>
+              <code>
+                <span id="ab'b7c548c30b5b42f8'"><div class="highlight"><pre><span></span>git clone https://github.com/microbs-io/microbs.git
+</pre></div>
+</span>
+              </code>
+            </div>
+            <h2 class='ui header'><a name="step-3"></a>Step 3. Install microbs</h2>
+            <div class="code">
+              <button class="ui labeled icon button teal tiny" data-clipboard-target="#ab'5eaf98e2b7054df8'">
+                <i class="icon">
+                  <span style="font-size:2rem;">&#x2398</span>
+                </i>
+                Copy to clipboard
+               </button>
+              <code>
+                <span id="ab'5eaf98e2b7054df8'"><div class="highlight"><pre><span></span><span class="c1"># Navigate into the cloned microbs repo</span>
+<span class="n">cd</span> <span class="n">microbs</span>
+
+<span class="c1"># Use the correct version of node</span>
+<span class="n">nvm</span> <span class="n">use</span>
+
+<span class="c1"># Install the node modules for microbs</span>
+<span class="n">npm</span> <span class="n">install</span>
+
+<span class="c1"># Add the current directory to your PATH</span>
+<span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;$(pwd):$PATH&quot;</span>
+
+<span class="c1"># Create a config file</span>
+<span class="n">cp</span> <span class="o">./</span><span class="n">config</span><span class="o">.</span><span class="n">reference</span><span class="o">.</span><span class="n">yaml</span> <span class="n">config</span><span class="o">.</span><span class="n">yaml</span>
+
+<span class="c1"># Verify installation</span>
+<span class="n">microbs</span> <span class="n">help</span>
+</pre></div>
+</span>
+              </code>
+            </div>
+            
+          </div></div>
+      </div>
+      <div id="bottom">
+  <small>
+    <div>
+      &copy; 2022 <a href="https://github.com/davemoore-" title="Dave Moore" onclick="to('https://github.com/davemoore-');">Dave Moore</a>.
+    </div>
+    <div>
+      Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" onclick="to('http://www.apache.org/licenses/LICENSE-2.0');">Apache License, Version 2.0</a>.
+    </div>
+    <div>
+      This website uses Google Analytics.
+    </div>
+  </small>
+</div>
+    </div>
+  </body>
+</html>

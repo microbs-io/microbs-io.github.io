@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>microbs - Configuration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability."/>
+    <meta property="og:title" content="microbs - Microservices Observability"/>
+    <meta property="og:description" content="Demo, test, or learn about microservices observability."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://microbs.io/"/>
+    <meta name="twitter:title" content="microbs - Microservices Observability"/>
+    <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
+    <link rel="stylesheet" href="/css/all.css?id=330417062"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5K0NJLJTD5');
+      var to = function(uri, event_category) {
+        gtag('event', 'click', {
+          'event_category': event_category,
+          'event_label': uri,
+          'transport_type': 'beacon',
+          'event_callback': function(){document.location = uri;}
+        });
+      };
+    </script></head>
+  <body>
+    <div id="app">
+      <div id="top" class="ui inverted menu">
+  <div id="nav" class="ui container">
+    <a href="/">
+      <div aria-label="microbs" class="ui inverted header huge">
+        microbs
+      </div>
+    </a>
+    <div id="buttons">
+      <a href="/docs" title="Docs">
+        <button type="button" class="ui button inverted" aria-label="Docs">
+          Docs
+        </button>
+      </a>
+      <a href="/docs/overview/getting-started" title="Get Started">
+        <button type="button" class="ui button inverted" aria-label="Get Started">
+          Get Started
+        </button>
+      </a>
+      <a href="https://github.com/microbs-io/microbs" title="Github" onclick="to('https://github.com/microbs-io/microbs');">
+        <button type="button" class="ui button inverted" aria-label="Github">
+          Github
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+      <div id="main" class="ui container "><div class="ui two grid" id="docs"><div class="four wide column computer only">
+  <div class="ui menu vertical">
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/overview">
+          Overview
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/overview/getting-started">
+          Getting Started
+        </a>
+        <a class="item" href="/docs/overview/concepts">
+          Concepts
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/usage">
+          Usage
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item active" href="/docs/usage/configuration">
+          Configuration
+        </a>
+        <a class="item" href="/docs/usage/cli">
+          CLI
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/apps">
+          Apps
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/apps/ecommerce">
+          ecommerce
+        </a>
+        <a class="item" href="/docs/apps/templates">
+          templates
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/plugins">
+          Plugins
+        </a>
+      </div>
+      <div class="menu">
+        <div class="item">
+          <a class="header " href="/docs/plugins/kubernetes">
+            Kubernetes
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/kubernetes/gke">
+              gke
+            </a>
+            <a class="item " href="/docs/plugins/kubernetes/minikube">
+              minikube
+            </a>
+            <a class="item " href="/docs/plugins/kubernetes/template">
+              template
+            </a>
+          </div>
+        </div>
+        <div class="item">
+          <a class="header " href="/docs/plugins/observability">
+            Observability
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/observability/elastic_cloud">
+              elastic_cloud
+            </a>
+            <a class="item " href="/docs/plugins/observability/grafana_cloud">
+              grafana_cloud
+            </a>
+            <a class="item " href="/docs/plugins/observability/template">
+              template
+            </a>
+          </div>
+        </div>
+        <div class="item">
+          <a class="header " href="/docs/plugins/alerts">
+            Alerts
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/alerts/slack">
+              slack
+            </a>
+            <a class="item " href="/docs/plugins/alerts/template">
+              template
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/development">
+          Development
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/development/apps">
+          Apps
+        </a>
+        <a class="item" href="/docs/development/plugins">
+          Plugins
+        </a>
+        <a class="item" href="/docs/development/versioning">
+          Versioning
+        </a>
+        <a class="item" href="/docs/development/contributing">
+          Contributing
+        </a>
+      </div>
+    </div>
+  </div>
+</div><div class="content column" style="flex:1;">
+            <h1 class='ui header'><a name="configuration"></a>Configuration</h1><h2 class='ui header'>Contents</h2><ul>
+<li><a href="#config.yaml" onclick="to(window.location.pathname + '#config.yaml', 'internal');">config.yaml</a></li>
+<li><a href="#syntax" onclick="to(window.location.pathname + '#syntax', 'internal');">Syntax</a></li>
+<li><a href="#reference" onclick="to(window.location.pathname + '#reference', 'internal');">Reference</a></li>
+</ul>
+<h2 class='ui header'><a name="config.yaml"></a>config.yaml</h2><p>microbs is driven by a config file. The repo includes a sample config file
+called <code>config.reference.yaml</code>. You should copy this file, rename it to
+<code>config.yaml</code>, and save it to the same directory. This is the default file name
+and location that microbs uses.</p>
+<p>You can specify the path to any config file using the <code>-c</code> flag in the
+<a href="/docs/usage/cli">CLI</a>:</p>
+<p><code>microbs help -c path/to/your/config.yaml</code></p>
+<h2 class='ui header'><a name="syntax"></a>Syntax</h2><p>The microbs config file uses <a href="https://yaml.org/spec/1.2.2/" onclick="to('https://yaml.org/spec/1.2.2/', 'outbound');" class="external">yaml</a> syntax.</p>
+<p>When you run a command with microbs, every field and value in <code>config.yaml</code> is
+converted to an environment variable and shared with all microbs application
+services on Kubernetes. Those values are stored in a Kubernetes
+<a href="https://kubernetes.io/docs/concepts/configuration/secret/" onclick="to('https://kubernetes.io/docs/concepts/configuration/secret/', 'outbound');" class="external">Secret</a> object named
+<code>microbs-secrets</code>. The field names are flattened and uppercased, and dots are
+replaced with underscores.</p>
+<p>For example, the following configuration in config.yaml...</p>
+
+            <div class="code">
+              <code>
+                <span id="ab'291ff3bfb0b7420b'"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">bar_baz.abc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xyz</span><span class="w"></span>
+</pre></div>
+</span>
+              </code>
+            </div>
+            <p>...would be shared with the application as the following environment variable:</p>
+
+            <div class="code">
+              <code>
+                <span id="ab'9888f88429eca3da'"><div class="highlight"><pre><span></span><span class="nx">FOO_BAR_BAZ_XYZ</span><span class="o">=</span><span class="nx">xyz</span>
+</pre></div>
+</span>
+              </code>
+            </div>
+            <h2 class='ui header'><a name="reference"></a>Reference</h2><h3 class='ui header dividing'>Required fields</h3><h4 class='ui header'><a name="deployment.name"></a><code>deployment.name</code></h4><p>A name for the deployment. The <a href="/docs/plugins">plugins</a> that come with microbs
+prefix this value with <code>microbs-</code> and use it as the name of the Kubernetes
+cluster or observability solution stack. For example, if the value of
+<code>deployment.name</code> is <code>changeme</code>, then the Kubernetes plugin would name the
+cluster <code>microbs-changeme</code>.</p>
+<h4 class='ui header'><a name="deployment.app"></a><code>deployment.app</code></h4><p>The name of an <a href="/docs/apps">application</a> to deploy
+(i.e. the name of a directory in <code>./apps</code>).</p>
+<h4 class='ui header'><a name="deployment.plugins.k8s"></a><code>deployment.plugins.k8s</code></h4><p>The name of a <a href="/docs/plugins/observability">Kubernetes plugin</a> to use
+(i.e. the name of a directory in <code>./cli/src/plugins/k8s</code>).</p>
+<h4 class='ui header'><a name="deployment.plugins.obs"></a><code>deployment.plugins.obs</code></h4><p>The name of an <a href="/docs/plugins/observability">observability plugin</a> to use
+(i.e. the name of a directory in <code>./cli/src/plugins/obs</code>).</p>
+<h4 class='ui header'><a name="otlp.receiver.host"></a><code>otlp.receiver.host</code></h4><p>The OTLP gRPC destination host for the deployed application services. The
+<a href="/docs/apps">apps</a> and <a href="/docs/plugins/observability">observability</a> plugins that
+come with microbs expect this value to be <code>otel-collector</code>.</p>
+<h4 class='ui header'><a name="otlp.receiver.port"></a><code>otlp.receiver.port</code></h4><p>The OTLP gRPC destination port for the deployed application services. The
+<a href="/docs/apps">apps</a> and <a href="/docs/plugins/observability">observability</a> plugins that
+come with microbs expect this value to be <code>4317</code>.</p>
+<h3 class='ui header dividing'>Optional fields</h3><h4 class='ui header'><a name="deployment.environment"></a><code>deployment.environment</code></h4><p>A description of the environment (e.g. <code>dev</code>, <code>test</code>, <code>prod</code>).</p>
+<h4 class='ui header'><a name="deployment.plugins.alerts"></a><code>deployment.plugins.alerts</code></h4><p>The name of an <a href="/docs/plugins/observability">alerts plugin</a> to use
+(i.e. the name of a directory in <code>./cli/src/plugins/alerts</code>).</p>
+<h4 class='ui header'><a name="docker.registry"></a><code>docker.registry</code></h4><p>A container image registry for the application services. This is used by the
+<a href="/docs/usage/cli#setup">setup</a> and <a href="/docs/usage/cli#rollout">rollout</a> commands,
+which passes the value to <code>skaffold run --default-repo=${docker.registry}</code>. Read the <a href="https://skaffold.dev/docs/environment/image-registries/" onclick="to('https://skaffold.dev/docs/environment/image-registries/', 'outbound');" class="external">skaffold docs</a> for more details on the behavior of this config.</p>
+<h3 class='ui header dividing'>Plugin configs</h3><p>Each <a href="/docs/plugins">plugin</a> has its own set of configurations that are
+specified in the same config file. Refer to the documentation for each plugin
+that you wish to use to ensure that the plugin is properly configured.</p>
+
+          </div></div>
+      </div>
+      <div id="bottom">
+  <small>
+    <div>
+      &copy; 2022 <a href="https://github.com/davemoore-" title="Dave Moore" onclick="to('https://github.com/davemoore-');">Dave Moore</a>.
+    </div>
+    <div>
+      Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" onclick="to('http://www.apache.org/licenses/LICENSE-2.0');">Apache License, Version 2.0</a>.
+    </div>
+    <div>
+      This website uses Google Analytics.
+    </div>
+  </small>
+</div>
+    </div>
+  </body>
+</html>

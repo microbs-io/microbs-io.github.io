@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>microbs - Concepts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability."/>
+    <meta property="og:title" content="microbs - Microservices Observability"/>
+    <meta property="og:description" content="Demo, test, or learn about microservices observability."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://microbs.io/"/>
+    <meta name="twitter:title" content="microbs - Microservices Observability"/>
+    <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
+    <link rel="stylesheet" href="/css/all.css?id=623338363"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5K0NJLJTD5');
+      var to = function(uri, event_category) {
+        gtag('event', 'click', {
+          'event_category': event_category,
+          'event_label': uri,
+          'transport_type': 'beacon',
+          'event_callback': function(){document.location = uri;}
+        });
+      };
+    </script></head>
+  <body>
+    <div id="app">
+      <div id="top" class="ui inverted menu">
+  <div id="nav" class="ui container">
+    <a href="/">
+      <div aria-label="microbs" class="ui inverted header huge">
+        microbs
+      </div>
+    </a>
+    <div id="buttons">
+      <a href="/docs" title="Docs">
+        <button type="button" class="ui button inverted" aria-label="Docs">
+          Docs
+        </button>
+      </a>
+      <a href="/docs/overview/getting-started" title="Get Started">
+        <button type="button" class="ui button inverted" aria-label="Get Started">
+          Get Started
+        </button>
+      </a>
+      <a href="https://github.com/microbs-io/microbs" title="Github" onclick="to('https://github.com/microbs-io/microbs');">
+        <button type="button" class="ui button inverted" aria-label="Github">
+          Github
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+      <div id="main" class="ui container "><div class="ui two grid" id="docs"><div class="four wide column computer only">
+  <div class="ui menu vertical">
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/overview">
+          Overview
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/overview/getting-started">
+          Getting Started
+        </a>
+        <a class="item active" href="/docs/overview/concepts">
+          Concepts
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/usage">
+          Usage
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/usage/configuration">
+          Configuration
+        </a>
+        <a class="item" href="/docs/usage/cli">
+          CLI
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/apps">
+          Apps
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/apps/ecommerce">
+          ecommerce
+        </a>
+        <a class="item" href="/docs/apps/templates">
+          templates
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/plugins">
+          Plugins
+        </a>
+      </div>
+      <div class="menu">
+        <div class="item">
+          <a class="header " href="/docs/plugins/kubernetes">
+            Kubernetes
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/kubernetes/gke">
+              gke
+            </a>
+            <a class="item " href="/docs/plugins/kubernetes/minikube">
+              minikube
+            </a>
+            <a class="item " href="/docs/plugins/kubernetes/template">
+              template
+            </a>
+          </div>
+        </div>
+        <div class="item">
+          <a class="header " href="/docs/plugins/observability">
+            Observability
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/observability/elastic_cloud">
+              elastic_cloud
+            </a>
+            <a class="item " href="/docs/plugins/observability/grafana_cloud">
+              grafana_cloud
+            </a>
+            <a class="item " href="/docs/plugins/observability/template">
+              template
+            </a>
+          </div>
+        </div>
+        <div class="item">
+          <a class="header " href="/docs/plugins/alerts">
+            Alerts
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/alerts/slack">
+              slack
+            </a>
+            <a class="item " href="/docs/plugins/alerts/template">
+              template
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/development">
+          Development
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/development/apps">
+          Apps
+        </a>
+        <a class="item" href="/docs/development/plugins">
+          Plugins
+        </a>
+        <a class="item" href="/docs/development/versioning">
+          Versioning
+        </a>
+        <a class="item" href="/docs/development/contributing">
+          Contributing
+        </a>
+      </div>
+    </div>
+  </div>
+</div><div class="content column" style="flex:1;">
+            <h1 class='ui header'><a name="concepts"></a>Concepts</h1><p>Here are the definitions of common terms that you will find in microbs.</p>
+<h2 class='ui header'><a name="cli"></a>CLI</h2><p>microbs provides a <a href="/docs/usage/cli">command-line interface (CLI)</a> to
+<a href="/docs/usage/cli#setup">setup</a>, <a href="/docs/usage/cli#rollout">rollout</a>, and
+<a href="/docs/usage/cli#destroy">destroy</a> your microbs environment. That environment
+includes your choice of a <a href="#kubernetes" onclick="to(window.location.pathname + '#kubernetes', 'internal');">Kubernetes</a> cluster, an
+<a href="#applications" onclick="to(window.location.pathname + '#applications', 'internal');">application</a> that runs in the cluster, an
+<a href="#observability" onclick="to(window.location.pathname + '#observability', 'internal');">observability</a> solution that monitors both the application and
+the cluster, and an <a href="#alerting" onclick="to(window.location.pathname + '#alerting', 'internal');">alerting</a> destination.</p>
+<h2 class='ui header'><a name="applications"></a>Applications</h2><p>Applications (&quot;apps&quot;) are bundled <a href="#microservices" onclick="to(window.location.pathname + '#microservices', 'internal');">microservices</a> that microbs
+deploys to <a href="#kubernetes" onclick="to(window.location.pathname + '#kubernetes', 'internal');">Kubernetes</a> and instruments for <a href="#observability" onclick="to(window.location.pathname + '#observability', 'internal');">observability</a>.
+See the <a href="/docs/apps/ecommerce">ecommerce</a> application as one example.</p>
+<h2 class='ui header'><a name="variants"></a>Variants</h2><p>Variants are simulated issues that you can rollout to your <a href="#applications" onclick="to(window.location.pathname + '#applications', 'internal');">applications</a>.
+Examples might include code syntax errors, traffic spikes, networking
+misconfigurations, or anything else that changes the behavior of the application
+in an undesired way. Variants allow you to test the efficacy of the
+<a href="#observability" onclick="to(window.location.pathname + '#observability', 'internal');">observability</a> solution. You can ask yourself, &quot;Do I see my
+expected alerts when this variant runs? Can I use my observability solution
+to identify the root cause of the variant?&quot;</p>
+<h2 class='ui header'><a name="kubernetes"></a>Kubernetes</h2><p>microbs deploys applications to <a href="https://kubernetes.io/" onclick="to('https://kubernetes.io/', 'outbound');" class="external">Kubernetes</a> (&quot;k8s&quot;),
+the industry standard for container orchestration and microservices. You can
+configure microbs to deploy to a Kubernetes cluster using one of the
+<a href="/docs/plugins/kubernetes">Kubernetes plugins</a>.</p>
+<h2 class='ui header'><a name="observability"></a>Observability</h2><p>Observability solutions capture information about the state of an application
+and its supporting infrastructure over time. That information can include logs,
+metrics, traces, probes, and synthetics checks. microbs instruments your chosen
+<a href="#applications" onclick="to(window.location.pathname + '#applications', 'internal');">application</a> and <a href="#kubernetes" onclick="to(window.location.pathname + '#kubernetes', 'internal');">Kubernetes</a> cluster with your
+choice of an observability solution using one of the
+<a href="/docs/plugins/observability">observability plugins</a>.</p>
+<h2 class='ui header'><a name="microservices"></a>Microservices</h2><p>Microservices (or &quot;services&quot;) are processes that run on <a href="#kubernetes" onclick="to(window.location.pathname + '#kubernetes', 'internal');">Kubernetes</a>
+and constitute part of an <a href="#applications" onclick="to(window.location.pathname + '#applications', 'internal');">application</a>. microbs treats an
+application as a set of services, each of which is implemented as a Kubernetes
+<a href="https://kubernetes.io/docs/concepts/workloads/pods/" onclick="to('https://kubernetes.io/docs/concepts/workloads/pods/', 'outbound');" class="external">pod</a>.</p>
+<h2 class='ui header'><a name="synthetics"></a>Synthetics</h2><p>Synthetics are human-like traffic sent to your <a href="#applications" onclick="to(window.location.pathname + '#applications', 'internal');">applications</a>.
+An application may or may not implement a synthetics service. For example, the
+<a href="/docs/apps/ecommerce">ecommerce</a> application runs several headless web browsers
+that run the steps needed to order a product.</p>
+<h2 class='ui header'><a name="alerts"></a>Alerts</h2><p>Alerts are notifications of undesired or unusual behaviors of <a href="#applications" onclick="to(window.location.pathname + '#applications', 'internal');">applications</a>
+or their supporting infrastructure. microbs will implement alerts to allow
+realistic troubleshooting of <a href="#variants" onclick="to(window.location.pathname + '#variants', 'internal');">variants</a>.</p>
+<p><div class="ui warning message tiny"><p>microbs has not fully implemented any alerts plugins yet.</p>
+</div></p>
+
+          </div></div>
+      </div>
+      <div id="bottom">
+  <small>
+    <div>
+      &copy; 2022 <a href="https://github.com/davemoore-" title="Dave Moore" onclick="to('https://github.com/davemoore-');">Dave Moore</a>.
+    </div>
+    <div>
+      Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" onclick="to('http://www.apache.org/licenses/LICENSE-2.0');">Apache License, Version 2.0</a>.
+    </div>
+    <div>
+      This website uses Google Analytics.
+    </div>
+  </small>
+</div>
+    </div>
+  </body>
+</html>

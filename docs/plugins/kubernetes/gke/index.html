@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>microbs - gke plugin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability."/>
+    <meta property="og:title" content="microbs - Microservices Observability"/>
+    <meta property="og:description" content="Demo, test, or learn about microservices observability."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://microbs.io/"/>
+    <meta name="twitter:title" content="microbs - Microservices Observability"/>
+    <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
+    <link rel="stylesheet" href="/css/all.css?id=971857769"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5K0NJLJTD5');
+      var to = function(uri, event_category) {
+        gtag('event', 'click', {
+          'event_category': event_category,
+          'event_label': uri,
+          'transport_type': 'beacon',
+          'event_callback': function(){document.location = uri;}
+        });
+      };
+    </script></head>
+  <body>
+    <div id="app">
+      <div id="top" class="ui inverted menu">
+  <div id="nav" class="ui container">
+    <a href="/">
+      <div aria-label="microbs" class="ui inverted header huge">
+        microbs
+      </div>
+    </a>
+    <div id="buttons">
+      <a href="/docs" title="Docs">
+        <button type="button" class="ui button inverted" aria-label="Docs">
+          Docs
+        </button>
+      </a>
+      <a href="/docs/overview/getting-started" title="Get Started">
+        <button type="button" class="ui button inverted" aria-label="Get Started">
+          Get Started
+        </button>
+      </a>
+      <a href="https://github.com/microbs-io/microbs" title="Github" onclick="to('https://github.com/microbs-io/microbs');">
+        <button type="button" class="ui button inverted" aria-label="Github">
+          Github
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+      <div id="main" class="ui container "><div class="ui two grid" id="docs"><div class="four wide column computer only">
+  <div class="ui menu vertical">
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/overview">
+          Overview
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/overview/getting-started">
+          Getting Started
+        </a>
+        <a class="item" href="/docs/overview/concepts">
+          Concepts
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/usage">
+          Usage
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/usage/configuration">
+          Configuration
+        </a>
+        <a class="item" href="/docs/usage/cli">
+          CLI
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/apps">
+          Apps
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/apps/ecommerce">
+          ecommerce
+        </a>
+        <a class="item" href="/docs/apps/templates">
+          templates
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/plugins">
+          Plugins
+        </a>
+      </div>
+      <div class="menu">
+        <div class="item">
+          <a class="header " href="/docs/plugins/kubernetes">
+            Kubernetes
+          </a>
+          <div class="menu">
+            <a class="item active" href="/docs/plugins/kubernetes/gke">
+              gke
+            </a>
+            <a class="item " href="/docs/plugins/kubernetes/minikube">
+              minikube
+            </a>
+            <a class="item " href="/docs/plugins/kubernetes/template">
+              template
+            </a>
+          </div>
+        </div>
+        <div class="item">
+          <a class="header " href="/docs/plugins/observability">
+            Observability
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/observability/elastic_cloud">
+              elastic_cloud
+            </a>
+            <a class="item " href="/docs/plugins/observability/grafana_cloud">
+              grafana_cloud
+            </a>
+            <a class="item " href="/docs/plugins/observability/template">
+              template
+            </a>
+          </div>
+        </div>
+        <div class="item">
+          <a class="header " href="/docs/plugins/alerts">
+            Alerts
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/alerts/slack">
+              slack
+            </a>
+            <a class="item " href="/docs/plugins/alerts/template">
+              template
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/development">
+          Development
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/development/apps">
+          Apps
+        </a>
+        <a class="item" href="/docs/development/plugins">
+          Plugins
+        </a>
+        <a class="item" href="/docs/development/versioning">
+          Versioning
+        </a>
+        <a class="item" href="/docs/development/contributing">
+          Contributing
+        </a>
+      </div>
+    </div>
+  </div>
+</div><div class="content column" style="flex:1;">
+            <h1 class='ui header'>gke plugin</h1><h2 class='ui header'>Contents</h2><ul>
+<li><a href="#usage" onclick="to(window.location.pathname + '#usage', 'internal');">Usage</a></li>
+<li><a href="#prerequisites" onclick="to(window.location.pathname + '#prerequisites', 'internal');">Prerequisites</a></li>
+<li><a href="#configuration" onclick="to(window.location.pathname + '#configuration', 'internal');">Configuration</a></li>
+</ul>
+<h2 class='ui header'><a name="usage"></a>Usage</h2><p>This section documents the behavior of the <code>gke</code> plugin when using the <a href="/docs/usage/cli"><code>CLI</code></a>.</p>
+<p>Before using the <code>gke</code> plugin you must have its <a href="#prerequisites" onclick="to(window.location.pathname + '#prerequisites', 'internal');">prerequisites</a>.</p>
+<h3 class='ui header dividing'><code>setup</code></h3><p><div class="ui warning message tiny"><p>Google will charge you for your use of GKE (<a href="https://cloud.google.com/kubernetes-engine/pricing" onclick="to('https://cloud.google.com/kubernetes-engine/pricing', 'outbound');" class="external">more info</a>).</p>
+</div></p>
+<p>When running <a href="/docs/usage/cli/#setup"><code>microbs setup [--k8s]</code></a>, the <code>gke</code> plugin
+runs <code>gcloud beta container clusters create</code>.</p>
+<p>Currently, the <code>gke</code> plugin deploys a fixed-sized cluster in &quot;Standard&quot; mode
+(i.e. not &quot;Autopilot&quot;) with the following configuration:</p>
+<ul>
+<li>Machine type: <code>e2-highcpu-4</code></li>
+<li>Number of nodes: 1 node for each zone in the given <code>region_name</code> (usually 3 nodes total).</li>
+<li>Disks: 32GB SSD Persistent Disks</li>
+</ul>
+<h3 class='ui header dividing'><code>rollout</code></h3><p>The <code>gke</code> plugin is unaffected by <a href="/docs/usage/cli#rollout"><code>microbs rollout</code></a>.</p>
+<h3 class='ui header dividing'><code>destroy</code></h3><p>The <code>gke</code> plugin does not yet implement <a href="/docs/usage/cli/#destroy"><code>microbs destroy [--k8s]</code></a>.
+You can delete your GKE cluster through the standard GCP interfaces such as the
+GCP UI or <code>gcloud</code>.</p>
+<h2 class='ui header'><a name="prerequisites"></a>Prerequisites</h2><h3 class='ui header dividing'>Create GCP resources</h3><p>You must create the following GCP resources before using the <code>gke</code> plugin:</p>
+<ul>
+<li><a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects" onclick="to('https://cloud.google.com/resource-manager/docs/creating-managing-projects', 'outbound');" class="external">Project</a></li>
+<li><a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks', 'outbound');" class="external">VPC network</a></li>
+<li><a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks#subnet-rules" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks#subnet-rules', 'outbound');" class="external">VPC subnetwork</a></li>
+<li><a href="https://cloud.google.com/iam/docs/service-accounts" onclick="to('https://cloud.google.com/iam/docs/service-accounts', 'outbound');" class="external">Service account</a></li>
+<li><a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys" onclick="to('https://cloud.google.com/iam/docs/creating-managing-service-account-keys', 'outbound');" class="external">Service account key</a></li>
+</ul>
+<h3 class='ui header dividing'>Install dependencies</h3><p>The <code>gke</code> plugin requires the following software dependencies on the same
+machine as microbs:</p>
+<table>
+<thead>
+<tr>
+  <th>Software</th>
+  <th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><a href="https://cloud.google.com/sdk/docs/install" onclick="to('https://cloud.google.com/sdk/docs/install', 'outbound');" class="external">gcloud</a></td>
+  <td>372.0.0</td>
+</tr>
+</tbody>
+</table>
+<h2 class='ui header'><a name="configuration"></a>Configuration</h2><p>This section documents the <code>gke</code> plugin configurations for <a href="/docs/usage/configuration">config.yaml</a>.</p>
+<h3 class='ui header dividing'>Required fields</h3><h4 class='ui header'><a name="plugins.gke.project_name"></a><code>plugins.gke.project_name</code></h4><p>Name of the <a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects" onclick="to('https://cloud.google.com/resource-manager/docs/creating-managing-projects', 'outbound');" class="external">project</a>
+in which your GKE cluster will be deployed.</p>
+<p>Example: <code>acmecorp</code></p>
+<h4 class='ui header'><a name="plugins.gke.region_name"></a><code>plugins.gke.region_name</code></h4><p>Name of the <a href="https://cloud.google.com/compute/docs/regions-zones" onclick="to('https://cloud.google.com/compute/docs/regions-zones', 'outbound');" class="external">region</a>
+in which your GKE cluster will be deployed.
+Your <a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks', 'outbound');" class="external">VPC network</a>
+must support your chosen region.</p>
+<p>See the
+<a href="https://cloud.google.com/compute/docs/regions-zones" onclick="to('https://cloud.google.com/compute/docs/regions-zones', 'outbound');" class="external">available regions</a> for
+acceptable values. Do NOT include the zone suffix (e.g. <code>-a</code>, <code>-b</code>, <code>-c</code>, <code>-d</code>).</p>
+<p>Examples: <code>us-central1</code>, <code>asia-east1</code></p>
+<h4 class='ui header'><a name="plugins.gke.network_name"></a><code>plugins.gke.network_name</code></h4><p>Name of the <a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks', 'outbound');" class="external">VPC network</a>
+in which your GKE cluster will be deployed.</p>
+<p>Example: <code>microbs</code></p>
+<h4 class='ui header'><a name="plugins.gke.subnetwork_name"></a><code>plugins.gke.subnetwork_name</code></h4><p>Name of the <a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks#subnet-rules" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks#subnet-rules', 'outbound');" class="external">VPC subnetwork</a>
+in which your GKE cluster will be deployed.</p>
+<p>Example: <code>microbs-us-east1</code></p>
+<h4 class='ui header'><a name="plugins.gke.service_account_name"></a><code>plugins.gke.service_account_name</code></h4><p>Name of the <a href="https://cloud.google.com/iam/docs/service-accounts" onclick="to('https://cloud.google.com/iam/docs/service-accounts', 'outbound');" class="external">service account</a>
+that microbs will use to authenticate interactions with GCP.</p>
+<p>Example: <code>username@acmecorp.iam.gserviceaccount.com</code></p>
+<h4 class='ui header'><a name="plugins.gke.service_account_key_path"></a><code>plugins.gke.service_account_key_path</code></h4><p>Path to the <a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys" onclick="to('https://cloud.google.com/iam/docs/creating-managing-service-account-keys', 'outbound');" class="external">service account key</a>
+JSON file that microbs will use to authenticate interactions with GCP.</p>
+<p>Example: <code>/path/to/my/secret/key/acmecorp-999999-49d9ba2b8b6d.json</code></p>
+
+          </div></div>
+      </div>
+      <div id="bottom">
+  <small>
+    <div>
+      &copy; 2022 <a href="https://github.com/davemoore-" title="Dave Moore" onclick="to('https://github.com/davemoore-');">Dave Moore</a>.
+    </div>
+    <div>
+      Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" onclick="to('http://www.apache.org/licenses/LICENSE-2.0');">Apache License, Version 2.0</a>.
+    </div>
+    <div>
+      This website uses Google Analytics.
+    </div>
+  </small>
+</div>
+    </div>
+  </body>
+</html>

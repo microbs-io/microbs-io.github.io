@@ -2,70 +2,103 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>microbs - microservices observability</title>
-    <meta name="viewport" content="width=device-width, initial-scale=0.8"/>
-    <meta name="description" content="microbs is an open source framework to demo, test, and learn about microservices observability."/>
-    <meta property="og:title" content="microbs - microservices observability"/>
-    <meta property="og:description" content="microbs is an open source framework to demo, test, and learn about microservices observability."/>
+    <title>microbs - Entity Resolution for Elasticsearch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability."/>
+    <meta property="og:title" content="microbs - Microservices Observability"/>
+    <meta property="og:description" content="Demo, test, or learn about microservices observability."/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://microbs.io/"/>
-    <meta name="twitter:title" content="microbs - Mmcroservices observability"/>
-    <meta name="twitter:description" content="microbs is an open source framework to demo, test, and learn about microservices observability."/>
-    <link rel="stylesheet" href="/css/all.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <meta name="twitter:title" content="microbs - Microservices Observability"/>
+    <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
+    <link rel="stylesheet" href="/css/all.css?id=870089597"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-5K0NJLJTD5');
-    </script>
-  </head>
+      var to = function(uri, event_category) {
+        gtag('event', 'click', {
+          'event_category': event_category,
+          'event_label': uri,
+          'transport_type': 'beacon',
+          'event_callback': function(){document.location = uri;}
+        });
+      };
+    </script></head>
   <body>
-    <div id="app" class="fadein">
-      <div id="top">
-        <div id="splash">
-          <h1 aria-label="microbs - microservices observability">
-            microbs - microservices observability
-          </h1>
-        </div>
+    <div id="app">
+      <div id="top" class="ui inverted menu">
+  <div id="nav" class="ui container">
+    <a href="/">
+      <div aria-label="microbs" class="ui inverted header huge">
+        microbs
       </div>
-      <div id="main">
-        <p>
-          microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability. With little configuration and one command, you can automatically deploy a tech stack with your choice of any combination of the following...
-        </p>
-        <ul>
-          <li><b>Sample applications</b> (e.g. ecommerce, or make your own)</li>
-          <li><b>Simulated issues</b> (e.g. bugs, traffic spikes, or make your own)</li>
-          <li><b>Synthetics</b> (e.g. real-time synthetic user interactions)</li>
-          <li><b>Kubernetes platforms</b> (e.g. minikube, GKE)</li>
-          <li><b>Observability solutions</b> (e.g. Elastic Cloud, Grafana Cloud)</li>
-        </ul>
-        <h2>Why microbs</h2>
-        <p>microbs creates immersive experiences that are ideal for several use cases:</p>
-        <ul>
-          <li><b>Demo</b> - Create interactive stories with your tech stacks.</li>
-          <li><b>Test</b> - Test your application observability under realistic circumstances.</li>
-          <li><b>Learn</b> - Hone your familiarity of microservices and observability.</li>
-        </ul>
-        <h2>Get started</h2>
-        <p>Currently everything is hosted on Github: <b><a href="https://github.com/microbs-io/microbs">https://github.com/microbs-io/microbs</a></b></p>
+    </a>
+    <div id="buttons">
+      <a href="/docs" title="Docs">
+        <button type="button" class="ui button inverted" aria-label="Docs">
+          Docs
+        </button>
+      </a>
+      <a href="/docs/overview/getting-started" title="Get Started">
+        <button type="button" class="ui button inverted" aria-label="Get Started">
+          Get Started
+        </button>
+      </a>
+      <a href="https://github.com/microbs-io/microbs" title="Github" onclick="to('https://github.com/microbs-io/microbs');">
+        <button type="button" class="ui button inverted" aria-label="Github">
+          Github
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+      <div id="main" class="ui container fadein"><div id="splash">
+          <h1 aria-label="Microservices Observability" class="ui header teal" style="font-size:4rem;font-weight:700;">
+            microbs
+          </h1>
+          <h2 aria-label="Microservices Observability" class="ui header" style="font-size:2rem;font-weight:300;margin-top:0;">
+            Microservices Observability
+          </h2>
+        </div><div class="ui two grid" >
+          <div id="action" class="content wide column" style="text-align:center;">
+            <h3 class="ui header grey" style="font-weight:300;padding:0 0 2rem 0;">
+              microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability.
+            </h3>
+            <a href="/docs/overview/getting-started" title="Get Started">
+              <button class="ui button huge teal" style="font-weight:300;">
+                Get Started
+              </button>
+            </a>
+            <a href="/docs/overview" title="Learn More">
+              <button class="ui button huge teal" style="font-weight:300;">
+                Learn More
+              </button>
+            </a>
+            <div style="padding-top:6rem;">
+              <h2>Why microbs?</h2>
+              <p>microbs creates immersive experiences that are ideal for several use cases:</p>
+              <div>&bull;<strong style="margin-left:1rem;">Demo</strong> - Create interactive stories with your tech stacks.</div>
+              <div>&bull;<strong style="margin-left:1rem;">Test</strong> - Test your app observability under realistic circumstances.</div>
+              <div>&bull;<strong style="margin-left:1rem;">Learn</strong> - Hone your skills in microservices and observability.</div>
+            </div>
+          </div></div>
       </div>
       <div id="bottom">
-        <small>
-          <div>
-            &copy; 2022 <a href="https://github.com/davemoore-" title="Dave Moore" onclick="to('https://github.com/davemoore-');">Dave Moore</a>.
-          </div>
-          <div>
-            Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" onclick="to('http://www.apache.org/licenses/LICENSE-2.0');">Apache License, Version 2.0</a>.
-          </div>
-          <div>
-            This website uses Google Analytics.
-          </div>
-        </small>
-      </div>
+  <small>
+    <div>
+      &copy; 2022 <a href="https://github.com/davemoore-" title="Dave Moore" onclick="to('https://github.com/davemoore-');">Dave Moore</a>.
+    </div>
+    <div>
+      Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" onclick="to('http://www.apache.org/licenses/LICENSE-2.0');">Apache License, Version 2.0</a>.
+    </div>
+    <div>
+      This website uses Google Analytics.
+    </div>
+  </small>
+</div>
     </div>
   </body>
 </html>

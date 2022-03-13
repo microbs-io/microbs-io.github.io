@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>microbs - ecommerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability."/>
+    <meta property="og:title" content="microbs - Microservices Observability"/>
+    <meta property="og:description" content="Demo, test, or learn about microservices observability."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://microbs.io/"/>
+    <meta name="twitter:title" content="microbs - Microservices Observability"/>
+    <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
+    <link rel="stylesheet" href="/css/all.css?id=470512149"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5K0NJLJTD5');
+      var to = function(uri, event_category) {
+        gtag('event', 'click', {
+          'event_category': event_category,
+          'event_label': uri,
+          'transport_type': 'beacon',
+          'event_callback': function(){document.location = uri;}
+        });
+      };
+    </script></head>
+  <body>
+    <div id="app">
+      <div id="top" class="ui inverted menu">
+  <div id="nav" class="ui container">
+    <a href="/">
+      <div aria-label="microbs" class="ui inverted header huge">
+        microbs
+      </div>
+    </a>
+    <div id="buttons">
+      <a href="/docs" title="Docs">
+        <button type="button" class="ui button inverted" aria-label="Docs">
+          Docs
+        </button>
+      </a>
+      <a href="/docs/overview/getting-started" title="Get Started">
+        <button type="button" class="ui button inverted" aria-label="Get Started">
+          Get Started
+        </button>
+      </a>
+      <a href="https://github.com/microbs-io/microbs" title="Github" onclick="to('https://github.com/microbs-io/microbs');">
+        <button type="button" class="ui button inverted" aria-label="Github">
+          Github
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+      <div id="main" class="ui container "><div class="ui two grid" id="docs"><div class="four wide column computer only">
+  <div class="ui menu vertical">
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/overview">
+          Overview
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/overview/getting-started">
+          Getting Started
+        </a>
+        <a class="item" href="/docs/overview/concepts">
+          Concepts
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/usage">
+          Usage
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/usage/configuration">
+          Configuration
+        </a>
+        <a class="item" href="/docs/usage/cli">
+          CLI
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/apps">
+          Apps
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item active" href="/docs/apps/ecommerce">
+          ecommerce
+        </a>
+        <a class="item" href="/docs/apps/templates">
+          templates
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/plugins">
+          Plugins
+        </a>
+      </div>
+      <div class="menu">
+        <div class="item">
+          <a class="header " href="/docs/plugins/kubernetes">
+            Kubernetes
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/kubernetes/gke">
+              gke
+            </a>
+            <a class="item " href="/docs/plugins/kubernetes/minikube">
+              minikube
+            </a>
+            <a class="item " href="/docs/plugins/kubernetes/template">
+              template
+            </a>
+          </div>
+        </div>
+        <div class="item">
+          <a class="header " href="/docs/plugins/observability">
+            Observability
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/observability/elastic_cloud">
+              elastic_cloud
+            </a>
+            <a class="item " href="/docs/plugins/observability/grafana_cloud">
+              grafana_cloud
+            </a>
+            <a class="item " href="/docs/plugins/observability/template">
+              template
+            </a>
+          </div>
+        </div>
+        <div class="item">
+          <a class="header " href="/docs/plugins/alerts">
+            Alerts
+          </a>
+          <div class="menu">
+            <a class="item " href="/docs/plugins/alerts/slack">
+              slack
+            </a>
+            <a class="item " href="/docs/plugins/alerts/template">
+              template
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <a class="" href="/docs/development">
+          Development
+        </a>
+      </div>
+      <div class="menu">
+        <a class="item" href="/docs/development/apps">
+          Apps
+        </a>
+        <a class="item" href="/docs/development/plugins">
+          Plugins
+        </a>
+        <a class="item" href="/docs/development/versioning">
+          Versioning
+        </a>
+        <a class="item" href="/docs/development/contributing">
+          Contributing
+        </a>
+      </div>
+    </div>
+  </div>
+</div><div class="content column" style="flex:1;">
+            <h1 class='ui header'><a name="ecommerce"></a>ecommerce</h1><p>The <code>ecommerce</code> app simulates an ecommerce website.</p>
+<h2 class='ui header'>Services</h2><p>Unless otherwise noted, these services are implementations of the
+<a href="/docs/apps/templates"><code>python-flask</code></a> template service.</p>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/api-gateway" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/api-gateway', 'outbound');" class="external">api-gateway</a></h3><p>The <code>api-gateway</code> service is an <a href="https://www.nginx.com/" onclick="to('https://www.nginx.com/', 'outbound');" class="external">Nginx</a> proxy instrumented
+with the <a href="https://github.com/open-telemetry/opentelemetry-cpp-contrib/tree/main/instrumentation/nginx" onclick="to('https://github.com/open-telemetry/opentelemetry-cpp-contrib/tree/main/instrumentation/nginx', 'outbound');" class="external">OpenTelemetry C++ nginx module</a>.
+This is an implementation of the <a href="/docs/apps/templates"><code>nginx</code></a> template service.</p>
+<p>Most services in the <code>ecommerce</code> app communicate with each other through the
+<code>api-gateway</code> service. This simplifies the microservices topology by requiring
+the services to be aware of only one service (in most cases). It also creates a
+predictable flow of communications among services, and in theory, a single
+place to manage access among services.</p>
+<p>There are exceptions in which communications don't flow through the <code>api-gateway</code>
+service:</p>
+<ul>
+<li>The <code>web-gateway</code> server communicates directly with the <code>session-data</code> service in addition to the <code>api-gateway</code> service.</li>
+<li>The <code>web-gateway</code> client communicates directly with the <code>web-gateway</code> server.</li>
+<li>The <code>content</code> service communicates with a public-internet GCP storage bucket to fetch images.</li>
+<li>The <code>synthetics</code> service communicates directly with the <code>web-gateway</code> client.</li>
+</ul>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/cart-data" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/cart-data', 'outbound');" class="external">cart-data</a></h3><p>The <code>cart-data</code> service stores the products and quantities of carts for each
+session. The service is a <a href="https://redis.io/" onclick="to('https://redis.io/', 'outbound');" class="external">redis</a> server configured with a
+replica service (<code>cart-data-replica</code>) for high availability.</p>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/cart" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/cart', 'outbound');" class="external">cart</a></h3><p>The <code>cart</code> service creates, reads, updates, and deletes carts and products in
+the <code>cart-data</code> service via the <code>api-gateway</code> service.</p>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/checkout" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/checkout', 'outbound');" class="external">checkout</a></h3><p>The <code>checkout</code> service processes payments and, if successful, clears the cart.
+It communicates with the <code>payment</code> and <code>cart</code> services via the <code>api-gateway</code>
+service.</p>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/content" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/content', 'outbound');" class="external">content</a></h3><p>The <code>content</code> service fetches product images from a public-internet GCP bucket
+that hosts images for the <code>ecommerce</code> microbs app.</p>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/payment" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/payment', 'outbound');" class="external">payment</a></h3><p>The <code>payment</code> service simulates the processing of a payment. Currently it does
+this by waiting for a random period of time before returning an acknowledgement.</p>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/product-data" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/product-data', 'outbound');" class="external">product-data</a></h3><p>The <code>product-data</code> service is a product catalog that stores data about each
+product. The service is a <a href="https://www.postgresql.org/" onclick="to('https://www.postgresql.org/', 'outbound');" class="external">PostgreSQL</a> database.</p>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/product" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/product', 'outbound');" class="external">product</a></h3><p>The <code>product</code> service queries product data from the <code>product-data</code> service.</p>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/session-data" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/session-data', 'outbound');" class="external">session-data</a></h3><p>The <code>session-data</code> service stores session cookie identifiers that the
+<code>web-gateway</code> service uses to establish and persist session state. The service
+is a <a href="https://redis.io/" onclick="to('https://redis.io/', 'outbound');" class="external">redis</a> server configured with a replica service
+(<code>session-data-replica</code>) for high availability.</p>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/synthetics" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/synthetics', 'outbound');" class="external">synthetics</a></h3><p>The <code>synthetics</code> service generates traffic to the <code>web-gateway</code> client.
+Currently all traffic simulates the process of adding a product to a cart and
+then placing an order. The service uses <a href="https://playwright.dev/" onclick="to('https://playwright.dev/', 'outbound');" class="external">Playwright</a>
+to simulate traffic using headless web browsers.</p>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/web-gateway" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/web-gateway', 'outbound');" class="external">web-gateway</a></h3><p>The <code>web-gateway</code> service is a web server that serves a React application and
+brokers requests between the React application and the <code>api-gateway</code> service.
+The <code>synthetics</code> service interacts directly with the React application.</p>
+<p>The <code>web-gateway</code> is given an external service on port <code>80</code> on Kubernetes so
+that human users can interact with the application.</p>
+
+          </div></div>
+      </div>
+      <div id="bottom">
+  <small>
+    <div>
+      &copy; 2022 <a href="https://github.com/davemoore-" title="Dave Moore" onclick="to('https://github.com/davemoore-');">Dave Moore</a>.
+    </div>
+    <div>
+      Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" onclick="to('http://www.apache.org/licenses/LICENSE-2.0');">Apache License, Version 2.0</a>.
+    </div>
+    <div>
+      This website uses Google Analytics.
+    </div>
+  </small>
+</div>
+    </div>
+  </body>
+</html>
