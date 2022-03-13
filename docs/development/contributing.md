@@ -1,0 +1,10 @@
+# [](contributing)Contributing
+
+If you'd like to contribute an app, plugin, or other change to microbs, you're
+welcome to submit a [pull request](https://github.com/microbs-io/microbs/pulls)
+to the [Github repo](https://github.com/microbs-io/microbs). You can also start
+a discussion for ideas, feature requests, or bug reports by opening an
+[issue](https://github.com/microbs-io/microbs/issues) on the Github repo.
+
+As the project matures, this page will publish more guidance on contributing
+to the project.
