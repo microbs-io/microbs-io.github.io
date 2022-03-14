@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>microbs - {$ title $}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=0.8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="{$ meta_description $}"/>
     <meta property="og:title" content="microbs - Microservices Observability"/>
     <meta property="og:description" content="{$ meta_description_social $}"/>
@@ -43,43 +43,43 @@
   <body>
     <div id="app">
       {% include "top.html" %}
-      <div id="main" class="ui container {$ 'fadein' if home else '' $}">
-        {%- if home -%}
-        <div id="splash">
+      {%- if home -%}
+      <div id="splash" class="ui fadein">
+        <div class="ui container">
           <h1 aria-label="Microservices Observability" class="ui header teal" style="font-size:4rem;font-weight:700;">
             microbs
           </h1>
           <h2 aria-label="Microservices Observability" class="ui header" style="font-size:2rem;font-weight:300;margin-top:0;">
             Microservices Observability
           </h2>
+          <h3 class="ui header grey" style="font-weight:300;padding:0 0 2rem 0;">
+            microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability.
+          </h3>
+          <a href="/docs/overview/getting-started" title="Get Started">
+            <button class="ui button huge teal" style="font-weight:300;">
+              Get Started
+            </button>
+          </a>
+          <a href="/docs/overview" title="Learn More">
+            <button class="ui button huge teal" style="font-weight:300;">
+              Learn More
+            </button>
+          </a>
         </div>
-        {%- endif -%}
+      </div>
+      {%- endif -%}
+      <div id="main" class="ui container {$ 'fadein' if home else '' $}">
         <div class="ui two grid" {$ 'id="docs"' if docs else '' $}>
           {%- if docs -%}
           {% include "docs-nav.html" %}
           {%- endif -%}
           {% if home %}
           <div id="action" class="content wide column" style="text-align:center;">
-            <h3 class="ui header grey" style="font-weight:300;padding:0 0 2rem 0;">
-              microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability.
-            </h3>
-            <a href="/docs/overview/getting-started" title="Get Started">
-              <button class="ui button huge teal" style="font-weight:300;">
-                Get Started
-              </button>
-            </a>
-            <a href="/docs/overview" title="Learn More">
-              <button class="ui button huge teal" style="font-weight:300;">
-                Learn More
-              </button>
-            </a>
-            <div style="padding-top:6rem;">
-              <h2>Why microbs?</h2>
-              <p>microbs creates immersive, realistic observability experiences:</p>
-              <div>&bull;<strong style="margin-left:1rem;">Demo</strong> - Create interactive stories with your tech stacks.</div>
-              <div>&bull;<strong style="margin-left:1rem;">Test</strong> - Test observability under realistic circumstances.</div>
-              <div>&bull;<strong style="margin-left:1rem;">Learn</strong> - Hone your skills in microservices and observability.</div>
-            </div>
+            <h2>Why microbs?</h2>
+            <p>microbs creates immersive and realistic observability experiences:</p>
+            <div>&bull;<strong style="margin-left:1rem;">Demo</strong> - Create interactive observability stories with your apps and tech stack.</div>
+            <div>&bull;<strong style="margin-left:1rem;">Test</strong> - Test your app and tech stack observability under realistic circumstances.</div>
+            <div>&bull;<strong style="margin-left:1rem;">Learn</strong> - Hone your skills in microservices and observability.</div>
           </div>
           {%- else -%}
           <div class="content column" style="flex:1;">
