@@ -161,7 +161,7 @@ def PAGES(args):
     return {
         "/": {
             "vars": {
-                "title": "Entity Resolution for Elasticsearch",
+                "title": "Microservices Observability",
                 "meta_description": META_DESCRIPTION_GENERIC,
                 "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
                 "home": True
