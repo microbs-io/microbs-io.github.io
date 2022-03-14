@@ -12,7 +12,7 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=194553567"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=541153052"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -189,7 +189,7 @@
 <h3 class='ui header dividing'><code>setup</code></h3><p><div class="ui warning message tiny"><p>Google will charge you for your use of GKE (<a href="https://cloud.google.com/kubernetes-engine/pricing" onclick="to('https://cloud.google.com/kubernetes-engine/pricing', 'outbound');" class="external">more info</a>).</p>
 </div></p>
 <p>When running <a href="/docs/usage/cli/#setup"><code>microbs setup [--k8s]</code></a>, the <code>gke</code> plugin
-runs <code>gcloud beta container clusters create</code>.</p>
+runs <code>gcloud container clusters create</code>.</p>
 <p>Currently, the <code>gke</code> plugin deploys a fixed-sized cluster in &quot;Standard&quot; mode
 (i.e. not &quot;Autopilot&quot;) with the following configuration:</p>
 <ul>
@@ -198,9 +198,8 @@ runs <code>gcloud beta container clusters create</code>.</p>
 <li>Disks: 32GB SSD Persistent Disks</li>
 </ul>
 <h3 class='ui header dividing'><code>rollout</code></h3><p>The <code>gke</code> plugin is unaffected by <a href="/docs/usage/cli#rollout"><code>microbs rollout</code></a>.</p>
-<h3 class='ui header dividing'><code>destroy</code></h3><p>The <code>gke</code> plugin does not yet implement <a href="/docs/usage/cli/#destroy"><code>microbs destroy [--k8s]</code></a>.
-You can delete your GKE cluster through the standard GCP interfaces such as the
-GCP UI or <code>gcloud</code>.</p>
+<h3 class='ui header dividing'><code>destroy</code></h3><p>When running <a href="/docs/usage/cli/#destroy"><code>microbs destroy [--k8s]</code></a>, the <code>gke</code>
+plugin runs <code>gcloud container clusters delete</code>.</p>
 <h2 class='ui header'><a name="prerequisites"></a>Prerequisites</h2><h3 class='ui header dividing'>Create GCP resources</h3><p>You must create the following GCP resources before using the <code>gke</code> plugin:</p>
 <ul>
 <li><a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects" onclick="to('https://cloud.google.com/resource-manager/docs/creating-managing-projects', 'outbound');" class="external">Project</a></li>
