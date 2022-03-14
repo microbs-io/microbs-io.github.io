@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>microbs - CLI</title>
-    <meta name="viewport" content="width=device-width, initial-scale=0.8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability."/>
     <meta property="og:title" content="microbs - Microservices Observability"/>
     <meta property="og:description" content="Demo, test, or learn about microservices observability."/>
@@ -12,7 +12,7 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=271001392"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=584489918"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -31,31 +31,27 @@
     <div id="app">
       <div id="top" class="ui inverted menu">
   <div id="nav" class="ui container">
-    <a href="/">
-      <div aria-label="microbs" class="ui inverted header huge">
-        microbs
-      </div>
-    </a>
-    <div id="buttons">
-      <a href="/docs" title="Docs">
-        <button type="button" class="ui button inverted" aria-label="Docs">
-          Docs
-        </button>
+    <div id="logo">
+      <a class="item borderless" href="/">
+        <div aria-label="microbs" class="ui inverted header big">
+          microbs
+        </div>
       </a>
-      <a href="/docs/overview/getting-started" title="Get Started">
-        <button type="button" class="ui button inverted" aria-label="Get Started">
-          Get Started
-        </button>
+    </div>
+    <div id="buttons" class="right menu">
+      <a class="item" href="/docs" title="Docs">
+        Docs
       </a>
-      <a href="https://github.com/microbs-io/microbs" title="Github" onclick="to('https://github.com/microbs-io/microbs');">
-        <button type="button" class="ui button inverted" aria-label="Github">
-          Github
-        </button>
+      <a class="item" href="/docs/overview/getting-started" title="Get Started">
+        Get Started
+      </a>
+      <a class="item" href="https://github.com/microbs-io/microbs" title="Github" onclick="to('https://github.com/microbs-io/microbs');">
+        <div class="github"></div>
       </a>
     </div>
   </div>
-</div>
-      <div id="main" class="ui container "><div class="ui two grid" id="docs"><div class="four wide column computer only">
+</div><div id="main" class="ui container ">
+        <div class="ui two grid" id="docs"><div class="four wide column computer only">
   <div class="ui menu vertical">
     <div class="item">
       <div class="header">
