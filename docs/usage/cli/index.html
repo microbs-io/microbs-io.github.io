@@ -12,7 +12,7 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=724783718"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=388028179"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -183,6 +183,7 @@
 <li><a href="#setup" onclick="to(window.location.pathname + '#setup', 'internal');"><code>setup</code></a></li>
 <li><a href="#rollout" onclick="to(window.location.pathname + '#rollout', 'internal');"><code>rollout</code></a></li>
 <li><a href="#destroy" onclick="to(window.location.pathname + '#destroy', 'internal');"><code>destroy</code></a></li>
+<li><a href="#validate" onclick="to(window.location.pathname + '#validate', 'internal');"><code>validate</code></a></li>
 </ul>
 <h3 class='ui header dividing'><a name="setup"></a><code>setup</code></h3><p>Usage: <code>microbs setup [OPTIONS]</code></p>
 <p>Creates all or part of the microbs environment as configured in the
@@ -308,6 +309,33 @@ dependencies, regardless of the order you specify in the command. That order is:
   <td><code>-l</code></td>
   <td><code>--alerts</code></td>
   <td>Run the <code>destroy()</code> command of the alerts plugin</td>
+</tr>
+</tbody>
+</table>
+<h3 class='ui header dividing'><a name="validate"></a><code>validate</code></h3><p>Usage: <code>microbs validate [OPTIONS]</code></p>
+<p>Validates the installation and configuration of microbs, and reports the status
+of each validation check. Offers guidance where possible.</p>
+<p>The scope of the <code>validate</code> command includes:</p>
+<ul>
+<li>Software dependency installation</li>
+<li>Software dependency versions</li>
+<li>Config file existence</li>
+<li>Config file syntax</li>
+<li>Config file values</li>
+</ul>
+<h4 class='ui header'>Optional command flags</h4><table>
+<thead>
+<tr>
+  <th>Short</th>
+  <th>Long</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>-c</code></td>
+  <td><code>--config</code></td>
+  <td>Path to config file</td>
 </tr>
 </tbody>
 </table>
