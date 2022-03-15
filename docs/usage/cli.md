@@ -5,6 +5,7 @@
 * [`setup`](#setup)
 * [`rollout`](#rollout)
 * [`destroy`](#destroy)
+* [`validate`](#validate)
 
 
 ### [](setup)`setup`
@@ -83,3 +84,25 @@ dependencies, regardless of the order you specify in the command. That order is:
 |`-k`|`--k8s`|Run the `destroy()` command of the Kubernetes plugin|
 |`-o`|`--obs`|Run the `destroy()` command of the observability plugin|
 |`-l`|`--alerts`|Run the `destroy()` command of the alerts plugin|
+
+
+### [](validate)`validate`
+
+Usage: `microbs validate [OPTIONS]`
+
+Validates the installation and configuration of microbs, and reports the status
+of each validation check. Offers guidance where possible.
+
+The scope of the `validate` command includes:
+
+* Software dependency installation
+* Software dependency versions
+* Config file existence
+* Config file syntax
+* Config file values
+
+#### Optional command flags
+
+|Short|Long|Description|
+|-----|----|-----------|
+|`-c`|`--config`|Path to config file|
