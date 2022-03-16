@@ -2,22 +2,36 @@
 
 ## Contents
 
-* [config.yaml](#config.yaml)
+* [Config file](#config-file)
 * [Syntax](#syntax)
 * [Reference](#reference)
 
 
-## [](config.yaml)config.yaml
+## [](config-file)Config file
 
-microbs is driven by a config file. The repo includes a sample config file
-called `config.reference.yaml`. You should copy this file, rename it to
-`config.yaml`, and save it to the same directory. This is the default file name
-and location that microbs uses.
+microbs is driven by a config file, named `config.yaml` by default. The repo
+includes a sample config file called `config.reference.yaml`. You should copy
+this file, rename it to `config.yaml`, and save it to the same directory. This
+is the default file name and location that microbs uses.
 
-You can specify the path to any config file using the `-c` flag in the
-[CLI](/docs/usage/cli):
+### [](alternative-files)Alternative files
 
-`microbs help -c path/to/your/config.yaml`
+By default, microbs expects to use a config file named `config.yaml` in the same
+directory as the `microbs` executable file, which is located in the root
+directory of the [repo](https://github.com/microbs-io/microbs) that you cloned
+during [installation](/docs/overview/getting-started). You can specify the path
+to a different config file when running commands in the [CLI](/docs/usage/cli)
+by using the `-c` or `--config` flag.
+
+Example:
+
+`microbs help -c /path/to/your/config.yaml`
+
+### [](validation)Validation
+
+You can (and should) validate the syntax and correctness of your config file by
+running [`microbs validate`](/docs/usage/cli#validate). The validation script
+can't provide 100% guidance, but it does a good job.
 
 
 ## [](syntax)Syntax

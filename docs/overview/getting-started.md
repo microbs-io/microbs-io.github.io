@@ -31,8 +31,8 @@ microbs has been tested with the following software versions:
 |Software|Version|
 |------|-----|
 |[kubectl](https://kubernetes.io/docs/tasks/tools/)|1.23.4|
-|[node](https://nodejs.org/en/download/)|17.5.0|
-|[nvm](https://github.com/nvm-sh/nvm)|17.5.0|
+|[node](https://nodejs.org/en/download/)|16.14.0|
+|[nvm](https://github.com/nvm-sh/nvm)|16.14.0|
 |[skaffold](https://skaffold.dev/docs/install/)|1.36.0|
 
 
@@ -49,8 +49,8 @@ git clone https://github.com/microbs-io/microbs.git
 # Navigate into the cloned microbs repo
 cd microbs
 
-# Use the correct version of node
-nvm use
+# Install and use the correct version of node
+nvm install
 
 # Install the node modules for microbs
 npm install
@@ -62,5 +62,13 @@ export PATH="$(pwd):$PATH"
 cp ./config.reference.yaml config.yaml
 
 # Verify installation
-microbs help
+microbs validate
 ```
+
+Don't forget to install any dependencies for the [plugins](/docs/plugins) you
+wish to use. You can run [`microbs validate`](/docs/usage/cli#validate) to check if you have correctly
+prepared the environment for your plugins.
+
+## [](whats-next)What's next?
+
+Once installed, you can proceed to the [configuration](/docs/usage/configuration) and [CLI](/docs/usage/cli).
