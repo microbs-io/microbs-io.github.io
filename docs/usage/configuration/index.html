@@ -12,7 +12,7 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=171652501"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=194066062"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -180,17 +180,25 @@
   </div>
 </div><div class="content column" style="flex:1;">
             <h1 class='ui header'><a name="configuration"></a>Configuration</h1><h2 class='ui header'>Contents</h2><ul>
-<li><a href="#config.yaml" onclick="to(window.location.pathname + '#config.yaml', 'internal');">config.yaml</a></li>
+<li><a href="#config-file" onclick="to(window.location.pathname + '#config-file', 'internal');">Config file</a></li>
 <li><a href="#syntax" onclick="to(window.location.pathname + '#syntax', 'internal');">Syntax</a></li>
 <li><a href="#reference" onclick="to(window.location.pathname + '#reference', 'internal');">Reference</a></li>
 </ul>
-<h2 class='ui header'><a name="config.yaml"></a>config.yaml</h2><p>microbs is driven by a config file. The repo includes a sample config file
-called <code>config.reference.yaml</code>. You should copy this file, rename it to
-<code>config.yaml</code>, and save it to the same directory. This is the default file name
-and location that microbs uses.</p>
-<p>You can specify the path to any config file using the <code>-c</code> flag in the
-<a href="/docs/usage/cli">CLI</a>:</p>
-<p><code>microbs help -c path/to/your/config.yaml</code></p>
+<h2 class='ui header'><a name="config-file"></a>Config file</h2><p>microbs is driven by a config file, named <code>config.yaml</code> by default. The repo
+includes a sample config file called <code>config.reference.yaml</code>. You should copy
+this file, rename it to <code>config.yaml</code>, and save it to the same directory. This
+is the default file name and location that microbs uses.</p>
+<h3 class='ui header dividing'><a name="alternative-files"></a>Alternative files</h3><p>By default, microbs expects to use a config file named <code>config.yaml</code> in the same
+directory as the <code>microbs</code> executable file, which is located in the root
+directory of the <a href="https://github.com/microbs-io/microbs" onclick="to('https://github.com/microbs-io/microbs', 'outbound');" class="external">repo</a> that you cloned
+during <a href="/docs/overview/getting-started">installation</a>. You can specify the path
+to a different config file when running commands in the <a href="/docs/usage/cli">CLI</a>
+by using the <code>-c</code> or <code>--config</code> flag.</p>
+<p>Example:</p>
+<p><code>microbs help -c /path/to/your/config.yaml</code></p>
+<h3 class='ui header dividing'><a name="validation"></a>Validation</h3><p>You can (and should) validate the syntax and correctness of your config file by
+running <a href="/docs/usage/cli#validate"><code>microbs validate</code></a>. The validation script
+can't provide 100% guidance, but it does a good job.</p>
 <h2 class='ui header'><a name="syntax"></a>Syntax</h2><p>The microbs config file uses <a href="https://yaml.org/spec/1.2.2/" onclick="to('https://yaml.org/spec/1.2.2/', 'outbound');" class="external">yaml</a> syntax.</p>
 <p>When you run a command with microbs, every field and value in <code>config.yaml</code> is
 converted to an environment variable and shared with all microbs application
@@ -202,7 +210,7 @@ replaced with underscores.</p>
 
             <div class="code">
               <code>
-                <span id="ab'cd36e672bd02cc32'"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"></span>
+                <span id="ab'06cc52a5d335f29d'"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">bar_baz.abc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xyz</span><span class="w"></span>
 </pre></div>
 </span>
@@ -212,7 +220,7 @@ replaced with underscores.</p>
 
             <div class="code">
               <code>
-                <span id="ab'a87e80d6f25c61f9'"><div class="highlight"><pre><span></span><span class="nx">FOO_BAR_BAZ_XYZ</span><span class="o">=</span><span class="nx">xyz</span>
+                <span id="ab'601cf1c35cf72597'"><div class="highlight"><pre><span></span><span class="nx">FOO_BAR_BAZ_XYZ</span><span class="o">=</span><span class="nx">xyz</span>
 </pre></div>
 </span>
               </code>
