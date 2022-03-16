@@ -520,7 +520,7 @@ a.external:after {
   min-width: 250px;
 }
 #docs th, #docs td {
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 0 0;
 }
 pre {
   padding: 1rem;
