@@ -24,9 +24,9 @@ configure the size of the cluster it deploys.
 
 The `kind` plugin is unaffected by [`microbs rollout`](/docs/usage/cli#rollout).
 
-### `kind`
+### `destroy`
 
-When running [`microbs setup [--k8s]`](/docs/usage/cli/#destroy), the `kind`
+When running [`microbs destroy [--k8s]`](/docs/usage/cli/#destroy), the `kind`
 plugin runs `kind delete cluster`.
 
 

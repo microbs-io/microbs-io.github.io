@@ -41,7 +41,7 @@ The `minikube` plugin is unaffected by [`microbs rollout`](/docs/usage/cli#rollo
 
 ### `destroy`
 
-When running [`microbs setup [--k8s]`](/docs/usage/cli/#destroy), the `minikube`
+When running [`microbs destroy [--k8s]`](/docs/usage/cli/#destroy), the `minikube`
 plugin runs `minikube delete`.
 
 
