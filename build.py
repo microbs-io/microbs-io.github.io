@@ -311,6 +311,15 @@ def PAGES(args):
                 "docs": True
             }
         },
+        "/docs/plugins/kubernetes/kind": {
+            "vars": {
+                "title": "kind plugin",
+                "meta_description": META_DESCRIPTION_GENERIC,
+                "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
+                "content": markdown("/docs/plugins/kubernetes/kind.md", args),
+                "docs": True
+            }
+        },
         "/docs/plugins/kubernetes/minikube": {
             "vars": {
                 "title": "minikube plugin",

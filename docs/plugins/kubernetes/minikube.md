@@ -19,6 +19,13 @@ Before using the `minikube` plugin you must have its [prerequisites](#prerequisi
 When running [`microbs setup [--k8s]`](/docs/usage/cli/#setup), the `minikube`
 plugin runs `minikube start`.
 
+After deploying an application with `microbs setup [--app]`, run
+[`minikube tunnel`](https://minikube.sigs.k8s.io/docs/handbook/accessing/#using-minikube-tunnel)
+in another terminal window to enable communications between your machine and the
+application. You may need to run `minikube tunnel` as a `sudo` user for
+applications that expose privileged ports, such as the
+[`ecommerce`](/docs/apps/ecommerce) app which exposes port `80`.
+
 Currently, the `minikube` plugin does not configure the size of the cluster it
 deploys. If you find that you need more capacity, [destroy](#/docs/usage/cli#destroy)
 your current cluster and run:
