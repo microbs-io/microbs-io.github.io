@@ -7,6 +7,8 @@
 * [`destroy`](#destroy)
 * [`validate`](#validate)
 
+See also: [Global options](#global-options)
+
 
 ### [](setup)`setup`
 
@@ -106,3 +108,14 @@ The scope of the `validate` command includes:
 |Short|Long|Description|
 |-----|----|-----------|
 |`-c`|`--config`|Path to config file|
+
+
+## [](global-options)Global options
+
+These options can be used for all commands.
+
+|Short|Long|Description|
+|-----|----|-----------|
+|`-L`|`--log-level`|Filter logs by: `debug`, `info`, `warn`, `error` (default: `info`)|
+||`--no-color`|Disable colors in log messages|
+|`-v`|`--verbose`|Include timestamps and log levels in logs|
