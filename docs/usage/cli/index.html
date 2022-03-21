@@ -12,7 +12,7 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=292889757"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=123377227"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -185,8 +185,12 @@
             <h1 class='ui header'><a name="cli"></a>CLI</h1><h2 class='ui header'>Commands</h2><ul>
 <li><a href="#setup" onclick="to(window.location.pathname + '#setup', 'internal');"><code>setup</code></a></li>
 <li><a href="#rollout" onclick="to(window.location.pathname + '#rollout', 'internal');"><code>rollout</code></a></li>
+<li><a href="#stabilize" onclick="to(window.location.pathname + '#stabilize', 'internal');"><code>stabilize</code></a></li>
 <li><a href="#destroy" onclick="to(window.location.pathname + '#destroy', 'internal');"><code>destroy</code></a></li>
 <li><a href="#validate" onclick="to(window.location.pathname + '#validate', 'internal');"><code>validate</code></a></li>
+<li><a href="#apps" onclick="to(window.location.pathname + '#apps', 'internal');"><code>apps</code></a></li>
+<li><a href="#plugins" onclick="to(window.location.pathname + '#plugins', 'internal');"><code>plugins</code></a></li>
+<li><a href="#help" onclick="to(window.location.pathname + '#help', 'internal');"><code>help</code></a></li>
 </ul>
 <p>See also: <a href="#global-options" onclick="to(window.location.pathname + '#global-options', 'internal');">Global options</a></p>
 <h3 class='ui header dividing'><a name="setup"></a><code>setup</code></h3><p>Usage: <code>microbs setup [OPTIONS]</code></p>
@@ -214,11 +218,6 @@ dependencies, regardless of the order you specify in the command. That order is:
 </thead>
 <tbody>
 <tr>
-  <td><code>-c</code></td>
-  <td><code>--config</code></td>
-  <td>Path to config file</td>
-</tr>
-<tr>
   <td><code>-a</code></td>
   <td><code>--app</code></td>
   <td>Rollout the application to Kubernetes</td>
@@ -245,27 +244,9 @@ dependencies, regardless of the order you specify in the command. That order is:
 application deployed to Kubernetes. If no variant name is given, then the
 default <code>main</code> profile of the application is rolled out to Kubernetes, which is
 the same thing as deploying the application via <a href="#setup" onclick="to(window.location.pathname + '#setup', 'internal');"><code>setup</code></a>.</p>
-<h4 class='ui header'>Optional command flags</h4><table>
-<thead>
-<tr>
-  <th>Short</th>
-  <th>Long</th>
-  <th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td><code>-c</code></td>
-  <td><code>--config</code></td>
-  <td>Path to config file</td>
-</tr>
-<tr>
-  <td></td>
-  <td><code>VARIANT_NAME</code></td>
-  <td>Name of the variant to rollout (default: <code>main</code>)</td>
-</tr>
-</tbody>
-</table>
+<h3 class='ui header dividing'><a name="stabilize"></a><code>stabilize</code></h3><p>Usage: <code>microbs stabilize [OPTIONS]</code></p>
+<p>An alias for <a href="#rollout" onclick="to(window.location.pathname + '#rollout', 'internal');"><code>microbs rollout main [OPTIONS]</code></a>. Returns a deployed
+application to its <code>main</code> profile.</p>
 <h3 class='ui header dividing'><a name="destroy"></a><code>destroy</code></h3><p>Usage: <code>microbs destroy [OPTIONS]</code></p>
 <p>Destroys all or part of the microbs environment as configured in the
 <code>deployment.app</code> and <code>deployment.plugins*</code> configuration fields.</p>
@@ -289,11 +270,6 @@ dependencies, regardless of the order you specify in the command. That order is:
 </tr>
 </thead>
 <tbody>
-<tr>
-  <td><code>-c</code></td>
-  <td><code>--config</code></td>
-  <td>Path to config file</td>
-</tr>
 <tr>
   <td><code>-a</code></td>
   <td><code>--app</code></td>
@@ -327,7 +303,14 @@ of each validation check. Offers guidance where possible.</p>
 <li>Config file syntax</li>
 <li>Config file values</li>
 </ul>
-<h4 class='ui header'>Optional command flags</h4><table>
+<h3 class='ui header dividing'><a name="apps"></a><code>apps</code></h3><p>Usage: <code>microbs apps [OPTIONS]</code></p>
+<p>Displays a list of <a href="/docs/apps">apps</a> available to microbs.</p>
+<h3 class='ui header dividing'><a name="plugins"></a><code>plugins</code></h3><p>Usage: <code>microbs plugins [OPTIONS]</code></p>
+<p>Displays a list of <a href="/docs/plugins">plugins</a> available to microbs.</p>
+<h3 class='ui header dividing'><a name="help"></a><code>help</code></h3><p>Usage: <code>microbs help [OPTIONS]</code></p>
+<p>Displays a concise explanation of commands and options available to the CLI.</p>
+<h2 class='ui header'><a name="global-options"></a>Global options</h2><p>These options can be used for all commands.</p>
+<table>
 <thead>
 <tr>
   <th>Short</th>
@@ -339,20 +322,8 @@ of each validation check. Offers guidance where possible.</p>
 <tr>
   <td><code>-c</code></td>
   <td><code>--config</code></td>
-  <td>Path to config file</td>
+  <td>Path to <a href="/docs/usage/configuration">config file</a> (default: <code>./config.yaml</code>)</td>
 </tr>
-</tbody>
-</table>
-<h2 class='ui header'><a name="global-options"></a>Global options</h2><p>These options can be used for all commands.</p>
-<table>
-<thead>
-<tr>
-  <th>Short</th>
-  <th>Long</th>
-  <th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
   <td><code>-L</code></td>
   <td><code>--log-level</code></td>
