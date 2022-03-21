@@ -12,7 +12,7 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=943958767"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=292889757"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -188,6 +188,7 @@
 <li><a href="#destroy" onclick="to(window.location.pathname + '#destroy', 'internal');"><code>destroy</code></a></li>
 <li><a href="#validate" onclick="to(window.location.pathname + '#validate', 'internal');"><code>validate</code></a></li>
 </ul>
+<p>See also: <a href="#global-options" onclick="to(window.location.pathname + '#global-options', 'internal');">Global options</a></p>
 <h3 class='ui header dividing'><a name="setup"></a><code>setup</code></h3><p>Usage: <code>microbs setup [OPTIONS]</code></p>
 <p>Creates all or part of the microbs environment as configured in the
 <code>deployment.app</code> and <code>deployment.plugins*</code> configuration fields.</p>
@@ -339,6 +340,33 @@ of each validation check. Offers guidance where possible.</p>
   <td><code>-c</code></td>
   <td><code>--config</code></td>
   <td>Path to config file</td>
+</tr>
+</tbody>
+</table>
+<h2 class='ui header'><a name="global-options"></a>Global options</h2><p>These options can be used for all commands.</p>
+<table>
+<thead>
+<tr>
+  <th>Short</th>
+  <th>Long</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>-L</code></td>
+  <td><code>--log-level</code></td>
+  <td>Filter logs by: <code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code> (default: <code>info</code>)</td>
+</tr>
+<tr>
+  <td></td>
+  <td><code>--no-color</code></td>
+  <td>Disable colors in log messages</td>
+</tr>
+<tr>
+  <td><code>-v</code></td>
+  <td><code>--verbose</code></td>
+  <td>Include timestamps and log levels in logs</td>
 </tr>
 </tbody>
 </table>
