@@ -74,8 +74,8 @@ is a [redis](https://redis.io/) server configured with a replica service
 
 The `synthetics` service generates traffic to the `web-gateway` client.
 Currently all traffic simulates the process of adding a product to a cart and
-then placing an order. The service uses [Playwright](https://playwright.dev/)
-to simulate traffic using headless web browsers.
+then placing an order. The service uses [k6](https://k6.io/) to simulate virtual
+user traffic.
 
 ### [web-gateway](https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/web-gateway)
 

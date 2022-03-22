@@ -61,8 +61,8 @@ application as a set of services, each of which is implemented as a Kubernetes
 
 Synthetics are human-like traffic sent to your [applications](#applications).
 An application may or may not implement a synthetics service. For example, the
-[ecommerce](/docs/apps/ecommerce) application runs several headless web browsers
-that run the steps needed to order a product.
+[ecommerce](/docs/apps/ecommerce) application generates virtual user traffic
+that runs the steps needed to order a product.
 
 
 ## [](alerts)Alerts
