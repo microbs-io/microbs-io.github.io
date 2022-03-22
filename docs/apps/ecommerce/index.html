@@ -12,7 +12,7 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=509029266"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=494297335"><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -222,8 +222,8 @@ is a <a href="https://redis.io/" onclick="to('https://redis.io/', 'outbound');" 
 (<code>session-data-replica</code>) for high availability.</p>
 <h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/synthetics" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/synthetics', 'outbound');" class="external">synthetics</a></h3><p>The <code>synthetics</code> service generates traffic to the <code>web-gateway</code> client.
 Currently all traffic simulates the process of adding a product to a cart and
-then placing an order. The service uses <a href="https://playwright.dev/" onclick="to('https://playwright.dev/', 'outbound');" class="external">Playwright</a>
-to simulate traffic using headless web browsers.</p>
+then placing an order. The service uses <a href="https://k6.io/" onclick="to('https://k6.io/', 'outbound');" class="external">k6</a> to simulate virtual
+user traffic.</p>
 <h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/web-gateway" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/web-gateway', 'outbound');" class="external">web-gateway</a></h3><p>The <code>web-gateway</code> service is a web server that serves a React application and
 brokers requests between the React application and the <code>api-gateway</code> service.
 The <code>synthetics</code> service interacts directly with the React application.</p>
