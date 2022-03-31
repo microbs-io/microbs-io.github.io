@@ -5,6 +5,7 @@ Welcome to the microbs docs! Select one of the guides below to find what you nee
 ## [Overview](/docs/overview)
 
 - [Getting started](/docs/overview/getting-started)
+- [Architecture](/docs/overview/architecture)
 - [Concepts](/docs/overview/concepts)
 
 ## [Usage](/docs/usage)
