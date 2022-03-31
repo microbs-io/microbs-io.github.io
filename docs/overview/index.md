@@ -15,7 +15,7 @@ With little [configuration](/docs/usage/configuration) and one [command](/docs/u
 
 You can make your own [apps](/docs/apps) or [plugins](/docs/plugins) for a more customized experience. More plugins are planned for the future.
 
-|? microbs is a project of the open source community. microbs is not officially supported by any vendors named in this documentation or the software (e.g. Cloud Native Computing Foundation, Amazon, Google, Microsoft, Elastic, Grafana). microbs is a vendor-inclusive community project to enable practitioners in the observability ecosystem.
+|? microbs is a project of the open source community. microbs is not officially supported by any vendors named in this documentation or the software (e.g. Cloud Native Computing Foundation, Amazon, Google, Microsoft, Elastic, Grafana), though employees or partners of those vendors may contribute to the project.
 
 
 ## [](why-microbs)Why microbs?
