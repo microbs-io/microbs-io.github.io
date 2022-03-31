@@ -93,6 +93,14 @@ class MicrobsRenderer(mistune.HTMLRenderer):
         out = "<h{} class='ui header{}'>{}</h{}>".format(level, ' dividing' if level == 3 else '', text, level)
         return out
 
+    def image(self, src, alt='', title=None):
+        out = """
+        <a class="image-popup" href="{}" title="{}">
+          <img src="{}" style="max-width:100%;" alt="{}"/>
+        </a>
+        """.format(src, alt, src, alt)
+        return out
+
     def link(self, link, text, title):
         link = mistune.escape(link)
         if not text:
@@ -191,6 +199,15 @@ def PAGES(args):
                 "meta_description": META_DESCRIPTION_GENERIC,
                 "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
                 "content": markdown("/docs/overview/getting-started.md", args),
+                "docs": True
+            }
+        },
+        "/docs/overview/architecture": {
+            "vars": {
+                "title": "Architecture",
+                "meta_description": META_DESCRIPTION_GENERIC,
+                "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
+                "content": markdown("/docs/overview/architecture.md", args),
                 "docs": True
             }
         },

@@ -1,16 +1,22 @@
 # [](overview)Overview
 
+
 ## [](what-is-microbs)What is microbs?
 
 microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability.
 
-With little configuration and one command, you can automatically deploy a tech stack with your choice of any combination of the following...
+With little [configuration](/docs/usage/configuration) and one [command](/docs/usage/cli), you can deploy a tech stack with your choice of:
 
-* **Sample applications** (e.g. [ecommerce](/docs/apps/ecommerce), [templates](/docs/apps/templates),  or make your own)
-* **Simulated issues** (e.g. bugs, traffic spikes, or make your own)
-* **Synthetics** (e.g. real-time synthetic user interactions)
-* **Kubernetes platforms** (e.g. [minikube](/docs/plugins/kubernetes/minikube), [GKE](/docs/plugins/kubernetes/gke))
-* **Observability solutions** (e.g. [Elastic Cloud](/docs/plugins/observability/elastic_cloud), [Grafana Cloud](/docs/plugins/observability/grafana_cloud))
+* **Sample apps** (e.g. [ecommerce](/docs/apps/ecommerce), [templates](/docs/apps/templates))
+* **Simulated issues** (e.g. bugs, traffic spikes)
+* **Synthetics** (e.g. realistic user traffic generation)
+* **Kubernetes platforms** (e.g. [GKE](/docs/plugins/kubernetes/gke), [minikube](/docs/plugins/kubernetes/minikube), [kind](/docs/plugins/kubernetes/kind))
+* **Observability stacks** (e.g. [Elastic](/docs/plugins/observability/elastic_cloud), [Grafana](/docs/plugins/observability/grafana_cloud))
+
+You can make your own [apps](/docs/apps) or [plugins](/docs/plugins) for a more customized experience. More plugins are planned for the future.
+
+|? microbs is a project of the open source community. microbs is not officially supported by any vendors named in this documentation or the software (e.g. Cloud Native Computing Foundation, Amazon, Google, Microsoft, Elastic, Grafana). microbs is a vendor-inclusive community project to enable practitioners in the observability ecosystem.
+
 
 ## [](why-microbs)Why microbs?
 
