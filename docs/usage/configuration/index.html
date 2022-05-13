@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=505043370">
-    <script src="/js/all.js?id=425443750"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=499490704">
+    <script src="/js/all.js?id=231477729"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -99,9 +99,6 @@
         <a class="item" href="/docs/apps/ecommerce">
           ecommerce
         </a>
-        <a class="item" href="/docs/apps/templates">
-          templates
-        </a>
       </div>
     </div>
 
@@ -126,9 +123,6 @@
             <a class="item " href="/docs/plugins/kubernetes/minikube">
               minikube
             </a>
-            <a class="item " href="/docs/plugins/kubernetes/template">
-              template
-            </a>
           </div>
         </div>
         <div class="item">
@@ -136,14 +130,11 @@
             Observability
           </a>
           <div class="menu">
-            <a class="item " href="/docs/plugins/observability/elastic_cloud">
-              elastic_cloud
+            <a class="item " href="/docs/plugins/observability/elastic-cloud">
+              elastic-cloud
             </a>
-            <a class="item " href="/docs/plugins/observability/grafana_cloud">
-              grafana_cloud
-            </a>
-            <a class="item " href="/docs/plugins/observability/template">
-              template
+            <a class="item " href="/docs/plugins/observability/grafana-cloud">
+              grafana-cloud
             </a>
           </div>
         </div>
@@ -154,9 +145,6 @@
           <div class="menu">
             <a class="item " href="/docs/plugins/alerts/slack">
               slack
-            </a>
-            <a class="item " href="/docs/plugins/alerts/template">
-              template
             </a>
           </div>
         </div>
@@ -217,7 +205,7 @@ replaced with underscores.</p>
 
             <div class="code">
               <code>
-                <span id="ab'595f96456a4e4061'"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"></span>
+                <span id="ab'3785ce24b6e8671c'"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">bar_baz.abc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xyz</span><span class="w"></span>
 </pre></div>
 </span>
@@ -227,7 +215,7 @@ replaced with underscores.</p>
 
             <div class="code">
               <code>
-                <span id="ab'6e1867061a1ea404'"><div class="highlight"><pre><span></span><span class="nx">FOO_BAR_BAZ_XYZ</span><span class="o">=</span><span class="nx">xyz</span>
+                <span id="ab'87f8993cbc5d64c0'"><div class="highlight"><pre><span></span><span class="nx">FOO_BAR_BAZ_XYZ</span><span class="o">=</span><span class="nx">xyz</span>
 </pre></div>
 </span>
               </code>
@@ -239,10 +227,10 @@ cluster or observability solution stack. For example, if the value of
 cluster <code>microbs-changeme</code>.</p>
 <h4 class='ui header'><a name="deployment.app"></a><code>deployment.app</code></h4><p>The name of an <a href="/docs/apps">application</a> to deploy
 (i.e. the name of a directory in <code>./apps</code>).</p>
-<h4 class='ui header'><a name="deployment.plugins.k8s"></a><code>deployment.plugins.k8s</code></h4><p>The name of a <a href="/docs/plugins/observability">Kubernetes plugin</a> to use
-(i.e. the name of a directory in <code>./cli/src/plugins/k8s</code>).</p>
-<h4 class='ui header'><a name="deployment.plugins.obs"></a><code>deployment.plugins.obs</code></h4><p>The name of an <a href="/docs/plugins/observability">observability plugin</a> to use
-(i.e. the name of a directory in <code>./cli/src/plugins/obs</code>).</p>
+<h4 class='ui header'><a name="deployment.plugins.kubernetes"></a><code>deployment.plugins.kubernetes</code></h4><p>The name of a <a href="/docs/plugins/observability">Kubernetes plugin</a> to use
+(i.e. the name of a directory in <code>./cli/src/plugins/kubernetes</code>).</p>
+<h4 class='ui header'><a name="deployment.plugins.observability"></a><code>deployment.plugins.observability</code></h4><p>The name of an <a href="/docs/plugins/observability">observability plugin</a> to use
+(i.e. the name of a directory in <code>./cli/src/plugins/observability</code>).</p>
 <h4 class='ui header'><a name="otlp.receiver.host"></a><code>otlp.receiver.host</code></h4><p>The OTLP gRPC destination host for the deployed application services. The
 <a href="/docs/apps">apps</a> and <a href="/docs/plugins/observability">observability</a> plugins that
 come with microbs expect this value to be <code>otel-collector</code>.</p>

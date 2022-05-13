@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>microbs - templates</title>
+    <title>microbs - elastic-cloud plugin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="microbs is an open source, vendor-inclusive framework to demo, test, or learn about microservices observability."/>
     <meta property="og:title" content="microbs - Microservices Observability"/>
@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=100549442">
-    <script src="/js/all.js?id=850845519"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=491034265">
+    <script src="/js/all.js?id=501860845"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -99,9 +99,6 @@
         <a class="item" href="/docs/apps/ecommerce">
           ecommerce
         </a>
-        <a class="item active" href="/docs/apps/templates">
-          templates
-        </a>
       </div>
     </div>
 
@@ -126,9 +123,6 @@
             <a class="item " href="/docs/plugins/kubernetes/minikube">
               minikube
             </a>
-            <a class="item " href="/docs/plugins/kubernetes/template">
-              template
-            </a>
           </div>
         </div>
         <div class="item">
@@ -136,14 +130,11 @@
             Observability
           </a>
           <div class="menu">
-            <a class="item " href="/docs/plugins/observability/elastic_cloud">
-              elastic_cloud
+            <a class="item active" href="/docs/plugins/observability/elastic-cloud">
+              elastic-cloud
             </a>
-            <a class="item " href="/docs/plugins/observability/grafana_cloud">
-              grafana_cloud
-            </a>
-            <a class="item " href="/docs/plugins/observability/template">
-              template
+            <a class="item " href="/docs/plugins/observability/grafana-cloud">
+              grafana-cloud
             </a>
           </div>
         </div>
@@ -154,9 +145,6 @@
           <div class="menu">
             <a class="item " href="/docs/plugins/alerts/slack">
               slack
-            </a>
-            <a class="item " href="/docs/plugins/alerts/template">
-              template
             </a>
           </div>
         </div>
@@ -186,29 +174,40 @@
     </div>
   </div>
 </div><div class="content column" style="flex:1;">
-            <h1 class='ui header'><a name="templates"></a>templates</h1><p>The <code>templates</code> app is a set of basic microservices implemented in various
-languages and software frameworks. You can think of each service as a simple
-&quot;hello world&quot; program.</p>
-<p>The purpose of the <code>templates</code> app is to test or demonstrate the essentials of
-observability instrumentation for various languages and software frameworks.
-Each service exhibits the same HTTP routes and behaviors, writes the same logs,
-and emits the same traces with OpenTelemetry, regardless of the language or
-framework of the service.</p>
-<p>You can also copy these templates and use them as the foundation for developing
-your own <a href="/docs/development/apps">custom microbs apps</a>. For example, you will
-notice that the <a href="/docs/apps/ecommerce"><code>ecommerce</code></a> app borrows many of the
-conventions from the <a href="https://github.com/microbs-io/microbs/tree/main/apps/templates/services/python-flask" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/templates/services/python-flask', 'outbound');" class="external"><code>python-flask</code></a>
-service of the <code>templates</code> app.</p>
-<h2 class='ui header'>Implementations</h2><ul>
-<li><a href="https://github.com/microbs-io/microbs/tree/main/apps/templates/services/nginx" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/templates/services/nginx', 'outbound');" class="external"><code>nginx</code></a> - An <a href="https://www.nginx.com/" onclick="to('https://www.nginx.com/', 'outbound');" class="external">Nginx</a> service instrumented with the <a href="https://github.com/open-telemetry/opentelemetry-cpp-contrib/tree/main/instrumentation/nginx" onclick="to('https://github.com/open-telemetry/opentelemetry-cpp-contrib/tree/main/instrumentation/nginx', 'outbound');" class="external">OpenTelemetry C++ nginx module</a>.</li>
-<li><a href="https://github.com/microbs-io/microbs/tree/main/apps/templates/services/python-flask" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/templates/services/python-flask', 'outbound');" class="external"><code>python-flask</code></a> - A <a href="https://www.python.org/" onclick="to('https://www.python.org/', 'outbound');" class="external">Python</a> service using the <a href="https://flask.palletsprojects.com/en/2.0.x/" onclick="to('https://flask.palletsprojects.com/en/2.0.x/', 'outbound');" class="external">Flask</a> framework.</li>
+            <h1 class='ui header'>elastic-cloud plugin</h1><h2 class='ui header'>Contents</h2><ul>
+<li><a href="#usage" onclick="to(window.location.pathname + '#usage', 'internal');">Usage</a></li>
+<li><a href="#prerequisites" onclick="to(window.location.pathname + '#prerequisites', 'internal');">Prerequisites</a></li>
+<li><a href="#configuration" onclick="to(window.location.pathname + '#configuration', 'internal');">Configuration</a></li>
 </ul>
-<h2 class='ui header'>Planned implementations</h2><ul>
-<li><code>dotnet-framework</code></li>
-<li><code>go-echo</code></li>
-<li><code>java-spring</code></li>
-<li><code>nodejs-express</code></li>
-</ul>
+<h2 class='ui header'><a name="usage"></a>Usage</h2><p>This section documents the behavior of the <code>elastic-cloud</code> plugin when using
+the <a href="/docs/usage/cli"><code>CLI</code></a>.</p>
+<p>Before using the <code>elastic-cloud</code> plugin you must have its <a href="#prerequisites" onclick="to(window.location.pathname + '#prerequisites', 'internal');">prerequisites</a>.</p>
+<h3 class='ui header dividing'><code>setup</code></h3><p><div class="ui warning message tiny"><p>Elastic will charge you for your use of Elastic Cloud after a 14-day free trial (<a href="https://www.elastic.co/elasticsearch/service" onclick="to('https://www.elastic.co/elasticsearch/service', 'outbound');" class="external">more info</a>).</p>
+</div></p>
+<p>When running <a href="/docs/usage/cli/#setup"><code>microbs setup [-o]</code></a>, the
+<code>elastic-cloud</code> plugin creates an Elastic Cloud deployment using the
+<a href="https://www.elastic.co/guide/en/cloud/current/Deployment_-_CRUD.html#create-deployment" onclick="to('https://www.elastic.co/guide/en/cloud/current/Deployment_-_CRUD.html#create-deployment', 'outbound');" class="external">Elastic Cloud API</a>. Then it deploys <code>filebeat</code>, <code>metricbeat</code>, and <code>heartbeat</code> services to the Kubernetes cluster. These agents autodiscover logs
+and metrics from the Kubernetes nodes and pods and ships that data to the
+Elastic Cloud deployment.</p>
+<h3 class='ui header dividing'><code>rollout</code></h3><p>The <code>elastic-cloud</code> plugin is unaffected by <a href="/docs/usage/cli#rollout"><code>microbs rollout</code></a>.</p>
+<h3 class='ui header dividing'><code>destroy</code></h3><p>When running <a href="/docs/usage/cli/#destroy"><code>microbs destroy [-o]</code></a>, the
+<code>elastic-cloud</code> plugin destroys your Elastic Cloud deployment using the
+<a href="https://grafana.com/docs/grafana-cloud/reference/cloud-api/#delete-stack" onclick="to('https://grafana.com/docs/grafana-cloud/reference/cloud-api/#delete-stack', 'outbound');" class="external">Elastic Cloud API</a>.
+It also removes the services that were deployed to Kubernetes
+during <code>setup</code>.</p>
+<h2 class='ui header'><a name="prerequisites"></a>Prerequisites</h2><h3 class='ui header dividing'>Create Elastic Cloud resources</h3><p>You must create an <a href="https://cloud.elastic.co/registration" onclick="to('https://cloud.elastic.co/registration', 'outbound');" class="external">Elastic Cloud account</a>
+and obtain an <a href="https://www.elastic.co/guide/en/cloud/current/ec-api-authentication.html" onclick="to('https://www.elastic.co/guide/en/cloud/current/ec-api-authentication.html', 'outbound');" class="external">Elastic Cloud API Key</a>
+before using the <code>elastic-cloud</code> plugin.</p>
+<h2 class='ui header'><a name="configuration"></a>Configuration</h2><p>This section documents the <code>elastic-cloud</code> plugin configurations for <a href="/docs/usage/configuration">config.yaml</a>.</p>
+<h3 class='ui header dividing'>Required fields</h3><h4 class='ui header'><a name="plugins.elastic-cloud.api_key"></a><code>plugins.elastic-cloud.api_key</code></h4><p>The value of your <a href="https://www.elastic.co/guide/en/cloud/current/ec-api-authentication.html" onclick="to('https://www.elastic.co/guide/en/cloud/current/ec-api-authentication.html', 'outbound');" class="external">Elastic Cloud API Key</a>.</p>
+<p>Example: <code>VnVhQ2ZHY0JDZGJrUW0tZTVhT3g6dWkybHAyYXhUTm1zeWFrdzl0dk5udw==</code></p>
+<h4 class='ui header'><a name="plugins.elastic-cloud.region"></a><code>plugins.elastic-cloud.region</code></h4><p>The name of the region in which to deploy your Elastic Cloud deployment.</p>
+<p>See the
+<a href="https://www.elastic.co/guide/en/cloud/current/ec-reference-regions.html" onclick="to('https://www.elastic.co/guide/en/cloud/current/ec-reference-regions.html', 'outbound');" class="external">available regions</a>
+for a list of acceptable values.</p>
+<p>Examples: <code>gcp-us-east1</code>, <code>ap-east1</code>, <code>westeurope</code></p>
+<h4 class='ui header'><a name="plugins.elastic-cloud.version"></a><code>plugins.elastic-cloud.version</code></h4><p>The version of the Elastic Stack to deploy.</p>
+<p>Examples: <code>8.2.0</code></p>
 
           </div></div>
       </div>

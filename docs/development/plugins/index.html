@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=841326284">
-    <script src="/js/all.js?id=985872034"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=224300452">
+    <script src="/js/all.js?id=685938911"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -99,9 +99,6 @@
         <a class="item" href="/docs/apps/ecommerce">
           ecommerce
         </a>
-        <a class="item" href="/docs/apps/templates">
-          templates
-        </a>
       </div>
     </div>
 
@@ -126,9 +123,6 @@
             <a class="item " href="/docs/plugins/kubernetes/minikube">
               minikube
             </a>
-            <a class="item " href="/docs/plugins/kubernetes/template">
-              template
-            </a>
           </div>
         </div>
         <div class="item">
@@ -136,14 +130,11 @@
             Observability
           </a>
           <div class="menu">
-            <a class="item " href="/docs/plugins/observability/elastic_cloud">
-              elastic_cloud
+            <a class="item " href="/docs/plugins/observability/elastic-cloud">
+              elastic-cloud
             </a>
-            <a class="item " href="/docs/plugins/observability/grafana_cloud">
-              grafana_cloud
-            </a>
-            <a class="item " href="/docs/plugins/observability/template">
-              template
+            <a class="item " href="/docs/plugins/observability/grafana-cloud">
+              grafana-cloud
             </a>
           </div>
         </div>
@@ -154,9 +145,6 @@
           <div class="menu">
             <a class="item " href="/docs/plugins/alerts/slack">
               slack
-            </a>
-            <a class="item " href="/docs/plugins/alerts/template">
-              template
             </a>
           </div>
         </div>
@@ -186,8 +174,298 @@
     </div>
   </div>
 </div><div class="content column" style="flex:1;">
-            <h1 class='ui header'><a name="plugin-development"></a>Plugin Development</h1><p><div class="ui warning message tiny"><p>This page will be published soon!</p>
-</div></p>
+            <h1 class='ui header'><a name="plugin-development"></a>Plugin Development</h1><ul>
+<li><a href="#intro" onclick="to(window.location.pathname + '#intro', 'internal');">Introduction</a><ul>
+<li><a href="#intro.what-is-a-microbs-plugin" onclick="to(window.location.pathname + '#intro.what-is-a-microbs-plugin', 'internal');">What is a microbs plugin?</a></li>
+</ul>
+</li>
+<li><a href="#plugin-types" onclick="to(window.location.pathname + '#plugin-types', 'internal');">Plugin types</a><ul>
+<li><a href="#plugin-types.kubernetes" onclick="to(window.location.pathname + '#plugin-types.kubernetes', 'internal');"><code>kubernetes</code></a></li>
+<li><a href="#plugin-types.observability" onclick="to(window.location.pathname + '#plugin-types.observability', 'internal');"><code>observability</code></a></li>
+<li><a href="#plugin-types.alerts" onclick="to(window.location.pathname + '#plugin-types.alerts', 'internal');"><code>alerts</code></a></li>
+</ul>
+</li>
+<li><a href="#configuration" onclick="to(window.location.pathname + '#configuration', 'internal');">Configuration</a></li>
+<li><a href="#requirements" onclick="to(window.location.pathname + '#requirements', 'internal');">Requirements</a><ul>
+<li><a href="#requirements.package.json" onclick="to(window.location.pathname + '#requirements.package.json', 'internal');">package.json</a></li>
+<li><a href="#requirements.versioning" onclick="to(window.location.pathname + '#requirements.versioning', 'internal');">Versioning</a></li>
+</ul>
+</li>
+<li><a href="#functions" onclick="to(window.location.pathname + '#functions', 'internal');">Functions</a><ul>
+<li><a href="#functions.overview" onclick="to(window.location.pathname + '#functions.overview', 'internal');">Overview</a></li>
+<li><a href="#functions.commands" onclick="to(window.location.pathname + '#functions.commands', 'internal');">Commands</a><ul>
+<li><a href="#functions.commands.setup" onclick="to(window.location.pathname + '#functions.commands.setup', 'internal');"><code>setup</code></a></li>
+<li><a href="#functions.commands.rollout" onclick="to(window.location.pathname + '#functions.commands.rollout', 'internal');"><code>rollout</code></a></li>
+<li><a href="#functions.commands.destroy" onclick="to(window.location.pathname + '#functions.commands.destroy', 'internal');"><code>destroy</code></a></li>
+<li><a href="#functions.commands.validate" onclick="to(window.location.pathname + '#functions.commands.validate', 'internal');"><code>validate</code></a></li>
+</ul>
+</li>
+<li><a href="#functions.hooks" onclick="to(window.location.pathname + '#functions.hooks', 'internal');">Hooks</a></li>
+</ul>
+</li>
+<li><a href="#tests" onclick="to(window.location.pathname + '#tests', 'internal');">Tests</a></li>
+</ul>
+<h2 class='ui header'><a name="intro"></a>Introduction</h2><h3 class='ui header dividing'><a name="intro.what-is-a-microbs-plugin"></a>What is a microbs plugin?</h3><p>A microbs plugin manages either the Kubernetes cluster, the observability
+solution, or the alerts destination of the microbs deployment. microbs users can
+install their choice of plugins and use them to run their microbs deployment
+that serves their purposes.</p>
+<p>More specifically, a microbs plugin is a Node.js package that implements the
+functionality of microbs <a href="#functions.commands" onclick="to(window.location.pathname + '#functions.commands', 'internal');">commands</a> and <a href="#functions.hooks" onclick="to(window.location.pathname + '#functions.hooks', 'internal');">lifecycle hooks</a>.
+The microbs CLI manages these Node.js packages using <code>npm</code>, which is simplified
+by the use of the <code>microbs plugins</code> command.</p>
+<h2 class='ui header'><a name="plugin-types"></a>Plugin types</h2><p>A microbs plugin belongs to one of the following plugin types:</p>
+<h3 class='ui header dividing'><a name="plugin-types.kubernetes"></a><code>kubernetes</code></h3><p>A <code>kubernetes</code> plugin creates and manages the Kubernetes cluster that the
+microbs application will run in.</p>
+<p>Users declare their choice of a <code>kubernetes</code> plugin in <code>config.yaml</code> here:</p>
+
+            <div class="code">
+              <button class="ui labeled icon button teal tiny" data-clipboard-target="#ab'2feebb5fbde6780a'">
+                <i class="icon">
+                  <span style="font-size:2rem;">&#x2398</span>
+                </i>
+                Copy to clipboard
+               </button>
+              <code>
+                <span id="ab'2feebb5fbde6780a'"><div class="highlight"><pre><span></span><span class="nt">deployment.plugins.kubernetes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PLUGIN_NAME</span><span class="w"></span>
+</pre></div>
+</span>
+              </code>
+            </div>
+            <h3 class='ui header dividing'><a name="plugin-types.observability"></a><code>observability</code></h3><p>An <code>observability</code> plugin creates and manages the observability solution that
+monitors both the Kubernetes cluster and the microbs application.</p>
+<p>Users declare their choice of an <code>observability</code> plugin in <code>config.yaml</code> here:</p>
+
+            <div class="code">
+              <button class="ui labeled icon button teal tiny" data-clipboard-target="#ab'cee5df22f1e88100'">
+                <i class="icon">
+                  <span style="font-size:2rem;">&#x2398</span>
+                </i>
+                Copy to clipboard
+               </button>
+              <code>
+                <span id="ab'cee5df22f1e88100'"><div class="highlight"><pre><span></span><span class="nt">deployment.plugins.observability</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PLUGIN_NAME</span><span class="w"></span>
+</pre></div>
+</span>
+              </code>
+            </div>
+            <h3 class='ui header dividing'><a name="plugin-types.alerts"></a><code>alerts</code></h3><p>An <code>alerts</code> plugin creates and manages the alerting destination to which the
+observability solution publishes alerts.</p>
+<p>Users declare their choice of an <code>alerts</code> plugin in <code>config.yaml</code> here:</p>
+
+            <div class="code">
+              <button class="ui labeled icon button teal tiny" data-clipboard-target="#ab'34f534937aec08f8'">
+                <i class="icon">
+                  <span style="font-size:2rem;">&#x2398</span>
+                </i>
+                Copy to clipboard
+               </button>
+              <code>
+                <span id="ab'34f534937aec08f8'"><div class="highlight"><pre><span></span><span class="nt">deployment.plugins.alerts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PLUGIN_NAME</span><span class="w"></span>
+</pre></div>
+</span>
+              </code>
+            </div>
+            <h2 class='ui header'><a name="configuration"></a>Configuration</h2><p>Each plugin must be configured in <code>config.yaml</code> under the <code>deployment.plugins</code>
+section as follows:</p>
+
+            <div class="code">
+              <button class="ui labeled icon button teal tiny" data-clipboard-target="#ab'617ab06e711ab744'">
+                <i class="icon">
+                  <span style="font-size:2rem;">&#x2398</span>
+                </i>
+                Copy to clipboard
+               </button>
+              <code>
+                <span id="ab'617ab06e711ab744'"><div class="highlight"><pre><span></span><span class="nt">deployment</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">PLUGIN_NAME</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VALUE,</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
+</pre></div>
+</span>
+              </code>
+            </div>
+            <p>Example:</p>
+
+            <div class="code">
+              <button class="ui labeled icon button teal tiny" data-clipboard-target="#ab'6b552bb43517c228'">
+                <i class="icon">
+                  <span style="font-size:2rem;">&#x2398</span>
+                </i>
+                Copy to clipboard
+               </button>
+              <code>
+                <span id="ab'6b552bb43517c228'"><div class="highlight"><pre><span></span><span class="nt">deployment</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">grafana-cloud</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-api-key</span><span class="w"></span>
+<span class="w">      </span><span class="nt">org_slug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
+<span class="w">      </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us</span><span class="w"></span>
+</pre></div>
+</span>
+              </code>
+            </div>
+            <p>Plugins have read-only access to the entire config object that the microbs CLI
+parses from <code>config.yaml</code>. Plugins can read from the config object using
+<code>config.get()</code> from <code>@microbs.io/core</code>.</p>
+<h2 class='ui header'><a name="requirements"></a>Plugin requirements</h2><p>A microbs plugin is a Node.js package and must be compatible with <code>npm</code>.</p>
+<h3 class='ui header dividing'><a name="requirements.package.json"></a>package.json</h3><p>Plugins must conform to these requirements in <code>package.json</code>:</p>
+<ul>
+<li><code>&quot;name&quot;</code> must start with <code>plugin-</code> or <code>@microbs.io/plugin-</code></li>
+<li><code>&quot;name&quot;</code> must contain only lowercase letters, digits, or hyphens</li>
+<li><code>&quot;main&quot;</code> must reference a module that exports the expected plugin functions</li>
+<li><code>&quot;version&quot;</code> must adhere to semantic version syntax.</li>
+<li><code>&quot;keywords&quot;</code> must contain <code>&quot;microbs&quot;</code> and <code>&quot;plugin&quot;</code></li>
+<li><code>&quot;keywords&quot;</code> must contain exactly one microbs plugin type: <code>&quot;kubernetes&quot;</code>, <code>&quot;observability&quot;</code>, or <code>&quot;alerts&quot;</code></li>
+<li><code>&quot;peerDependencies&quot;</code> must include <code>&quot;@microbs.io/core&quot;</code></li>
+</ul>
+<p>Plugins also should conform to these best practices in <code>package.json</code>, though they are not required:</p>
+<ul>
+<li><code>&quot;license&quot;</code> should be provided</li>
+<li><code>&quot;repository&quot;</code> should be provided</li>
+<li><code>&quot;description&quot;</code> should be <code>&quot;microbs plugin - PLUGIN_NAME&quot;</code></li>
+<li><code>&quot;scripts&quot;</code> should include <code>&quot;test&quot;</code> which invokes <code>&quot;jest&quot;</code></li>
+</ul>
+<p>Here is an example of a complete, well-formed <code>package.json</code> file used by the 
+<a href="/plugins/kubernetes/gke"><code>gke</code></a> plugin:</p>
+
+            <div class="code">
+              <button class="ui labeled icon button teal tiny" data-clipboard-target="#ab'3115c16867dce6f6'">
+                <i class="icon">
+                  <span style="font-size:2rem;">&#x2398</span>
+                </i>
+                Copy to clipboard
+               </button>
+              <code>
+                <span id="ab'3115c16867dce6f6'"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@microbs.io/plugin-gke&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.7-alpha&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;microbs plugin - gke&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apache-2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://microbs.io/docs/plugins/kubernetes/gke/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./src/index.js&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;repository&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;git&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/microbs-io/microbs-plugin-gke.git&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;microbs&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;plugin&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;kubernetes&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;gke&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jest&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;jest&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;silent&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;verbose&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;engines&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&gt;=14.16.1&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;dependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;command-exists&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^1.2.9&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;semver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^7.3.5&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;shell-quote&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^1.7.3&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;peerDependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;@microbs.io/core&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^0.1.8-alpha&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;jest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^26.6.3&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</span>
+              </code>
+            </div>
+            <h3 class='ui header dividing'><a name="requirements.versioning"></a>Versioning</h3><p>Plugins must conform with the microbs <a href="/docs/development/versioning">version policy</a>, 
+which uses semantic version syntax.</p>
+<h2 class='ui header'><a name="functions"></a>Functions</h2><h3 class='ui header dividing'><a name="functions.overview"></a>Overview</h3><p>A microbs plugin is expected to implement all applicable functions documents in
+this guide and export them in the root module of the package.</p>
+<p>Example of expected usage:</p>
+
+            <div class="code">
+              <button class="ui labeled icon button teal tiny" data-clipboard-target="#ab'b3ce5cc21b201bd0'">
+                <i class="icon">
+                  <span style="font-size:2rem;">&#x2398</span>
+                </i>
+                Copy to clipboard
+               </button>
+              <code>
+                <span id="ab'b3ce5cc21b201bd0'"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">plugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@microbs.io/plugin-example&#39;</span><span class="p">)</span>
+<span class="nx">plugin</span><span class="p">.</span><span class="nx">setup</span><span class="p">()</span>
+<span class="nx">plugin</span><span class="p">.</span><span class="nx">destroy</span><span class="p">()</span>
+<span class="nx">plugin</span><span class="p">.</span><span class="nx">hooks</span><span class="p">.</span><span class="nx">after_setup_kubernetes</span><span class="p">()</span>
+<span class="nx">plugin</span><span class="p">.</span><span class="nx">hooks</span><span class="p">.</span><span class="nx">before_setup_app</span><span class="p">()</span>
+</pre></div>
+</span>
+              </code>
+            </div>
+            <h3 class='ui header dividing'><a name="functions.commands"></a>Commands</h3><p>Whenever the microbs CLI runs the <code>setup</code> or <code>destroy</code> commands, it calls the
+<code>setup()</code> or <code>destroy()</code> function of the plugins that the user has invoked in
+the command. For example, <code>microbs setup -ko</code> will invoke the <code>setup()</code> function
+of the <code>kubernetes</code> and <code>observability</code> plugins specified in the <code>deployment.plugins.*</code>
+fields of <code>config.yaml</code>. Running <code>microbs setup</code> without any limitaton on
+plugins will call the <code>setup()</code> function of all those plugins.</p>
+<p>Plugins are called in a specific order depending on the command being run:</p>
+<ul>
+<li><code>setup</code> calls the <code>setup()</code> function of <code>alerts</code>, then <code>kubernetes</code>, then <code>observability</code></li>
+<li><code>destroy</code> calls the <code>destroy()</code> function of <code>alerts</code>, then <code>observability</code>, then <code>kubernetes</code></li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><code>microbs setup</code> calls the <code>setup()</code> function of the <code>alerts</code> plugin, then the</li>
+</ul>
+<p><code>kubernetes</code> plugin, and then the <code>observability</code> plugin. It also calls any
+setup <a href="%60functions.hooks%60" onclick="to('%60functions.hooks%60', 'outbound');" class="external">hooks</a> for all plugins.</p>
+<ul>
+<li><code>microbs setup -ko</code> calls the <code>setup()</code> function of the <code>kubernetes</code> plugin and</li>
+</ul>
+<p>then the <code>observability</code> plugin. It also calls any setup <a href="%60functions.hooks%60" onclick="to('%60functions.hooks%60', 'outbound');" class="external">hooks</a>
+for all plugins.</p>
+<ul>
+<li><code>microbs destroy -a</code> destroys the deployed application on Kubernetes. It also</li>
+</ul>
+<p>calls any destroy <a href="%60functions.hooks%60" onclick="to('%60functions.hooks%60', 'outbound');" class="external">hooks</a> for all plugins.</p>
+<h3 class='ui header dividing'><a name="functions.hooks"></a>Hooks</h3><p>Whenever the microbs CLI runs the <code>setup</code>, <code>rollout</code>, or <code>destroy</code> commands,
+it calls optional lifecycle hooks for any plugin that implements them. This
+allows plugins to perform certain necessary actions regardless of whether the
+user called them or not. For example, if an <code>observability</code> plugin needs to
+perform some action whenever the user runs either <code>microbs setup --app</code> or
+<code>microbs rollout</code>, then the plugin could implement the <code>after_setup_app</code> and
+<code>after_rollout</code> hooks to always perform that action during those commands.</p>
+<p>Plugins are called in a specific order depending on the command being run:</p>
+<ul>
+<li><code>setup</code> calls the hooks of <code>alerts</code>, then <code>kubernetes</code>, then <code>observability</code></li>
+<li><code>rollout</code> calls the hooks of <code>alerts</code>, then <code>kubernetes</code>, then <code>observability</code></li>
+<li><code>destroy</code> calls the hooks of <code>alerts</code>, then <code>observability</code>, then <code>kubernetes</code></li>
+</ul>
+<p>Plugins can implement any (or none) of the following hooks:</p>
+<ul>
+<li><code>after_destroy_alerts()</code> - Runs after <code>microbs destroy --alerts</code></li>
+<li><code>after_destroy_app()</code> - Runs after <code>microbs destroy --app</code></li>
+<li><code>after_destroy_kubernetes()</code> - Runs after <code>microbs destroy --kubernetes</code></li>
+<li><code>after_destroy_observability()</code> - Runs after <code>microbs destroy --observability</code></li>
+<li><code>after_setup_alerts()</code> - Runs after <code>microbs setup --alerts</code></li>
+<li><code>after_setup_app()</code> - Runs after <code>microbs setup --app</code></li>
+<li><code>after_setup_kubernetes()</code> - Runs after <code>microbs setup --kubernetes</code></li>
+<li><code>after_setup_observability()</code> - Runs after <code>microbs setup --observability</code></li>
+<li><code>after_rollout()</code> - Runs after <code>microbs rollout</code></li>
+<li><code>before_destroy_alerts()</code> - Runs before <code>microbs destroy --alerts</code></li>
+<li><code>before_destroy_app()</code> - Runs before <code>microbs destroy --app</code></li>
+<li><code>before_destroy_kubernetes()</code> - Runs before <code>microbs destroy --kubernetes</code></li>
+<li><code>before_destroy_observability()</code> - Runs before <code>microbs destroy --observability</code></li>
+<li><code>before_setup_alerts()</code> - Runs before <code>microbs setup --alerts</code></li>
+<li><code>before_setup_app()</code> - Runs before <code>microbs setup --app</code></li>
+<li><code>before_setup_kubernetes()</code> - Runs before <code>microbs setup --kubernetes</code></li>
+<li><code>before_setup_observability()</code> - Runs before <code>microbs setup --observability</code></li>
+<li><code>before_rollout()</code> - Runs before <code>microbs rollout</code></li>
+</ul>
+<h2 class='ui header'><a name="tests"></a>Tests</h2><p>Plugins are expected to run and pass automated tests prior to release. Tests
+must cover the standard <a href="#requirements" onclick="to(window.location.pathname + '#requirements', 'internal');">plugin requirements</a> and should cover
+as much other functionality as possible.</p>
 
           </div></div>
       </div>

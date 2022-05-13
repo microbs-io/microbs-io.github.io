@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=940514257">
-    <script src="/js/all.js?id=361203183"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=436738964">
+    <script src="/js/all.js?id=109395658"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -99,9 +99,6 @@
         <a class="item" href="/docs/apps/ecommerce">
           ecommerce
         </a>
-        <a class="item" href="/docs/apps/templates">
-          templates
-        </a>
       </div>
     </div>
 
@@ -126,9 +123,6 @@
             <a class="item " href="/docs/plugins/kubernetes/minikube">
               minikube
             </a>
-            <a class="item " href="/docs/plugins/kubernetes/template">
-              template
-            </a>
           </div>
         </div>
         <div class="item">
@@ -136,14 +130,11 @@
             Observability
           </a>
           <div class="menu">
-            <a class="item " href="/docs/plugins/observability/elastic_cloud">
-              elastic_cloud
+            <a class="item " href="/docs/plugins/observability/elastic-cloud">
+              elastic-cloud
             </a>
-            <a class="item " href="/docs/plugins/observability/grafana_cloud">
-              grafana_cloud
-            </a>
-            <a class="item " href="/docs/plugins/observability/template">
-              template
+            <a class="item " href="/docs/plugins/observability/grafana-cloud">
+              grafana-cloud
             </a>
           </div>
         </div>
@@ -154,9 +145,6 @@
           <div class="menu">
             <a class="item " href="/docs/plugins/alerts/slack">
               slack
-            </a>
-            <a class="item " href="/docs/plugins/alerts/template">
-              template
             </a>
           </div>
         </div>
@@ -193,11 +181,11 @@
 </ul>
 <h2 class='ui header'><a name="usage"></a>Usage</h2><p>This section documents the behavior of the <code>kind</code> plugin when using the <a href="/docs/usage/cli"><code>CLI</code></a>.</p>
 <p>Before using the <code>kind</code> plugin you must have its <a href="#prerequisites" onclick="to(window.location.pathname + '#prerequisites', 'internal');">prerequisites</a>.</p>
-<h3 class='ui header dividing'><code>setup</code></h3><p>When running <a href="/docs/usage/cli/#setup"><code>microbs setup [--k8s]</code></a>, the <code>kind</code>
+<h3 class='ui header dividing'><code>setup</code></h3><p>When running <a href="/docs/usage/cli/#setup"><code>microbs setup [-k]</code></a>, the <code>kind</code>
 plugin runs <code>kind create cluster</code>. Currently, the <code>kind</code> plugin does not
 configure the size of the cluster it deploys.</p>
 <h3 class='ui header dividing'><code>rollout</code></h3><p>The <code>kind</code> plugin is unaffected by <a href="/docs/usage/cli#rollout"><code>microbs rollout</code></a>.</p>
-<h3 class='ui header dividing'><code>destroy</code></h3><p>When running <a href="/docs/usage/cli/#destroy"><code>microbs destroy [--k8s]</code></a>, the <code>kind</code>
+<h3 class='ui header dividing'><code>destroy</code></h3><p>When running <a href="/docs/usage/cli/#destroy"><code>microbs destroy [-k]</code></a>, the <code>kind</code>
 plugin runs <code>kind delete cluster</code>.</p>
 <h2 class='ui header'><a name="prerequisites"></a>Prerequisites</h2><h3 class='ui header dividing'>Install dependencies</h3><p>The <code>kind</code> plugin requires the following software dependencies on the same machine as microbs:</p>
 <table>

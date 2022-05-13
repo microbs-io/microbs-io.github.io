@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=552656021">
-    <script src="/js/all.js?id=784640519"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=412381306">
+    <script src="/js/all.js?id=128190457"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -99,9 +99,6 @@
         <a class="item" href="/docs/apps/ecommerce">
           ecommerce
         </a>
-        <a class="item" href="/docs/apps/templates">
-          templates
-        </a>
       </div>
     </div>
 
@@ -126,9 +123,6 @@
             <a class="item " href="/docs/plugins/kubernetes/minikube">
               minikube
             </a>
-            <a class="item " href="/docs/plugins/kubernetes/template">
-              template
-            </a>
           </div>
         </div>
         <div class="item">
@@ -136,14 +130,11 @@
             Observability
           </a>
           <div class="menu">
-            <a class="item " href="/docs/plugins/observability/elastic_cloud">
-              elastic_cloud
+            <a class="item " href="/docs/plugins/observability/elastic-cloud">
+              elastic-cloud
             </a>
-            <a class="item " href="/docs/plugins/observability/grafana_cloud">
-              grafana_cloud
-            </a>
-            <a class="item " href="/docs/plugins/observability/template">
-              template
+            <a class="item " href="/docs/plugins/observability/grafana-cloud">
+              grafana-cloud
             </a>
           </div>
         </div>
@@ -154,9 +145,6 @@
           <div class="menu">
             <a class="item active" href="/docs/plugins/alerts/slack">
               slack
-            </a>
-            <a class="item " href="/docs/plugins/alerts/template">
-              template
             </a>
           </div>
         </div>
@@ -196,17 +184,17 @@
 <h2 class='ui header'><a name="usage"></a>Usage</h2><p>This section documents the behavior of the <code>slack</code> plugin when using
 the <a href="/docs/usage/cli"><code>CLI</code></a>.</p>
 <p>Before using the <code>slack</code> plugin you must have its <a href="#prerequisites" onclick="to(window.location.pathname + '#prerequisites', 'internal');">prerequisites</a>.</p>
-<h3 class='ui header dividing'><code>setup</code></h3><p>When running <a href="/docs/usage/cli/#setup"><code>microbs setup [--obs]</code></a>, the
+<h3 class='ui header dividing'><code>setup</code></h3><p>When running <a href="/docs/usage/cli/#setup"><code>microbs setup [-o]</code></a>, the
 <code>slack</code> plugin creates a channel in your Slack Workspace.</p>
 <h3 class='ui header dividing'><code>rollout</code></h3><p>The <code>slack</code> plugin is unaffected by <a href="/docs/usage/cli#rollout"><code>microbs rollout</code></a>.</p>
-<h3 class='ui header dividing'><code>destroy</code></h3><p>The <code>slack</code> plugin does not yet implement <a href="/docs/usage/cli/#destroy"><code>microbs destroy [--k8s]</code></a>.
+<h3 class='ui header dividing'><code>destroy</code></h3><p>The <code>slack</code> plugin does not yet implement <a href="/docs/usage/cli/#destroy"><code>microbs destroy [-k]</code></a>.
 You can delete your channel through the standard Slack interfaces such as the
 Slack UI.</p>
 <h2 class='ui header'><a name="prerequisites"></a>Prerequisites</h2><h3 class='ui header dividing'>Create Slack resources</h3><p>You must create a <a href="https://slack.com/get-started#/create" onclick="to('https://slack.com/get-started#/create', 'outbound');" class="external">Slack workspace</a>
 and obtain a <a href="https://api.slack.com/authentication/token-types#bot" onclick="to('https://api.slack.com/authentication/token-types#bot', 'outbound');" class="external">bot access token</a>
 before using the <code>slack</code> plugin.</p>
 <h2 class='ui header'><a name="configuration"></a>Configuration</h2><p>This section documents the <code>slack</code> plugin configurations for <a href="/docs/usage/configuration">config.yaml</a>.</p>
-<h3 class='ui header dividing'>Required fields</h3><h4 class='ui header'><a name="plugins.slack.bot_user_oauth_access_token"></a><code>plugins.elastic_cloud.api_key</code></h4><p>The value of your <a href="https://api.slack.com/authentication/token-types#bot" onclick="to('https://api.slack.com/authentication/token-types#bot', 'outbound');" class="external">bot access token</a>.</p>
+<h3 class='ui header dividing'>Required fields</h3><h4 class='ui header'><a name="plugins.slack.bot_user_oauth_access_token"></a><code>plugins.slack.api_key</code></h4><p>The value of your <a href="https://api.slack.com/authentication/token-types#bot" onclick="to('https://api.slack.com/authentication/token-types#bot', 'outbound');" class="external">bot access token</a>.</p>
 <p>Example: <code>xoxb-999999999999-999999999999-gxnpd45mZZh76FzLfkpLP7Tj</code></p>
 
           </div></div>

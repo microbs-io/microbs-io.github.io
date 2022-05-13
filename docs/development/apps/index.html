@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=619841168">
-    <script src="/js/all.js?id=588742340"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=327131842">
+    <script src="/js/all.js?id=656477548"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -99,9 +99,6 @@
         <a class="item" href="/docs/apps/ecommerce">
           ecommerce
         </a>
-        <a class="item" href="/docs/apps/templates">
-          templates
-        </a>
       </div>
     </div>
 
@@ -126,9 +123,6 @@
             <a class="item " href="/docs/plugins/kubernetes/minikube">
               minikube
             </a>
-            <a class="item " href="/docs/plugins/kubernetes/template">
-              template
-            </a>
           </div>
         </div>
         <div class="item">
@@ -136,14 +130,11 @@
             Observability
           </a>
           <div class="menu">
-            <a class="item " href="/docs/plugins/observability/elastic_cloud">
-              elastic_cloud
+            <a class="item " href="/docs/plugins/observability/elastic-cloud">
+              elastic-cloud
             </a>
-            <a class="item " href="/docs/plugins/observability/grafana_cloud">
-              grafana_cloud
-            </a>
-            <a class="item " href="/docs/plugins/observability/template">
-              template
+            <a class="item " href="/docs/plugins/observability/grafana-cloud">
+              grafana-cloud
             </a>
           </div>
         </div>
@@ -154,9 +145,6 @@
           <div class="menu">
             <a class="item " href="/docs/plugins/alerts/slack">
               slack
-            </a>
-            <a class="item " href="/docs/plugins/alerts/template">
-              template
             </a>
           </div>
         </div>
@@ -186,8 +174,155 @@
     </div>
   </div>
 </div><div class="content column" style="flex:1;">
-            <h1 class='ui header'><a name="app-development"></a>App Development</h1><p><div class="ui warning message tiny"><p>This page will be published soon!</p>
-</div></p>
+            <h1 class='ui header'><a name="app-development"></a>App Development</h1><ul>
+<li><a href="#intro" onclick="to(window.location.pathname + '#intro', 'internal');">Introduction</a><ul>
+<li><a href="#intro.what-is-a-microbs-app" onclick="to(window.location.pathname + '#intro.what-is-a-microbs-app', 'internal');">What is a microbs app?</a></li>
+</ul>
+</li>
+<li><a href="#project-structure" onclick="to(window.location.pathname + '#project-structure', 'internal');">Project structure</a></li>
+<li><a href="#requirements" onclick="to(window.location.pathname + '#requirements', 'internal');">Requirements</a><ul>
+<li><a href="#requirements.package.json" onclick="to(window.location.pathname + '#requirements.package.json', 'internal');">package.json</a></li>
+<li><a href="#requirements.versioning" onclick="to(window.location.pathname + '#requirements.versioning', 'internal');">Versioning</a></li>
+</ul>
+</li>
+<li><a href="#observability" onclick="to(window.location.pathname + '#observability', 'internal');">Observability</a><ul>
+<li><a href="#observability.logging" onclick="to(window.location.pathname + '#observability.logging', 'internal');">Logging</a></li>
+<li><a href="#observability.tracing" onclick="to(window.location.pathname + '#observability.tracing', 'internal');">Tracing</a></li>
+<li><a href="#observability.liveness-readiness" onclick="to(window.location.pathname + '#observability.liveness-readiness', 'internal');">Liveness &amp; Readiness</a></li>
+</ul>
+</li>
+</ul>
+<h2 class='ui header'><a name="intro"></a>Introduction</h2><h3 class='ui header dividing'><a name="intro.what-is-a-microbs-app"></a>What is a microbs app?</h3><p>A microbs app is a set of microservices that run in a Kubernetes cluster and are
+monitored with an observability solution. microbs users can install their choice
+of apps and use them to run their microbs deployment that serves their purposes.</p>
+<p>More specifically, a microbs app is a Node.js package that contains the source
+code and metadata for the application, which also includes Dockerfiles,
+Kubernetes manifests, and a skaffold file. The application services can be
+written in any programming language because they will be deployed as containers.
+Node.js is required simply to publish the project and install it to microbs.
+The microbs CLI manages these Node.js packages using <code>npm</code>, which is simplified
+by the use of the <code>microbs apps</code> command.</p>
+<h2 class='ui header'><a name="project-structure"></a>Project structure</h2><h3 class='ui header dividing'><a name="project-structure.overview"></a>Overview</h3>
+            <div class="code">
+              <button class="ui labeled icon button teal tiny" data-clipboard-target="#ab'de72339578bb679b'">
+                <i class="icon">
+                  <span style="font-size:2rem;">&#x2398</span>
+                </i>
+                Copy to clipboard
+               </button>
+              <code>
+                <span id="ab'de72339578bb679b'"><div class="highlight"><pre><span></span>./plugins
+./plugins/PLUGIN_NAME
+./src
+./src/common
+./src/services
+./src/services/SERVICE_NAME
+./src/services/SERVICE_NAME/k8s
+./src/services/SERVICE_NAME/k8s/*.yaml
+./src/services/SERVICE_NAME/src
+./src/services/SERVICE_NAME/Dockerfile
+./src/variants
+./src/variants/VARIANT_NAME
+./src/variants/VARIANT_NAME/k8s
+./src/variants/VARIANT_NAME/k8s/*.yaml
+./src/variants/VARIANT_NAME/src
+./src/variants/VARIANT_NAME/Dockerfile
+./src/skaffold.yaml
+package.json
+</pre></div>
+</span>
+              </code>
+            </div>
+            <h3 class='ui header dividing'><a name="src"></a><code>./src</code></h3><p>Contains the source code for the entire application.</p>
+<h3 class='ui header dividing'><a name="src/services"></a><code>./src/services</code></h3><p>Contains the source code for each service of the application.</p>
+<h3 class='ui header dividing'><a name="src/services/SERVICE_NAME"></a><code>./src/services/SERVICE_NAME</code></h3><p>Contains the source code for a single service.</p>
+<h3 class='ui header dividing'><a name="src/services/SERVICE_NAME/k8s"></a><code>./src/services/SERVICE_NAME/k8s</code></h3><p>Contains the Kubernetes manifests for a service. The <a href="/docs/usage/cli#setup"><code>setup</code></a>, <a href="/docs/usage/cli#rollout"><code>rollout</code></a>, and <a href="/docs/usage/cli#destroy"><code>destroy</code></a> commands invoke <code>skaffold run</code> or <code>skaffold delete</code> to apply or remove these configurations on Kubernetes. The manifests must be declared in <a href="src/skaffold.yaml" onclick="to('src/skaffold.yaml', 'outbound');" class="external"><code>./src/skaffold.yaml</code></a> under the <code>main</code> profile for the commands to apply them.</p>
+<h3 class='ui header dividing'><a name="src/services/SERVICE_NAME/k8s/*.yaml"></a><code>./src/services/SERVICE_NAME/k8s/*.yaml</code></h3><p>Contains the configuration for one or more Kubernetes resources of the service. Usually this includes a <code>Deployment</code> and a <code>Service</code>.</p>
+<h3 class='ui header dividing'><a name="src/services/SERVICE_NAME/src"></a><code>./src/services/SERVICE_NAME/src</code></h3><p>Contains the source code for a single service.</p>
+<h3 class='ui header dividing'><a name="src/services/SERVICE_NAME/src/Dockerfile"></a><code>./src/services/SERVICE_NAME/src/Dockerfile</code></h3><p>Contains the instructions to build a Docker image for the service. The <a href="/docs/usage/cli#setup"><code>setup</code></a> and <a href="/docs/usage/cli#rollout"><code>rollout</code></a> commands invoke <code>skaffold run</code> to build these images and deploy them to Kubernetes. The Dockerfiles must be declared in <a href="src/skaffold.yaml" onclick="to('src/skaffold.yaml', 'outbound');" class="external"><code>./src/skaffold.yaml</code></a> under the <code>main</code> profile for the commands to build them.</p>
+<h3 class='ui header dividing'><a name="src/variants"></a><code>./src/variants</code></h3><p>Contains the source code for each variant of the application. (Functionally equivalent to <a href="#src/services" onclick="to(window.location.pathname + '#src/services', 'internal');"><code>./src/services</code></a>)</p>
+<h3 class='ui header dividing'><a name="src/variants/VARIANT_NAME"></a><code>./src/variants/VARIANT_NAME</code></h3><p>Contains the source code for a single variant. (Functionally equivalent to <a href="#src/services/SERVICE_NAME" onclick="to(window.location.pathname + '#src/services/SERVICE_NAME', 'internal');"><code>./src/services/SERVICE_NAME</code></a>)</p>
+<h3 class='ui header dividing'><a name="src/variants/VARIANT_NAME/k8s"></a><code>./src/variants/VARIANT_NAME/k8s</code></h3><p>Contains the Kubernetes manifests for a variant. The <a href="/docs/usage/cli#rollout"><code>rollout</code></a> command invokes <code>skaffold run</code> to apply or remove these configurations on Kubernetes. The manifests must be declared in <a href="src/skaffold.yaml" onclick="to('src/skaffold.yaml', 'outbound');" class="external"><code>./src/skaffold.yaml</code></a> under a profile that is not <code>main</code> for the commands to apply them. (Functionally equivalent to <a href="#src/services/SERVICE_NAME/k8s" onclick="to(window.location.pathname + '#src/services/SERVICE_NAME/k8s', 'internal');"><code>./src/services/SERVICE_NAME/k8s</code></a>)</p>
+<h3 class='ui header dividing'><a name="src/variants/VARIANT_NAME/k8s/*.yaml"></a><code>./src/variants/VARIANT_NAME/k8s/*.yaml</code></h3><p>Contains the configuration for one or more Kubernetes resources of the variant. (Functionally equivalent to <a href="#src/services/SERVICE_NAME/k8s/*.yaml" onclick="to(window.location.pathname + '#src/services/SERVICE_NAME/k8s/*.yaml', 'internal');"><code>./src/services/SERVICE_NAME/k8s/*.yaml</code></a>)</p>
+<h3 class='ui header dividing'><a name="src/variants/VARIANT_NAME/src"></a><code>./src/variants/VARIANT_NAME/src</code></h3><p>Contains the source code for a single variant. (Functionally equivalent to <a href="#src/services/SERVICE_NAME/src" onclick="to(window.location.pathname + '#src/services/SERVICE_NAME/src', 'internal');"><code>./src/services/SERVICE_NAME/src</code></a>)</p>
+<h3 class='ui header dividing'><a name="src/variants/VARIANT_NAME/src/Dockerfile"></a><code>./src/variants/VARIANT_NAME/src/Dockerfile</code></h3><p>Contains the instructions to build a Docker image for the variant. The <a href="/docs/usage/cli#rollout"><code>rollout</code></a> command invoke <code>skaffold run</code> to build these images and deploy them to Kubernetes. The Dockerfiles must be declared in <a href="src/skaffold.yaml" onclick="to('src/skaffold.yaml', 'outbound');" class="external"><code>./src/skaffold.yaml</code></a> under a profile that is not <code>main</code> for the commands to build them. (Functionally equivalent to <a href="#src/services/SERVICE_NAME/src/Dockerfile" onclick="to(window.location.pathname + '#src/services/SERVICE_NAME/src/Dockerfile', 'internal');"><code>./src/services/SERVICE_NAME/src/Dockerfile</code></a>)</p>
+<h3 class='ui header dividing'><a name="src/skaffold.yaml"></a><code>./src/skaffold.yaml</code></h3><p>Contains the configuration that <code>skaffold</code> needs to build the Docker images for the services or variants and then deploy them to Kubernetes.</p>
+<h3 class='ui header dividing'><a name="package.json"></a><code>package.json</code></h3><p>Contains metadata about the application that is required to be installed to microbs.</p>
+<h2 class='ui header'><a name="requirements"></a>App requirements</h2><p>A microbs app is a Node.js package and must be compatible with <code>npm</code>.</p>
+<h3 class='ui header dividing'><a name="requirements.package.json"></a>package.json</h3><p>Apps must conform to these requirements in <code>package.json</code>:</p>
+<ul>
+<li><code>&quot;name&quot;</code> must start with <code>app-</code> or <code>@microbs.io/app-</code></li>
+<li><code>&quot;name&quot;</code> must contain only lowercase letters, digits, or hyphens</li>
+<li><code>&quot;version&quot;</code> must adhere to semantic version syntax.</li>
+<li><code>&quot;keywords&quot;</code> must contain <code>&quot;microbs&quot;</code> and <code>&quot;app&quot;</code></li>
+</ul>
+<p>Plugins also should conform to these best practices in <code>package.json</code>, though they are not required:</p>
+<ul>
+<li><code>&quot;license&quot;</code> should be provided</li>
+<li><code>&quot;repository&quot;</code> should be provided</li>
+<li><code>&quot;description&quot;</code> should be <code>&quot;microbs app - APP_NAME&quot;</code></li>
+<li><code>&quot;scripts&quot;</code> should include <code>&quot;test&quot;</code> which invokes <code>&quot;jest&quot;</code></li>
+</ul>
+<p>Here is an example of a complete, well-formed <code>package.json</code> file used by the 
+<a href="/apps/ecommerce"><code>ecommerce</code></a> app:</p>
+
+            <div class="code">
+              <button class="ui labeled icon button teal tiny" data-clipboard-target="#ab'5c53c6ac3c30f243'">
+                <i class="icon">
+                  <span style="font-size:2rem;">&#x2398</span>
+                </i>
+                Copy to clipboard
+               </button>
+              <code>
+                <span id="ab'5c53c6ac3c30f243'"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@microbs.io/app-ecommerce&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.1-alpha&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;microbs app - ecommerce&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apache-2.0&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://microbs.io/docs/apps/ecommerce/&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;repository&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;git&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://github.com/microbs-io/microbs-app-ecommerce.git&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;microbs&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;app&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;ecommerce&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jest&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;jest&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;silent&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;verbose&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;engines&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&gt;=14.16.1&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;devDependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;@microbs.io/core&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^0.1.7-alpha&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;jest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;^26.6.3&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</span>
+              </code>
+            </div>
+            <h3 class='ui header dividing'><a name="requirements.versioning"></a>Versioning</h3><p>Apps must conform with the microbs <a href="/docs/development/versioning">version policy</a>, 
+which uses semantic version syntax.</p>
+<h2 class='ui header'><a name="observability"></a>Observability</h2><p>The following implementation details for logging and tracing will be compatible
+with the current <a href="/docs/plugins/observability">observability plugins</a>.</p>
+<h3 class='ui header dividing'><a name="observability.logging"></a>Logging</h3><ul>
+<li>Services should serialize logs using logfmt</li>
+<li>Services should write to <code>stdout</code></li>
+</ul>
+<h3 class='ui header dividing'><a name="observability.tracing"></a>Tracing</h3><ul>
+<li>Services should instrument with OpenTelemetry</li>
+<li>Services should send spans to the <code>otel-collector</code> service on Kubernetes</li>
+</ul>
+<h3 class='ui header dividing'><a name="observability.liveness-readines"></a>Liveness &amp; Readiness</h3><ul>
+<li>Services should handle <code>GET /healthz</code> and return <code>200 OK</code> with the payload <code>{&quot;health&quot;:true}</code> and the header <code>Content-Type: application/json</code></li>
+</ul>
 
           </div></div>
       </div>

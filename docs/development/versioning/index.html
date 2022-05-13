@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=856943834">
-    <script src="/js/all.js?id=107544174"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=562465489">
+    <script src="/js/all.js?id=743044414"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -99,9 +99,6 @@
         <a class="item" href="/docs/apps/ecommerce">
           ecommerce
         </a>
-        <a class="item" href="/docs/apps/templates">
-          templates
-        </a>
       </div>
     </div>
 
@@ -126,9 +123,6 @@
             <a class="item " href="/docs/plugins/kubernetes/minikube">
               minikube
             </a>
-            <a class="item " href="/docs/plugins/kubernetes/template">
-              template
-            </a>
           </div>
         </div>
         <div class="item">
@@ -136,14 +130,11 @@
             Observability
           </a>
           <div class="menu">
-            <a class="item " href="/docs/plugins/observability/elastic_cloud">
-              elastic_cloud
+            <a class="item " href="/docs/plugins/observability/elastic-cloud">
+              elastic-cloud
             </a>
-            <a class="item " href="/docs/plugins/observability/grafana_cloud">
-              grafana_cloud
-            </a>
-            <a class="item " href="/docs/plugins/observability/template">
-              template
+            <a class="item " href="/docs/plugins/observability/grafana-cloud">
+              grafana-cloud
             </a>
           </div>
         </div>
@@ -154,9 +145,6 @@
           <div class="menu">
             <a class="item " href="/docs/plugins/alerts/slack">
               slack
-            </a>
-            <a class="item " href="/docs/plugins/alerts/template">
-              template
             </a>
           </div>
         </div>
@@ -186,9 +174,14 @@
     </div>
   </div>
 </div><div class="content column" style="flex:1;">
-            <h1 class='ui header'><a name="versioning"></a>Versioning</h1><p>microbs does not yet have a version policy. Once the project reaches its first
-beta release, it will have a version policy to set proper expectations for
-breaking changes.</p>
+            <h1 class='ui header'><a name="versioning"></a>Versioning</h1><p>microbs uses semantic versioning for its projects.</p>
+<ul>
+<li>Template: <code>v${MAJOR}.${MINOR}.${PATCH}</code></li>
+<li>Example: <code>v1.0.0</code></li>
+</ul>
+<p><strong>Major</strong> - Breaking changes have been observed. Interfacing software may require <em>substantial</em> refactoring before upgrading to this version.</p>
+<p><strong>Minor</strong> - Breaking changes have been observed or are believed to be likely. Interfacing software may require <em>some</em> refactoring before upgrading to this version.</p>
+<p><strong>Patch</strong> - Breaking changes have <em>not</em> been observed and believed to be <em>unlikely</em>. Interfacing software should be able to upgrade to this version immediately.</p>
 
           </div></div>
       </div>
