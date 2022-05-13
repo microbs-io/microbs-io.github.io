@@ -16,7 +16,7 @@ Before using the `kind` plugin you must have its [prerequisites](#prerequisites)
 
 ### `setup`
 
-When running [`microbs setup [--k8s]`](/docs/usage/cli/#setup), the `kind`
+When running [`microbs setup [-k]`](/docs/usage/cli/#setup), the `kind`
 plugin runs `kind create cluster`. Currently, the `kind` plugin does not
 configure the size of the cluster it deploys.
 
@@ -26,7 +26,7 @@ The `kind` plugin is unaffected by [`microbs rollout`](/docs/usage/cli#rollout).
 
 ### `destroy`
 
-When running [`microbs destroy [--k8s]`](/docs/usage/cli/#destroy), the `kind`
+When running [`microbs destroy [-k]`](/docs/usage/cli/#destroy), the `kind`
 plugin runs `kind delete cluster`.
 
 

@@ -9,15 +9,11 @@ Unless otherwise noted, these services are implementations of the
 
 ### [api-gateway](https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/api-gateway)
 
-The `api-gateway` service is an [Nginx](https://www.nginx.com/) proxy instrumented
-with the [OpenTelemetry C++ nginx module](https://github.com/open-telemetry/opentelemetry-cpp-contrib/tree/main/instrumentation/nginx).
-This is an implementation of the [`nginx`](/docs/apps/templates) template service.
-
-Most services in the `ecommerce` app communicate with each other through the
-`api-gateway` service. This simplifies the microservices topology by requiring
-the services to be aware of only one service (in most cases). It also creates a
-predictable flow of communications among services, and in theory, a single
-place to manage access among services.
+The `api-gateway` service is a proxy. Most services in the `ecommerce` app
+communicate with each other through the `api-gateway` service. This simplifies
+the microservices topology by requiring the services to be aware of only on
+service (in most cases). It also creates a predictable flow of communications
+among services, and in theory, a single place to manage access among services.
 
 There are exceptions in which communications don't flow through the `api-gateway`
 service:

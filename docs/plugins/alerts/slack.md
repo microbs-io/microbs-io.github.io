@@ -20,7 +20,7 @@ Before using the `slack` plugin you must have its [prerequisites](#prerequisites
 
 ### `setup`
 
-When running [`microbs setup [--obs]`](/docs/usage/cli/#setup), the
+When running [`microbs setup [-o]`](/docs/usage/cli/#setup), the
 `slack` plugin creates a channel in your Slack Workspace.
 
 ### `rollout`
@@ -29,7 +29,7 @@ The `slack` plugin is unaffected by [`microbs rollout`](/docs/usage/cli#rollout)
 
 ### `destroy`
 
-The `slack` plugin does not yet implement [`microbs destroy [--k8s]`](/docs/usage/cli/#destroy).
+The `slack` plugin does not yet implement [`microbs destroy [-k]`](/docs/usage/cli/#destroy).
 You can delete your channel through the standard Slack interfaces such as the
 Slack UI.
 
@@ -50,7 +50,7 @@ This section documents the `slack` plugin configurations for [config.yaml](/docs
 
 ### Required fields
 
-#### [](plugins.slack.bot_user_oauth_access_token)`plugins.elastic_cloud.api_key`
+#### [](plugins.slack.bot_user_oauth_access_token)`plugins.slack.api_key`
 
 The value of your [bot access token](https://api.slack.com/authentication/token-types#bot).
 

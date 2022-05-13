@@ -11,7 +11,7 @@ With little [configuration](/docs/usage/configuration) and one [command](/docs/u
 * **Simulated issues** (e.g. bugs, traffic spikes)
 * **Synthetics** (e.g. realistic user traffic generation)
 * **Kubernetes platforms** (e.g. [GKE](/docs/plugins/kubernetes/gke), [minikube](/docs/plugins/kubernetes/minikube), [kind](/docs/plugins/kubernetes/kind))
-* **Observability stacks** (e.g. [Elastic](/docs/plugins/observability/elastic_cloud), [Grafana](/docs/plugins/observability/grafana_cloud))
+* **Observability stacks** (e.g. [Grafana](/docs/plugins/observability/grafana-cloud), [Elastic](/docs/plugins/observability/elastic-cloud))
 
 You can make your own [apps](/docs/apps) or [plugins](/docs/plugins) for a more customized experience. More plugins are planned for the future.
 

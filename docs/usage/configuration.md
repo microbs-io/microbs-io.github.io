@@ -77,15 +77,15 @@ cluster `microbs-changeme`.
 The name of an [application](/docs/apps) to deploy
 (i.e. the name of a directory in `./apps`).
 
-#### [](deployment.plugins.k8s)`deployment.plugins.k8s`
+#### [](deployment.plugins.kubernetes)`deployment.plugins.kubernetes`
 
 The name of a [Kubernetes plugin](/docs/plugins/observability) to use
-(i.e. the name of a directory in `./cli/src/plugins/k8s`).
+(i.e. the name of a directory in `./cli/src/plugins/kubernetes`).
 
-#### [](deployment.plugins.obs)`deployment.plugins.obs`
+#### [](deployment.plugins.observability)`deployment.plugins.observability`
 
 The name of an [observability plugin](/docs/plugins/observability) to use
-(i.e. the name of a directory in `./cli/src/plugins/obs`).
+(i.e. the name of a directory in `./cli/src/plugins/observability`).
 
 #### [](otlp.receiver.host)`otlp.receiver.host`
 

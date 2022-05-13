@@ -16,7 +16,7 @@ Before using the `minikube` plugin you must have its [prerequisites](#prerequisi
 
 ### `setup`
 
-When running [`microbs setup [--k8s]`](/docs/usage/cli/#setup), the `minikube`
+When running [`microbs setup [-k]`](/docs/usage/cli/#setup), the `minikube`
 plugin runs `minikube start`.
 
 After deploying an application with `microbs setup [--app]`, run
@@ -41,7 +41,7 @@ The `minikube` plugin is unaffected by [`microbs rollout`](/docs/usage/cli#rollo
 
 ### `destroy`
 
-When running [`microbs destroy [--k8s]`](/docs/usage/cli/#destroy), the `minikube`
+When running [`microbs destroy [-k]`](/docs/usage/cli/#destroy), the `minikube`
 plugin runs `minikube delete`.
 
 

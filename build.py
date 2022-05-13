@@ -265,15 +265,15 @@ def PAGES(args):
                 "docs": True
             }
         },
-        "/docs/apps/templates": {
-            "vars": {
-                "title": "templates",
-                "meta_description": META_DESCRIPTION_GENERIC,
-                "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
-                "content": markdown("/docs/apps/templates.md", args),
-                "docs": True
-            }
-        },
+        #"/docs/apps/templates": {
+        #    "vars": {
+        #        "title": "templates",
+        #        "meta_description": META_DESCRIPTION_GENERIC,
+        #        "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
+        #        "content": markdown("/docs/apps/templates.md", args),
+        #        "docs": True
+        #    }
+        #},
         "/docs/plugins": {
             "vars": {
                 "title": "Plugins",
@@ -301,15 +301,15 @@ def PAGES(args):
                 "docs": True
             }
         },
-        "/docs/plugins/alerts/template": {
-            "vars": {
-                "title": "template plugin",
-                "meta_description": META_DESCRIPTION_GENERIC,
-                "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
-                "content": markdown("/docs/plugins/alerts/template.md", args),
-                "docs": True
-            }
-        },
+        #"/docs/plugins/alerts/template": {
+        #    "vars": {
+        #        "title": "template plugin",
+        #        "meta_description": META_DESCRIPTION_GENERIC,
+        #        "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
+        #        "content": markdown("/docs/plugins/alerts/template.md", args),
+        #        "docs": True
+        #    }
+        #},
         "/docs/plugins/kubernetes": {
             "vars": {
                 "title": "Kubernetes plugins",
@@ -346,15 +346,15 @@ def PAGES(args):
                 "docs": True
             }
         },
-        "/docs/plugins/kubernetes/template": {
-            "vars": {
-                "title": "template plugin",
-                "meta_description": META_DESCRIPTION_GENERIC,
-                "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
-                "content": markdown("/docs/plugins/kubernetes/template.md", args),
-                "docs": True
-            }
-        },
+        #"/docs/plugins/kubernetes/template": {
+        #    "vars": {
+        #        "title": "template plugin",
+        #        "meta_description": META_DESCRIPTION_GENERIC,
+        #        "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
+        #        "content": markdown("/docs/plugins/kubernetes/template.md", args),
+        #        "docs": True
+        #    }
+        #},
         "/docs/plugins/observability": {
             "vars": {
                 "title": "Observability plugins",
@@ -364,33 +364,33 @@ def PAGES(args):
                 "docs": True
             }
         },
-        "/docs/plugins/observability/elastic_cloud": {
+        "/docs/plugins/observability/elastic-cloud": {
             "vars": {
-                "title": "elastic_cloud plugin",
+                "title": "elastic-cloud plugin",
                 "meta_description": META_DESCRIPTION_GENERIC,
                 "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
-                "content": markdown("/docs/plugins/observability/elastic_cloud.md", args),
+                "content": markdown("/docs/plugins/observability/elastic-cloud.md", args),
                 "docs": True
             }
         },
-        "/docs/plugins/observability/grafana_cloud": {
+        "/docs/plugins/observability/grafana-cloud": {
             "vars": {
-                "title": "grafana_cloud plugin",
+                "title": "grafana-cloud plugin",
                 "meta_description": META_DESCRIPTION_GENERIC,
                 "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
-                "content": markdown("/docs/plugins/observability/grafana_cloud.md", args),
+                "content": markdown("/docs/plugins/observability/grafana-cloud.md", args),
                 "docs": True
             }
         },
-        "/docs/plugins/observability/template": {
-            "vars": {
-                "title": "template plugin",
-                "meta_description": META_DESCRIPTION_GENERIC,
-                "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
-                "content": markdown("/docs/plugins/observability/template.md", args),
-                "docs": True
-            }
-        },
+        #"/docs/plugins/observability/template": {
+        #    "vars": {
+        #        "title": "template plugin",
+        #        "meta_description": META_DESCRIPTION_GENERIC,
+        #        "meta_description_social": META_DESCRIPTION_GENERIC_SHORT,
+        #        "content": markdown("/docs/plugins/observability/template.md", args),
+        #        "docs": True
+        #    }
+        #},
         "/docs/development": {
             "vars": {
                 "title": "Development",

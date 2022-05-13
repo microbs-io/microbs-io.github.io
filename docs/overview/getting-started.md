@@ -1,74 +1,69 @@
 # [](getting-started)Getting Started
 
-|? 👋 Hello! microbs is a new project with an amibtious scope. Its configurations and interfaces might change until its GA release. Be sure to check these docs for changes whenever you pull the latest version of microbs. And if you like the project, consider [contributing](http://github.com/microbs-io/microbs) on GitHub!
-
-
 ## [](quick-start)Quick start
 
-You can install microbs in three basic steps:
+You can get started with microbs in three basic steps:
 
 1. [Prepare your environment](#step-1)
-2. [Clone the repo](#step-2)
-3. [Install microbs](#step-3)
+2. [Install microbs](#step-2)
+2. [Configure microbs](#step-3)
 
-Once installed, you can proceed to the [configuration](/docs/usage/configuration) and [CLI](/docs/usage/cli).
+Once installed and configured, you can use the [CLI](/docs/usage/cli) to run
+commands with microbs.
 
 
 ## [](step-1)Step 1. Prepare your environment
 
 ### Operating system
 
-microbs has been tested on **MacOS 12.1**. Your mileage may vary on other operating systems.
+microbs has been tested on **MacOS 12.1+**. Your mileage may vary on other
+operating systems. Linux may work, but Windows is expected *not* to work.
 
 ### Software dependencies
 
-|! [Plugins](/docs/plugins) may require additional dependencies. Be sure to read the docs for the plugins you wish to use.
+|! [Plugins](/docs/plugins) may require additional dependencies. Be sure to read
+the docs for the plugins you wish to use.
 
-You will need to install [node](https://nodejs.org/en/download/), [nvm](https://github.com/nvm-sh/nvm), [kubectl](https://kubernetes.io/docs/tasks/tools/), and [skaffold](https://skaffold.dev/docs/install/) before installing microbs.
+You will need to install [node](https://nodejs.org/en/download/),
+[docker](https://docs.docker.com/engine/install/),
+[kubectl](https://kubernetes.io/docs/tasks/tools/), and
+[skaffold](https://skaffold.dev/docs/install/) before installing microbs.
 
 microbs has been tested with the following software versions:
 
 |Software|Version|
 |------|-----|
-|[kubectl](https://kubernetes.io/docs/tasks/tools/)|1.23.4|
 |[node](https://nodejs.org/en/download/)|16.14.0|
-|[nvm](https://github.com/nvm-sh/nvm)|16.14.0|
+|[docker](https://docs.docker.com/engine/install/)|20.10.12|
+|[kubectl](https://kubernetes.io/docs/tasks/tools/)|1.23.4|
 |[skaffold](https://skaffold.dev/docs/install/)|1.36.0|
 
 
-## [](step-2)Step 2. Clone the repo
+## [](step-2)Step 2. Install microbs
+
+Run the following command:
 
 ```sh
-git clone https://github.com/microbs-io/microbs.git
+npm install -g microbs
 ```
 
+This will do a few things:
 
-## [](step-3)Step 3. Install microbs
+* `microbs` will be available as an executable file in your `$PATH`
+* `$HOME/.microbs` will be created to store deployment information
+* `$HOME/.microbs/config.yaml` will be created to configure microbs
+* All [official apps and plugins](https://www.npmjs.com/~microbs.io) will be installed
 
-```python
-# Navigate into the cloned microbs repo
-cd microbs
 
-# Install and use the correct version of node
-nvm install
+## [](step-3)Step 3. Configure microbs
 
-# Install the node modules for microbs
-npm install
-
-# Add the current directory to your PATH
-export PATH="$(pwd):$PATH"
-
-# Create a config file
-cp ./config.reference.yaml config.yaml
-
-# Verify installation
-microbs validate
-```
-
-Don't forget to install any dependencies for the [plugins](/docs/plugins) you
-wish to use. You can run [`microbs validate`](/docs/usage/cli#validate) to check if you have correctly
+Open `$HOME/.microbs/config.yaml` in a text editor and complete the
+[configuration](/docs/usage/configuration). Don't forget to install any
+dependencies for the [plugins](/docs/plugins) you wish to use. You can run
+[`microbs validate`](/docs/usage/cli#validate) to check if you have correctly
 prepared the environment for your plugins.
 
 ## [](whats-next)What's next?
 
-Once installed, you can proceed to the [configuration](/docs/usage/configuration) and [CLI](/docs/usage/cli).
+Once installed and [configured](/docs/usage/configuration), refer to the [CLI](/docs/usage/cli)
+for an explanation of how to run microbs commands.

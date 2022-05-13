@@ -18,7 +18,7 @@ Before using the `gke` plugin you must have its [prerequisites](#prerequisites).
 
 |! Google will charge you for your use of GKE ([more info](https://cloud.google.com/kubernetes-engine/pricing)).
 
-When running [`microbs setup [--k8s]`](/docs/usage/cli/#setup), the `gke` plugin
+When running [`microbs setup [-k]`](/docs/usage/cli/#setup), the `gke` plugin
 runs `gcloud container clusters create`.
 
 Currently, the `gke` plugin deploys a fixed-sized cluster in "Standard" mode
@@ -34,7 +34,7 @@ The `gke` plugin is unaffected by [`microbs rollout`](/docs/usage/cli#rollout).
 
 ### `destroy`
 
-When running [`microbs destroy [--k8s]`](/docs/usage/cli/#destroy), the `gke`
+When running [`microbs destroy [-k]`](/docs/usage/cli/#destroy), the `gke`
 plugin runs `gcloud container clusters delete`.
 
 
