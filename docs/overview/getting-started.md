@@ -44,7 +44,7 @@ microbs has been tested with the following software versions:
 Run the following command:
 
 ```sh
-npm install -g microbs
+curl -Ls https://microbs.io/install.js | node
 ```
 
 This will do a few things:
