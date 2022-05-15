@@ -62,7 +62,7 @@ class MicrobsRenderer(mistune.HTMLRenderer):
             lang = lang.split(":")[0]
             nocopy = True
         lexer = get_lexer_by_name(lang, stripall=True)
-        id = "a%s" % binascii.hexlify(os.urandom(8))
+        id = "a%s" % binascii.hexlify(os.urandom(8)).decode("utf8")
         formatter = html.HtmlFormatter()
         formatted = highlight(code, lexer, formatter)
         if nocopy:
@@ -76,7 +76,7 @@ class MicrobsRenderer(mistune.HTMLRenderer):
         else:
             formatted = """
             <div class="code">
-              <button class="ui labeled icon button teal tiny" data-clipboard-target="#%s">
+              <button class="ui labeled icon button teal tiny copy" data-clipboard-target="#%s">
                 <i class="icon">
                   <span style="font-size:2rem;">&#x2398</span>
                 </i>

@@ -21,8 +21,7 @@ operating systems. Linux may work, but Windows is expected *not* to work.
 
 ### Software dependencies
 
-|! [Plugins](/docs/plugins) may require additional dependencies. Be sure to read
-the docs for the plugins you wish to use.
+|! [Plugins](/docs/plugins) may require additional dependencies. Be sure to read the docs for the plugins you wish to use.
 
 You will need to install [node](https://nodejs.org/en/download/),
 [docker](https://docs.docker.com/engine/install/),
