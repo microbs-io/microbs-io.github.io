@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=961134957">
-    <script src="/js/all.js?id=146180544"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=842827606">
+    <script src="/js/all.js?id=599377022"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -179,18 +179,16 @@
 <li><a href="#syntax" onclick="to(window.location.pathname + '#syntax', 'internal');">Syntax</a></li>
 <li><a href="#reference" onclick="to(window.location.pathname + '#reference', 'internal');">Reference</a></li>
 </ul>
-<h2 class='ui header'><a name="config-file"></a>Config file</h2><p>microbs is driven by a config file, named <code>config.yaml</code> by default. The repo
-includes a sample config file called <code>config.reference.yaml</code>. You should copy
-this file, rename it to <code>config.yaml</code>, and save it to the same directory. This
-is the default file name and location that microbs uses.</p>
-<h3 class='ui header dividing'><a name="alternative-files"></a>Alternative files</h3><p>By default, microbs expects to use a config file named <code>config.yaml</code> in the same
-directory as the <code>microbs</code> executable file, which is located in the root
-directory of the <a href="https://github.com/microbs-io/microbs" onclick="to('https://github.com/microbs-io/microbs', 'outbound');" class="external">repo</a> that you cloned
-during <a href="/docs/overview/getting-started">installation</a>. You can specify the path
-to a different config file when running commands in the <a href="/docs/usage/cli">CLI</a>
-by using the <code>-c</code> or <code>--config</code> flag.</p>
+<h2 class='ui header'><a name="config-file"></a>Config file</h2><p>microbs is driven by a config file named <code>config.yaml</code> which is located in the
+<code>$HOME/.microbs</code> directory by default. The directory and file are created
+automatically when you <a href="/docs/overview/getting-started">install microbs</a> or run
+<code>microbs init</code>.</p>
+<h3 class='ui header dividing'><a name="alternative-files"></a>Alternative files</h3><p>By default, microbs expects to use a config file named <code>config.yaml</code> in
+<code>$HOME/.microbs</code>. You can specify the path to a different config directory when
+running commands in the <a href="/docs/usage/cli">CLI</a> by using the <code>-c</code> or <code>--config</code>
+flag.</p>
 <p>Example:</p>
-<p><code>microbs help -c /path/to/your/config.yaml</code></p>
+<p><code>microbs help -c /path/to/your/config/directory</code></p>
 <h3 class='ui header dividing'><a name="validation"></a>Validation</h3><p>You can (and should) validate the syntax and correctness of your config file by
 running <a href="/docs/usage/cli#validate"><code>microbs validate</code></a>. The validation script
 can't provide 100% guidance, but it does a good job.</p>
@@ -205,7 +203,7 @@ replaced with underscores.</p>
 
             <div class="code">
               <code>
-                <span id="a6276bcf125b51ed9"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"></span>
+                <span id="ab4c51fe4b7a15ccf"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">bar_baz.abc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xyz</span><span class="w"></span>
 </pre></div>
 </span>
@@ -215,7 +213,7 @@ replaced with underscores.</p>
 
             <div class="code">
               <code>
-                <span id="ac70407b57c32987a"><div class="highlight"><pre><span></span><span class="nx">FOO_BAR_BAZ_XYZ</span><span class="o">=</span><span class="nx">xyz</span>
+                <span id="a76df54a34d03cb79"><div class="highlight"><pre><span></span><span class="nx">FOO_BAR_BAZ_XYZ</span><span class="o">=</span><span class="nx">xyz</span>
 </pre></div>
 </span>
               </code>
@@ -225,12 +223,9 @@ prefix this value with <code>microbs-</code> and use it as the name of the Kuber
 cluster or observability solution stack. For example, if the value of
 <code>deployment.name</code> is <code>changeme</code>, then the Kubernetes plugin would name the
 cluster <code>microbs-changeme</code>.</p>
-<h4 class='ui header'><a name="deployment.app"></a><code>deployment.app</code></h4><p>The name of an <a href="/docs/apps">application</a> to deploy
-(i.e. the name of a directory in <code>./apps</code>).</p>
-<h4 class='ui header'><a name="deployment.plugins.kubernetes"></a><code>deployment.plugins.kubernetes</code></h4><p>The name of a <a href="/docs/plugins/observability">Kubernetes plugin</a> to use
-(i.e. the name of a directory in <code>./cli/src/plugins/kubernetes</code>).</p>
-<h4 class='ui header'><a name="deployment.plugins.observability"></a><code>deployment.plugins.observability</code></h4><p>The name of an <a href="/docs/plugins/observability">observability plugin</a> to use
-(i.e. the name of a directory in <code>./cli/src/plugins/observability</code>).</p>
+<h4 class='ui header'><a name="deployment.app"></a><code>deployment.app</code></h4><p>The name of an installed <a href="/docs/apps">application</a> to deploy.</p>
+<h4 class='ui header'><a name="deployment.plugins.kubernetes"></a><code>deployment.plugins.kubernetes</code></h4><p>The name of an installed <a href="/docs/plugins/observability">Kubernetes plugin</a> to use.</p>
+<h4 class='ui header'><a name="deployment.plugins.observability"></a><code>deployment.plugins.observability</code></h4><p>The name of an installed <a href="/docs/plugins/observability">observability plugin</a> to use.</p>
 <h4 class='ui header'><a name="otlp.receiver.host"></a><code>otlp.receiver.host</code></h4><p>The OTLP gRPC destination host for the deployed application services. The
 <a href="/docs/apps">apps</a> and <a href="/docs/plugins/observability">observability</a> plugins that
 come with microbs expect this value to be <code>otel-collector</code>.</p>
@@ -238,11 +233,12 @@ come with microbs expect this value to be <code>otel-collector</code>.</p>
 <a href="/docs/apps">apps</a> and <a href="/docs/plugins/observability">observability</a> plugins that
 come with microbs expect this value to be <code>4317</code>.</p>
 <h3 class='ui header dividing'>Optional fields</h3><h4 class='ui header'><a name="deployment.environment"></a><code>deployment.environment</code></h4><p>A description of the environment (e.g. <code>dev</code>, <code>test</code>, <code>prod</code>).</p>
-<h4 class='ui header'><a name="deployment.plugins.alerts"></a><code>deployment.plugins.alerts</code></h4><p>The name of an <a href="/docs/plugins/observability">alerts plugin</a> to use
-(i.e. the name of a directory in <code>./cli/src/plugins/alerts</code>).</p>
+<h4 class='ui header'><a name="deployment.plugins.alerts"></a><code>deployment.plugins.alerts</code></h4><p>The name of an installed <a href="/docs/plugins/observability">alerts plugin</a> to use.</p>
 <h4 class='ui header'><a name="docker.registry"></a><code>docker.registry</code></h4><p>A container image registry for the application services. This is used by the
 <a href="/docs/usage/cli#setup">setup</a> and <a href="/docs/usage/cli#rollout">rollout</a> commands,
-which passes the value to <code>skaffold run --default-repo=${docker.registry}</code>. Read the <a href="https://skaffold.dev/docs/environment/image-registries/" onclick="to('https://skaffold.dev/docs/environment/image-registries/', 'outbound');" class="external">skaffold docs</a> for more details on the behavior of this config.</p>
+which passes the value to <code>skaffold run --default-repo=${docker.registry}</code>. Read
+the <a href="https://skaffold.dev/docs/environment/image-registries/" onclick="to('https://skaffold.dev/docs/environment/image-registries/', 'outbound');" class="external">skaffold docs</a> fo
+more details on the behavior of this config.</p>
 <h3 class='ui header dividing'>Plugin configs</h3><p>Each <a href="/docs/plugins">plugin</a> has its own set of configurations that are
 specified in the same config file. Refer to the documentation for each plugin
 that you wish to use to ensure that the plugin is properly configured.</p>

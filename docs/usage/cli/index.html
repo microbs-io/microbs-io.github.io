@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=271931226">
-    <script src="/js/all.js?id=486051423"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=657575861">
+    <script src="/js/all.js?id=471937988"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -179,9 +179,10 @@
 <li><a href="#rollout" onclick="to(window.location.pathname + '#rollout', 'internal');"><code>rollout</code></a></li>
 <li><a href="#stabilize" onclick="to(window.location.pathname + '#stabilize', 'internal');"><code>stabilize</code></a></li>
 <li><a href="#destroy" onclick="to(window.location.pathname + '#destroy', 'internal');"><code>destroy</code></a></li>
-<li><a href="#validate" onclick="to(window.location.pathname + '#validate', 'internal');"><code>validate</code></a></li>
 <li><a href="#plugins" onclick="to(window.location.pathname + '#plugins', 'internal');"><code>plugins</code></a></li>
 <li><a href="#apps" onclick="to(window.location.pathname + '#apps', 'internal');"><code>apps</code></a></li>
+<li><a href="#version" onclick="to(window.location.pathname + '#version', 'internal');"><code>init</code></a></li>
+<li><a href="#validate" onclick="to(window.location.pathname + '#validate', 'internal');"><code>validate</code></a></li>
 <li><a href="#version" onclick="to(window.location.pathname + '#version', 'internal');"><code>version</code></a></li>
 <li><a href="#help" onclick="to(window.location.pathname + '#help', 'internal');"><code>help</code></a></li>
 </ul>
@@ -301,9 +302,9 @@ of each validation check. Offers guidance where possible.</p>
 <ul>
 <li><code>microbs plugins list</code></li>
 <li><code>microbs plugins search</code></li>
-<li><code>microbs plugins install PLUGIN_NAME [...]</code></li>
-<li><code>microbs plugins update PLUGIN_NAME [...]</code></li>
-<li><code>microbs plugins uninstall PLUGIN_NAME [...]</code></li>
+<li><code>microbs plugins install PLUGIN_NAME [...] [OPTIONS]</code></li>
+<li><code>microbs plugins update PLUGIN_NAME [...] [OPTIONS]</code></li>
+<li><code>microbs plugins uninstall PLUGIN_NAME [...] [OPTIONS]</code></li>
 </ul>
 <h4 class='ui header'><a name="plugins.list"></a><code>plugins.list</code></h4><p><code>microbs plugins list</code> displays the plugins installed on the same machine as the
 microbs CLI.</p>
@@ -315,13 +316,148 @@ from the npm registry. microbs automatically prefixes the plugin package name
 with <code>@microbs.io/plugin-</code>, thus if you wanted to install the <code>gke</code> plugin, you
 would only need to run <code>microbs plugin install gke</code> and not <code>@microbs.io/plugin-gke</code>. Plugins are installed under the <code>node_modules</code> directory of the microbs
 CLI.</p>
+<h4 class='ui header'>Optional command flags</h4><table>
+<thead>
+<tr>
+  <th>Short</th>
+  <th>Long</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td></td>
+  <td><code>--all</code></td>
+  <td>Install all official microbs plugins from the npm registry.</td>
+</tr>
+</tbody>
+</table>
 <h4 class='ui header'><a name="plugins.update"></a><code>plugins.update</code></h4><p><code>microbs plugins update PLUGIN_NAME [...]</code> updates one or more installed plugins
 by name.</p>
+<h4 class='ui header'>Optional command flags</h4><table>
+<thead>
+<tr>
+  <th>Short</th>
+  <th>Long</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td></td>
+  <td><code>--all</code></td>
+  <td>Update all installed microbs plugins.</td>
+</tr>
+</tbody>
+</table>
 <h4 class='ui header'><a name="plugins.uninstall"></a><code>plugins.uninstall</code></h4><p><code>microbs plugins uninstall PLUGIN_NAME [...]</code> removes one or more installed
 plugins by name.</p>
-<h3 class='ui header dividing'><a name="apps"></a><code>apps</code></h3><p>Usage: <code>microbs apps [OPTIONS]</code></p>
-<p>Displays a list of <a href="/docs/apps">apps</a> available to microbs.</p>
-<h3 class='ui header dividing'><a name="apps"></a><code>version</code></h3><p>Usage: <code>microbs version</code></p>
+<h4 class='ui header'>Optional command flags</h4><table>
+<thead>
+<tr>
+  <th>Short</th>
+  <th>Long</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td></td>
+  <td><code>--all</code></td>
+  <td>Uninstall all installed microbs plugins.</td>
+</tr>
+</tbody>
+</table>
+<h3 class='ui header dividing'><a name="apps"></a><code>apps</code></h3><p>Manages microbs <a href="/docs/apps">apps</a></p>
+<p>Usages:</p>
+<ul>
+<li><code>microbs apps list</code></li>
+<li><code>microbs apps search</code></li>
+<li><code>microbs apps install APP_NAME [...] [OPTIONS]</code></li>
+<li><code>microbs apps update APP_NAME [...] [OPTIONS]</code></li>
+<li><code>microbs apps uninstall APP_NAME [...] [OPTIONS]</code></li>
+</ul>
+<h4 class='ui header'><a name="apps.list"></a><code>apps.list</code></h4><p><code>microbs apps list</code> displays the apps installed on the same machine as the
+microbs CLI.</p>
+<h4 class='ui header'><a name="apps.list"></a><code>apps.search</code></h4><p><code>microbs apps search</code> searches for official microbs apps on the npm registry.
+The names of official apps packages are prefixed with <code>@microbs.io/app-</code>.</p>
+<h4 class='ui header'><a name="apps.install"></a><code>apps.install</code></h4><p><code>microbs apps install APP_NAME [...]</code> installs one or more apps by name from the
+npm registry. microbs automatically prefixes the app package name with
+<code>@microbs.io/app-</code>, thus if you wanted to install the <code>ecommerce</code> app, you
+would only need to run <code>microbs apps install ecommerce</code> and not
+<code>@microbs.io/app-ecommerce</code>. Apps are installed under the <code>node_modules</code>
+directory of the microbs CLI.</p>
+<h4 class='ui header'>Optional command flags</h4><table>
+<thead>
+<tr>
+  <th>Short</th>
+  <th>Long</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td></td>
+  <td><code>--all</code></td>
+  <td>Install all official microbs apps from the npm registry.</td>
+</tr>
+</tbody>
+</table>
+<h4 class='ui header'><a name="apps.update"></a><code>apps.update</code></h4><p><code>microbs apps update APP_NAME [...]</code> updates one or more installed apps by name.</p>
+<h4 class='ui header'>Optional command flags</h4><table>
+<thead>
+<tr>
+  <th>Short</th>
+  <th>Long</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td></td>
+  <td><code>--all</code></td>
+  <td>Update all installed microbs apps.</td>
+</tr>
+</tbody>
+</table>
+<h4 class='ui header'><a name="apps.uninstall"></a><code>apps.uninstall</code></h4><p><code>microbs apps uninstall APP_NAME [...]</code> removes one or more installed apps by name.</p>
+<h4 class='ui header'>Optional command flags</h4><table>
+<thead>
+<tr>
+  <th>Short</th>
+  <th>Long</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td></td>
+  <td><code>--all</code></td>
+  <td>Uninstall all installed microbs apps.</td>
+</tr>
+</tbody>
+</table>
+<h3 class='ui header dividing'><a name="init"></a><code>init</code></h3><p>Usage: <code>microbs init [OPTIONS]</code></p>
+<p>Creates <code>$HOME/.microbs</code> and <code>$HOME/.microbs/config.yaml</code> if they do not exist.
+The <code>config.yaml</code> file is given some default values but will require some fields
+to be provided manually.</p>
+<h4 class='ui header'>Optional command flags</h4><table>
+<thead>
+<tr>
+  <th>Short</th>
+  <th>Long</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>-c</code></td>
+  <td><code>--config</code></td>
+  <td>Path to <a href="/docs/usage/configuration">config directory</a> (default: <code>$HOME/.microbs</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 class='ui header dividing'><a name="version"></a><code>version</code></h3><p>Usage: <code>microbs version</code></p>
 <p>Displays the version of microbs.</p>
 <h3 class='ui header dividing'><a name="help"></a><code>help</code></h3><p>Usage: <code>microbs help [OPTIONS]</code></p>
 <p>Displays a concise explanation of commands and options available to the CLI.</p>
@@ -338,7 +474,7 @@ plugins by name.</p>
 <tr>
   <td><code>-c</code></td>
   <td><code>--config</code></td>
-  <td>Path to <a href="/docs/usage/configuration">config file</a> (default: <code>./config.yaml</code>)</td>
+  <td>Path to <a href="/docs/usage/configuration">config directory</a> (default: <code>$HOME/.microbs</code>)</td>
 </tr>
 <tr>
   <td><code>-L</code></td>
