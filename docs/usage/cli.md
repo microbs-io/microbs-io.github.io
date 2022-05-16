@@ -6,9 +6,10 @@
 * [`rollout`](#rollout)
 * [`stabilize`](#stabilize)
 * [`destroy`](#destroy)
-* [`validate`](#validate)
 * [`plugins`](#plugins)
 * [`apps`](#apps)
+* [`init`](#version)
+* [`validate`](#validate)
 * [`version`](#version)
 * [`help`](#help)
 
@@ -116,9 +117,9 @@ Usages:
 
 * `microbs plugins list`
 * `microbs plugins search`
-* `microbs plugins install PLUGIN_NAME [...]`
-* `microbs plugins update PLUGIN_NAME [...]`
-* `microbs plugins uninstall PLUGIN_NAME [...]`
+* `microbs plugins install PLUGIN_NAME [...] [OPTIONS]`
+* `microbs plugins update PLUGIN_NAME [...] [OPTIONS]`
+* `microbs plugins uninstall PLUGIN_NAME [...] [OPTIONS]`
 
 #### [](plugins.list)`plugins.list`
 
@@ -139,25 +140,109 @@ with `@microbs.io/plugin-`, thus if you wanted to install the `gke` plugin, you
 would only need to run `microbs plugin install gke` and not `@microbs.io/plugin-gke`. Plugins are installed under the `node_modules` directory of the microbs
 CLI.
 
+#### Optional command flags
+
+|Short|Long|Description|
+|-----|----|-----------|
+||`--all`|Install all official microbs plugins from the npm registry.|
+
 #### [](plugins.update)`plugins.update`
 
 `microbs plugins update PLUGIN_NAME [...]` updates one or more installed plugins
 by name.
+
+#### Optional command flags
+
+|Short|Long|Description|
+|-----|----|-----------|
+||`--all`|Update all installed microbs plugins.|
 
 #### [](plugins.uninstall)`plugins.uninstall`
 
 `microbs plugins uninstall PLUGIN_NAME [...]` removes one or more installed
 plugins by name.
 
+#### Optional command flags
+
+|Short|Long|Description|
+|-----|----|-----------|
+||`--all`|Uninstall all installed microbs plugins.|
+
 
 ### [](apps)`apps`
 
-Usage: `microbs apps [OPTIONS]`
+Manages microbs [apps](/docs/apps)
 
-Displays a list of [apps](/docs/apps) available to microbs.
+Usages:
+
+* `microbs apps list`
+* `microbs apps search`
+* `microbs apps install APP_NAME [...] [OPTIONS]`
+* `microbs apps update APP_NAME [...] [OPTIONS]`
+* `microbs apps uninstall APP_NAME [...] [OPTIONS]`
+
+#### [](apps.list)`apps.list`
+
+`microbs apps list` displays the apps installed on the same machine as the
+microbs CLI.
+
+#### [](apps.list)`apps.search`
+
+`microbs apps search` searches for official microbs apps on the npm registry.
+The names of official apps packages are prefixed with `@microbs.io/app-`.
+
+#### [](apps.install)`apps.install`
+
+`microbs apps install APP_NAME [...]` installs one or more apps by name from the
+npm registry. microbs automatically prefixes the app package name with
+`@microbs.io/app-`, thus if you wanted to install the `ecommerce` app, you
+would only need to run `microbs apps install ecommerce` and not
+`@microbs.io/app-ecommerce`. Apps are installed under the `node_modules`
+directory of the microbs CLI.
+
+#### Optional command flags
+
+|Short|Long|Description|
+|-----|----|-----------|
+||`--all`|Install all official microbs apps from the npm registry.|
+
+#### [](apps.update)`apps.update`
+
+`microbs apps update APP_NAME [...]` updates one or more installed apps by name.
+
+#### Optional command flags
+
+|Short|Long|Description|
+|-----|----|-----------|
+||`--all`|Update all installed microbs apps.|
+
+#### [](apps.uninstall)`apps.uninstall`
+
+`microbs apps uninstall APP_NAME [...]` removes one or more installed apps by name.
+
+#### Optional command flags
+
+|Short|Long|Description|
+|-----|----|-----------|
+||`--all`|Uninstall all installed microbs apps.|
 
 
-### [](apps)`version`
+### [](init)`init`
+
+Usage: `microbs init [OPTIONS]`
+
+Creates `$HOME/.microbs` and `$HOME/.microbs/config.yaml` if they do not exist.
+The `config.yaml` file is given some default values but will require some fields
+to be provided manually.
+
+#### Optional command flags
+
+|Short|Long|Description|
+|-----|----|-----------|
+|`-c`|`--config`|Path to [config directory](/docs/usage/configuration) (default: `$HOME/.microbs`)|
+
+
+### [](version)`version`
 
 Usage: `microbs version`
 
@@ -177,7 +262,7 @@ These options can be used for all commands.
 
 |Short|Long|Description|
 |-----|----|-----------|
-|`-c`|`--config`|Path to [config file](/docs/usage/configuration) (default: `./config.yaml`)|
+|`-c`|`--config`|Path to [config directory](/docs/usage/configuration) (default: `$HOME/.microbs`)|
 |`-L`|`--log-level`|Filter logs by: `debug`, `info`, `warn`, `error` (default: `info`)|
 ||`--no-color`|Disable colors in log messages|
 |`-v`|`--verbose`|Include timestamps and log levels in logs|

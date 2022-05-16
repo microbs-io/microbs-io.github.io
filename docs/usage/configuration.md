@@ -9,23 +9,21 @@
 
 ## [](config-file)Config file
 
-microbs is driven by a config file, named `config.yaml` by default. The repo
-includes a sample config file called `config.reference.yaml`. You should copy
-this file, rename it to `config.yaml`, and save it to the same directory. This
-is the default file name and location that microbs uses.
+microbs is driven by a config file named `config.yaml` which is located in the
+`$HOME/.microbs` directory by default. The directory and file are created
+automatically when you [install microbs](/docs/overview/getting-started) or run
+`microbs init`.
 
 ### [](alternative-files)Alternative files
 
-By default, microbs expects to use a config file named `config.yaml` in the same
-directory as the `microbs` executable file, which is located in the root
-directory of the [repo](https://github.com/microbs-io/microbs) that you cloned
-during [installation](/docs/overview/getting-started). You can specify the path
-to a different config file when running commands in the [CLI](/docs/usage/cli)
-by using the `-c` or `--config` flag.
+By default, microbs expects to use a config file named `config.yaml` in
+`$HOME/.microbs`. You can specify the path to a different config directory when
+running commands in the [CLI](/docs/usage/cli) by using the `-c` or `--config`
+flag.
 
 Example:
 
-`microbs help -c /path/to/your/config.yaml`
+`microbs help -c /path/to/your/config/directory`
 
 ### [](validation)Validation
 
@@ -74,18 +72,15 @@ cluster `microbs-changeme`.
 
 #### [](deployment.app)`deployment.app`
 
-The name of an [application](/docs/apps) to deploy
-(i.e. the name of a directory in `./apps`).
+The name of an installed [application](/docs/apps) to deploy.
 
 #### [](deployment.plugins.kubernetes)`deployment.plugins.kubernetes`
 
-The name of a [Kubernetes plugin](/docs/plugins/observability) to use
-(i.e. the name of a directory in `./cli/src/plugins/kubernetes`).
+The name of an installed [Kubernetes plugin](/docs/plugins/observability) to use.
 
 #### [](deployment.plugins.observability)`deployment.plugins.observability`
 
-The name of an [observability plugin](/docs/plugins/observability) to use
-(i.e. the name of a directory in `./cli/src/plugins/observability`).
+The name of an installed [observability plugin](/docs/plugins/observability) to use.
 
 #### [](otlp.receiver.host)`otlp.receiver.host`
 
@@ -108,14 +103,15 @@ A description of the environment (e.g. `dev`, `test`, `prod`).
 
 #### [](deployment.plugins.alerts)`deployment.plugins.alerts`
 
-The name of an [alerts plugin](/docs/plugins/observability) to use
-(i.e. the name of a directory in `./cli/src/plugins/alerts`).
+The name of an installed [alerts plugin](/docs/plugins/observability) to use.
 
 #### [](docker.registry)`docker.registry`
 
 A container image registry for the application services. This is used by the
 [setup](/docs/usage/cli#setup) and [rollout](/docs/usage/cli#rollout) commands,
-which passes the value to `skaffold run --default-repo=${docker.registry}`. Read the [skaffold docs](https://skaffold.dev/docs/environment/image-registries/) for more details on the behavior of this config.
+which passes the value to `skaffold run --default-repo=${docker.registry}`. Read
+the [skaffold docs](https://skaffold.dev/docs/environment/image-registries/) fo
+more details on the behavior of this config.
 
 
 ### Plugin configs
