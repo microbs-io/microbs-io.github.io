@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=905837102">
-    <script src="/js/all.js?id=875152215"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=447648506">
+    <script src="/js/all.js?id=249610132"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -24,7 +24,7 @@
           'event_category': event_category,
           'event_label': uri,
           'transport_type': 'beacon',
-          'event_callback': function(){document.location = uri;}
+          'event_callback': function(){window.open(uri, '_blank')}
         });
       };
     </script></head>
@@ -177,7 +177,7 @@
             <h1 class='ui header'><a name="ecommerce"></a>ecommerce</h1><p>The <code>ecommerce</code> app simulates an ecommerce website.</p>
 <h2 class='ui header'>Services</h2><p>Unless otherwise noted, these services are implementations of the
 <a href="/docs/apps/templates"><code>python-flask</code></a> template service.</p>
-<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/api-gateway" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/api-gateway', 'outbound');" class="external">api-gateway</a></h3><p>The <code>api-gateway</code> service is a proxy. Most services in the <code>ecommerce</code> app
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/api-gateway" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/api-gateway', 'outbound');" class="external" target="_blank">api-gateway</a></h3><p>The <code>api-gateway</code> service is a proxy. Most services in the <code>ecommerce</code> app
 communicate with each other through the <code>api-gateway</code> service. This simplifies
 the microservices topology by requiring the services to be aware of only on
 service (in most cases). It also creates a predictable flow of communications
@@ -190,30 +190,30 @@ service:</p>
 <li>The <code>content</code> service communicates with a public-internet GCP storage bucket to fetch images.</li>
 <li>The <code>synthetics</code> service communicates directly with the <code>web-gateway</code> client.</li>
 </ul>
-<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/cart-data" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/cart-data', 'outbound');" class="external">cart-data</a></h3><p>The <code>cart-data</code> service stores the products and quantities of carts for each
-session. The service is a <a href="https://redis.io/" onclick="to('https://redis.io/', 'outbound');" class="external">redis</a> server configured with a
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/cart-data" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/cart-data', 'outbound');" class="external" target="_blank">cart-data</a></h3><p>The <code>cart-data</code> service stores the products and quantities of carts for each
+session. The service is a <a href="https://redis.io/" onclick="to('https://redis.io/', 'outbound');" class="external" target="_blank">redis</a> server configured with a
 replica service (<code>cart-data-replica</code>) for high availability.</p>
-<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/cart" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/cart', 'outbound');" class="external">cart</a></h3><p>The <code>cart</code> service creates, reads, updates, and deletes carts and products in
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/cart" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/cart', 'outbound');" class="external" target="_blank">cart</a></h3><p>The <code>cart</code> service creates, reads, updates, and deletes carts and products in
 the <code>cart-data</code> service via the <code>api-gateway</code> service.</p>
-<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/checkout" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/checkout', 'outbound');" class="external">checkout</a></h3><p>The <code>checkout</code> service processes payments and, if successful, clears the cart.
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/checkout" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/checkout', 'outbound');" class="external" target="_blank">checkout</a></h3><p>The <code>checkout</code> service processes payments and, if successful, clears the cart.
 It communicates with the <code>payment</code> and <code>cart</code> services via the <code>api-gateway</code>
 service.</p>
-<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/content" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/content', 'outbound');" class="external">content</a></h3><p>The <code>content</code> service fetches product images from a public-internet GCP bucket
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/content" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/content', 'outbound');" class="external" target="_blank">content</a></h3><p>The <code>content</code> service fetches product images from a public-internet GCP bucket
 that hosts images for the <code>ecommerce</code> microbs app.</p>
-<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/payment" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/payment', 'outbound');" class="external">payment</a></h3><p>The <code>payment</code> service simulates the processing of a payment. Currently it does
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/payment" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/payment', 'outbound');" class="external" target="_blank">payment</a></h3><p>The <code>payment</code> service simulates the processing of a payment. Currently it does
 this by waiting for a random period of time before returning an acknowledgement.</p>
-<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/product-data" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/product-data', 'outbound');" class="external">product-data</a></h3><p>The <code>product-data</code> service is a product catalog that stores data about each
-product. The service is a <a href="https://www.postgresql.org/" onclick="to('https://www.postgresql.org/', 'outbound');" class="external">PostgreSQL</a> database.</p>
-<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/product" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/product', 'outbound');" class="external">product</a></h3><p>The <code>product</code> service queries product data from the <code>product-data</code> service.</p>
-<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/session-data" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/session-data', 'outbound');" class="external">session-data</a></h3><p>The <code>session-data</code> service stores session cookie identifiers that the
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/product-data" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/product-data', 'outbound');" class="external" target="_blank">product-data</a></h3><p>The <code>product-data</code> service is a product catalog that stores data about each
+product. The service is a <a href="https://www.postgresql.org/" onclick="to('https://www.postgresql.org/', 'outbound');" class="external" target="_blank">PostgreSQL</a> database.</p>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/product" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/product', 'outbound');" class="external" target="_blank">product</a></h3><p>The <code>product</code> service queries product data from the <code>product-data</code> service.</p>
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/session-data" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/session-data', 'outbound');" class="external" target="_blank">session-data</a></h3><p>The <code>session-data</code> service stores session cookie identifiers that the
 <code>web-gateway</code> service uses to establish and persist session state. The service
-is a <a href="https://redis.io/" onclick="to('https://redis.io/', 'outbound');" class="external">redis</a> server configured with a replica service
+is a <a href="https://redis.io/" onclick="to('https://redis.io/', 'outbound');" class="external" target="_blank">redis</a> server configured with a replica service
 (<code>session-data-replica</code>) for high availability.</p>
-<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/synthetics" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/synthetics', 'outbound');" class="external">synthetics</a></h3><p>The <code>synthetics</code> service generates traffic to the <code>web-gateway</code> client.
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/synthetics" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/synthetics', 'outbound');" class="external" target="_blank">synthetics</a></h3><p>The <code>synthetics</code> service generates traffic to the <code>web-gateway</code> client.
 Currently all traffic simulates the process of adding a product to a cart and
-then placing an order. The service uses <a href="https://k6.io/" onclick="to('https://k6.io/', 'outbound');" class="external">k6</a> to simulate virtual
+then placing an order. The service uses <a href="https://k6.io/" onclick="to('https://k6.io/', 'outbound');" class="external" target="_blank">k6</a> to simulate virtual
 user traffic.</p>
-<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/web-gateway" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/web-gateway', 'outbound');" class="external">web-gateway</a></h3><p>The <code>web-gateway</code> service is a web server that serves a React application and
+<h3 class='ui header dividing'><a href="https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/web-gateway" onclick="to('https://github.com/microbs-io/microbs/tree/main/apps/ecommerce/services/web-gateway', 'outbound');" class="external" target="_blank">web-gateway</a></h3><p>The <code>web-gateway</code> service is a web server that serves a React application and
 brokers requests between the React application and the <code>api-gateway</code> service.
 The <code>synthetics</code> service interacts directly with the React application.</p>
 <p>The <code>web-gateway</code> is given an external service on port <code>80</code> on Kubernetes so

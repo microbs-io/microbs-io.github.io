@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=661266285">
-    <script src="/js/all.js?id=511101001"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=147182861">
+    <script src="/js/all.js?id=399255331"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -24,7 +24,7 @@
           'event_category': event_category,
           'event_label': uri,
           'transport_type': 'beacon',
-          'event_callback': function(){document.location = uri;}
+          'event_callback': function(){window.open(uri, '_blank')}
         });
       };
     </script></head>
@@ -192,7 +192,7 @@ in an undesired way. Variants allow you to test the efficacy of the
 <a href="#observability" onclick="to(window.location.pathname + '#observability', 'internal');">observability</a> solution. You can ask yourself, &quot;Do I see my
 expected alerts when this variant runs? Can I use my observability solution
 to identify the root cause of the variant?&quot;</p>
-<h2 class='ui header'><a name="kubernetes"></a>Kubernetes</h2><p>microbs deploys applications to <a href="https://kubernetes.io/" onclick="to('https://kubernetes.io/', 'outbound');" class="external">Kubernetes</a> (&quot;k8s&quot;),
+<h2 class='ui header'><a name="kubernetes"></a>Kubernetes</h2><p>microbs deploys applications to <a href="https://kubernetes.io/" onclick="to('https://kubernetes.io/', 'outbound');" class="external" target="_blank">Kubernetes</a> (&quot;k8s&quot;),
 the industry standard for container orchestration and microservices. You can
 configure microbs to deploy to a Kubernetes cluster using one of the
 <a href="/docs/plugins/kubernetes">Kubernetes plugins</a>.</p>
@@ -205,7 +205,7 @@ choice of an observability solution using one of the
 <h2 class='ui header'><a name="microservices"></a>Microservices</h2><p>Microservices (or &quot;services&quot;) are processes that run on <a href="#kubernetes" onclick="to(window.location.pathname + '#kubernetes', 'internal');">Kubernetes</a>
 and constitute part of an <a href="#applications" onclick="to(window.location.pathname + '#applications', 'internal');">application</a>. microbs treats an
 application as a set of services, each of which is implemented as a Kubernetes
-<a href="https://kubernetes.io/docs/concepts/workloads/pods/" onclick="to('https://kubernetes.io/docs/concepts/workloads/pods/', 'outbound');" class="external">pod</a>.</p>
+<a href="https://kubernetes.io/docs/concepts/workloads/pods/" onclick="to('https://kubernetes.io/docs/concepts/workloads/pods/', 'outbound');" class="external" target="_blank">pod</a>.</p>
 <h2 class='ui header'><a name="synthetics"></a>Synthetics</h2><p>Synthetics are human-like traffic sent to your <a href="#applications" onclick="to(window.location.pathname + '#applications', 'internal');">applications</a>.
 An application may or may not implement a synthetics service. For example, the
 <a href="/docs/apps/ecommerce">ecommerce</a> application generates virtual user traffic

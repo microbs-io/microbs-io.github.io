@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=329656181">
-    <script src="/js/all.js?id=305510838"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=876364444">
+    <script src="/js/all.js?id=476720400"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -24,7 +24,7 @@
           'event_category': event_category,
           'event_label': uri,
           'transport_type': 'beacon',
-          'event_callback': function(){document.location = uri;}
+          'event_callback': function(){window.open(uri, '_blank')}
         });
       };
     </script></head>
@@ -182,11 +182,11 @@
 <h2 class='ui header'><a name="usage"></a>Usage</h2><p>This section documents the behavior of the <code>grafana-cloud</code> plugin when using
 the <a href="/docs/usage/cli"><code>CLI</code></a>.</p>
 <p>Before using the <code>grafana-cloud</code> plugin you must have its <a href="#prerequisites" onclick="to(window.location.pathname + '#prerequisites', 'internal');">prerequisites</a>.</p>
-<h3 class='ui header dividing'><code>setup</code></h3><p><div class="ui warning message tiny"><p>Grafana Cloud has a free tier that works for most usage of microbs (<a href="https://grafana.com/pricing/" onclick="to('https://grafana.com/pricing/', 'outbound');" class="external">more info</a>).</p>
+<h3 class='ui header dividing'><code>setup</code></h3><p><div class="ui warning message tiny"><p>Grafana Cloud has a free tier that works for most usage of microbs (<a href="https://grafana.com/pricing/" onclick="to('https://grafana.com/pricing/', 'outbound');" class="external" target="_blank">more info</a>).</p>
 </div></p>
 <p>When running <a href="/docs/usage/cli/#setup"><code>microbs setup [-o]</code></a>, the
 <code>grafana-cloud</code> plugin creates a Grafana Cloud stack using the
-<a href="https://grafana.com/docs/grafana-cloud/reference/cloud-api/#create-stack" onclick="to('https://grafana.com/docs/grafana-cloud/reference/cloud-api/#create-stack', 'outbound');" class="external">Grafana Cloud API</a>.
+<a href="https://grafana.com/docs/grafana-cloud/reference/cloud-api/#create-stack" onclick="to('https://grafana.com/docs/grafana-cloud/reference/cloud-api/#create-stack', 'outbound');" class="external" target="_blank">Grafana Cloud API</a>.
 Then it deploys a <code>grafana-agent</code> service to the Kubernetes cluster. This agent
 autodiscovers logs and metrics from the Kubernetes nodes and pods, and collects
 OpenTelemetry traces and metrics from the application running on Kubernetes, and
@@ -194,21 +194,21 @@ ships that data to the Grafana Cloud stack.</p>
 <h3 class='ui header dividing'><code>rollout</code></h3><p>The <code>grafana-cloud</code> plugin is unaffected by <a href="/docs/usage/cli#rollout"><code>microbs rollout</code></a>.</p>
 <h3 class='ui header dividing'><code>destroy</code></h3><p>When running <a href="/docs/usage/cli/#destroy"><code>microbs destroy [-o]</code></a>, the
 <code>grafana-cloud</code> plugin destroys your Grafana Cloud stack using the
-<a href="https://grafana.com/docs/grafana-cloud/reference/cloud-api/#delete-stack" onclick="to('https://grafana.com/docs/grafana-cloud/reference/cloud-api/#delete-stack', 'outbound');" class="external">Grafana Cloud API</a>.</p>
-<h2 class='ui header'><a name="prerequisites"></a>Prerequisites</h2><h3 class='ui header dividing'>Create Grafana Cloud resources</h3><p>You must create a <a href="https://grafana.com/auth/sign-up/create-user" onclick="to('https://grafana.com/auth/sign-up/create-user', 'outbound');" class="external">Grafana Cloud account</a>
-and obtain a <a href="https://grafana.com/docs/grafana-cloud/reference/create-api-key/" onclick="to('https://grafana.com/docs/grafana-cloud/reference/create-api-key/', 'outbound');" class="external">Grafana Cloud API Key</a>
+<a href="https://grafana.com/docs/grafana-cloud/reference/cloud-api/#delete-stack" onclick="to('https://grafana.com/docs/grafana-cloud/reference/cloud-api/#delete-stack', 'outbound');" class="external" target="_blank">Grafana Cloud API</a>.</p>
+<h2 class='ui header'><a name="prerequisites"></a>Prerequisites</h2><h3 class='ui header dividing'>Create Grafana Cloud resources</h3><p>You must create a <a href="https://grafana.com/auth/sign-up/create-user" onclick="to('https://grafana.com/auth/sign-up/create-user', 'outbound');" class="external" target="_blank">Grafana Cloud account</a>
+and obtain a <a href="https://grafana.com/docs/grafana-cloud/reference/create-api-key/" onclick="to('https://grafana.com/docs/grafana-cloud/reference/create-api-key/', 'outbound');" class="external" target="_blank">Grafana Cloud API Key</a>
 before using the <code>grafana-cloud</code> plugin.</p>
 <h2 class='ui header'><a name="configuration"></a>Configuration</h2><p>This section documents the <code>grafana-cloud</code> plugin configurations for <a href="/docs/usage/configuration">config.yaml</a>.</p>
-<h3 class='ui header dividing'>Required fields</h3><h4 class='ui header'><a name="plugins.grafana-cloud.api_key"></a><code>plugins.grafana-cloud.api_key</code></h4><p>The value of your <a href="https://grafana.com/docs/grafana-cloud/reference/create-api-key/" onclick="to('https://grafana.com/docs/grafana-cloud/reference/create-api-key/', 'outbound');" class="external">Grafana Cloud API Key</a>.</p>
+<h3 class='ui header dividing'>Required fields</h3><h4 class='ui header'><a name="plugins.grafana-cloud.api_key"></a><code>plugins.grafana-cloud.api_key</code></h4><p>The value of your <a href="https://grafana.com/docs/grafana-cloud/reference/create-api-key/" onclick="to('https://grafana.com/docs/grafana-cloud/reference/create-api-key/', 'outbound');" class="external" target="_blank">Grafana Cloud API Key</a>.</p>
 <p>Example: <code>eyJrIjoiZTlkNmY5MDdjYTlmZTMxNDYxZDZmZGUwMTdhYzJhZGE5ZDE1MGI2NCIsIm4iOiJjaGFuZ2VtZSIsImlkIjo5OTk5OTl9</code></p>
 <h4 class='ui header'><a name="plugins.grafana-cloud.org_slug"></a><code>plugins.grafana-cloud.org_slug</code></h4><p>The slug of your organization name as it exists on Grafana Cloud.</p>
-<p>If you're unsure what this is, <a href="https://grafana.com/auth/sign-in" onclick="to('https://grafana.com/auth/sign-in', 'outbound');" class="external">sign in</a> to
+<p>If you're unsure what this is, <a href="https://grafana.com/auth/sign-in" onclick="to('https://grafana.com/auth/sign-in', 'outbound');" class="external" target="_blank">sign in</a> to
 Grafana Cloud and look at the value of URL after <code>/orgs/</code>:</p>
 <p><code>https://grafana.com/orgs/acmecorp</code></p>
 <p>Example: <code>acmecorp</code></p>
 <h4 class='ui header'><a name="plugins.grafana-cloud.region"></a><code>plugins.grafana-cloud.region</code></h4><p>The slug of the region in which to deploy your Grafana Cloud stack.</p>
 <p>See the
-<a href="https://grafana.com/api/stack-regions" onclick="to('https://grafana.com/api/stack-regions', 'outbound');" class="external">available regions</a> and refer to the
+<a href="https://grafana.com/api/stack-regions" onclick="to('https://grafana.com/api/stack-regions', 'outbound');" class="external" target="_blank">available regions</a> and refer to the
 <code>slug</code> fields for a list of acceptable values.</p>
 <p>Examples: <code>us</code>, <code>eu</code>, <code>au</code></p>
 

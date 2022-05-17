@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=524836522">
-    <script src="/js/all.js?id=494376391"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=972741278">
+    <script src="/js/all.js?id=300534077"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -24,7 +24,7 @@
           'event_category': event_category,
           'event_label': uri,
           'transport_type': 'beacon',
-          'event_callback': function(){document.location = uri;}
+          'event_callback': function(){window.open(uri, '_blank')}
         });
       };
     </script></head>
@@ -192,18 +192,18 @@ flag.</p>
 <h3 class='ui header dividing'><a name="validation"></a>Validation</h3><p>You can (and should) validate the syntax and correctness of your config file by
 running <a href="/docs/usage/cli#validate"><code>microbs validate</code></a>. The validation script
 can't provide 100% guidance, but it does a good job.</p>
-<h2 class='ui header'><a name="syntax"></a>Syntax</h2><p>The microbs config file uses <a href="https://yaml.org/spec/1.2.2/" onclick="to('https://yaml.org/spec/1.2.2/', 'outbound');" class="external">yaml</a> syntax.</p>
+<h2 class='ui header'><a name="syntax"></a>Syntax</h2><p>The microbs config file uses <a href="https://yaml.org/spec/1.2.2/" onclick="to('https://yaml.org/spec/1.2.2/', 'outbound');" class="external" target="_blank">yaml</a> syntax.</p>
 <p>When you run a command with microbs, every field and value in <code>config.yaml</code> is
 converted to an environment variable and shared with all microbs application
 services on Kubernetes. Those values are stored in a Kubernetes
-<a href="https://kubernetes.io/docs/concepts/configuration/secret/" onclick="to('https://kubernetes.io/docs/concepts/configuration/secret/', 'outbound');" class="external">Secret</a> object named
+<a href="https://kubernetes.io/docs/concepts/configuration/secret/" onclick="to('https://kubernetes.io/docs/concepts/configuration/secret/', 'outbound');" class="external" target="_blank">Secret</a> object named
 <code>microbs-secrets</code>. The field names are flattened and uppercased, and dots are
 replaced with underscores.</p>
 <p>For example, the following configuration in config.yaml...</p>
 
             <div class="code">
               <code>
-                <span id="a6ea353332693cbbf"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"></span>
+                <span id="abe2f8c47f44128cf"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">bar_baz.abc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xyz</span><span class="w"></span>
 </pre></div>
 </span>
@@ -213,7 +213,7 @@ replaced with underscores.</p>
 
             <div class="code">
               <code>
-                <span id="a94501db216971cad"><div class="highlight"><pre><span></span><span class="nx">FOO_BAR_BAZ_XYZ</span><span class="o">=</span><span class="nx">xyz</span>
+                <span id="aad0769965fe3f97f"><div class="highlight"><pre><span></span><span class="nx">FOO_BAR_BAZ_XYZ</span><span class="o">=</span><span class="nx">xyz</span>
 </pre></div>
 </span>
               </code>
@@ -224,7 +224,7 @@ cluster or observability solution stack. For example, if the value of
 <code>deployment.name</code> is <code>changeme</code>, then the Kubernetes plugin would name the
 cluster <code>microbs-changeme</code>.</p>
 <h4 class='ui header'><a name="deployment.app"></a><code>deployment.app</code></h4><p>The name of an installed <a href="/docs/apps">application</a> to deploy.</p>
-<h4 class='ui header'><a name="deployment.plugins.kubernetes"></a><code>deployment.plugins.kubernetes</code></h4><p>The name of an installed <a href="/docs/plugins/observability">Kubernetes plugin</a> to use.</p>
+<h4 class='ui header'><a name="deployment.plugins.kubernetes"></a><code>deployment.plugins.kubernetes</code></h4><p>The name of an installed <a href="/docs/plugins/kubernetes">Kubernetes plugin</a> to use.</p>
 <h4 class='ui header'><a name="deployment.plugins.observability"></a><code>deployment.plugins.observability</code></h4><p>The name of an installed <a href="/docs/plugins/observability">observability plugin</a> to use.</p>
 <h4 class='ui header'><a name="otlp.receiver.host"></a><code>otlp.receiver.host</code></h4><p>The OTLP gRPC destination host for the deployed application services. The
 <a href="/docs/apps">apps</a> and <a href="/docs/plugins/observability">observability</a> plugins that
@@ -233,11 +233,11 @@ come with microbs expect this value to be <code>otel-collector</code>.</p>
 <a href="/docs/apps">apps</a> and <a href="/docs/plugins/observability">observability</a> plugins that
 come with microbs expect this value to be <code>4317</code>.</p>
 <h3 class='ui header dividing'>Optional fields</h3><h4 class='ui header'><a name="deployment.environment"></a><code>deployment.environment</code></h4><p>A description of the environment (e.g. <code>dev</code>, <code>test</code>, <code>prod</code>).</p>
-<h4 class='ui header'><a name="deployment.plugins.alerts"></a><code>deployment.plugins.alerts</code></h4><p>The name of an installed <a href="/docs/plugins/observability">alerts plugin</a> to use.</p>
+<h4 class='ui header'><a name="deployment.plugins.alerts"></a><code>deployment.plugins.alerts</code></h4><p>The name of an installed <a href="/docs/plugins/alerts">alerts plugin</a> to use.</p>
 <h4 class='ui header'><a name="docker.registry"></a><code>docker.registry</code></h4><p>A container image registry for the application services. This is used by the
 <a href="/docs/usage/cli#setup">setup</a> and <a href="/docs/usage/cli#rollout">rollout</a> commands,
 which passes the value to <code>skaffold run --default-repo=${docker.registry}</code>. Read
-the <a href="https://skaffold.dev/docs/environment/image-registries/" onclick="to('https://skaffold.dev/docs/environment/image-registries/', 'outbound');" class="external">skaffold docs</a> fo
+the <a href="https://skaffold.dev/docs/environment/image-registries/" onclick="to('https://skaffold.dev/docs/environment/image-registries/', 'outbound');" class="external" target="_blank">skaffold docs</a> fo
 more details on the behavior of this config.</p>
 <h3 class='ui header dividing'>Plugin configs</h3><p>Each <a href="/docs/plugins">plugin</a> has its own set of configurations that are
 specified in the same config file. Refer to the documentation for each plugin

@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=697241956">
-    <script src="/js/all.js?id=285189916"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=245945067">
+    <script src="/js/all.js?id=489595333"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -24,7 +24,7 @@
           'event_category': event_category,
           'event_label': uri,
           'transport_type': 'beacon',
-          'event_callback': function(){document.location = uri;}
+          'event_callback': function(){window.open(uri, '_blank')}
         });
       };
     </script></head>
@@ -181,7 +181,7 @@
 </ul>
 <h2 class='ui header'><a name="usage"></a>Usage</h2><p>This section documents the behavior of the <code>gke</code> plugin when using the <a href="/docs/usage/cli"><code>CLI</code></a>.</p>
 <p>Before using the <code>gke</code> plugin you must have its <a href="#prerequisites" onclick="to(window.location.pathname + '#prerequisites', 'internal');">prerequisites</a>.</p>
-<h3 class='ui header dividing'><code>setup</code></h3><p><div class="ui warning message tiny"><p>Google will charge you for your use of GKE (<a href="https://cloud.google.com/kubernetes-engine/pricing" onclick="to('https://cloud.google.com/kubernetes-engine/pricing', 'outbound');" class="external">more info</a>).</p>
+<h3 class='ui header dividing'><code>setup</code></h3><p><div class="ui warning message tiny"><p>Google will charge you for your use of GKE (<a href="https://cloud.google.com/kubernetes-engine/pricing" onclick="to('https://cloud.google.com/kubernetes-engine/pricing', 'outbound');" class="external" target="_blank">more info</a>).</p>
 </div></p>
 <p>When running <a href="/docs/usage/cli/#setup"><code>microbs setup [-k]</code></a>, the <code>gke</code> plugin
 runs <code>gcloud container clusters create</code>.</p>
@@ -197,11 +197,11 @@ runs <code>gcloud container clusters create</code>.</p>
 plugin runs <code>gcloud container clusters delete</code>.</p>
 <h2 class='ui header'><a name="prerequisites"></a>Prerequisites</h2><h3 class='ui header dividing'>Create GCP resources</h3><p>You must create the following GCP resources before using the <code>gke</code> plugin:</p>
 <ul>
-<li><a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects" onclick="to('https://cloud.google.com/resource-manager/docs/creating-managing-projects', 'outbound');" class="external">Project</a></li>
-<li><a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks', 'outbound');" class="external">VPC network</a></li>
-<li><a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks#subnet-rules" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks#subnet-rules', 'outbound');" class="external">VPC subnetwork</a></li>
-<li><a href="https://cloud.google.com/iam/docs/service-accounts" onclick="to('https://cloud.google.com/iam/docs/service-accounts', 'outbound');" class="external">Service account</a></li>
-<li><a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys" onclick="to('https://cloud.google.com/iam/docs/creating-managing-service-account-keys', 'outbound');" class="external">Service account key</a></li>
+<li><a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects" onclick="to('https://cloud.google.com/resource-manager/docs/creating-managing-projects', 'outbound');" class="external" target="_blank">Project</a></li>
+<li><a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks', 'outbound');" class="external" target="_blank">VPC network</a></li>
+<li><a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks#subnet-rules" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks#subnet-rules', 'outbound');" class="external" target="_blank">VPC subnetwork</a></li>
+<li><a href="https://cloud.google.com/iam/docs/service-accounts" onclick="to('https://cloud.google.com/iam/docs/service-accounts', 'outbound');" class="external" target="_blank">Service account</a></li>
+<li><a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys" onclick="to('https://cloud.google.com/iam/docs/creating-managing-service-account-keys', 'outbound');" class="external" target="_blank">Service account key</a></li>
 </ul>
 <h3 class='ui header dividing'>Install dependencies</h3><p>The <code>gke</code> plugin requires the following software dependencies on the same
 machine as microbs:</p>
@@ -214,33 +214,33 @@ machine as microbs:</p>
 </thead>
 <tbody>
 <tr>
-  <td><a href="https://cloud.google.com/sdk/docs/install" onclick="to('https://cloud.google.com/sdk/docs/install', 'outbound');" class="external">gcloud</a></td>
+  <td><a href="https://cloud.google.com/sdk/docs/install" onclick="to('https://cloud.google.com/sdk/docs/install', 'outbound');" class="external" target="_blank">gcloud</a></td>
   <td>372.0.0</td>
 </tr>
 </tbody>
 </table>
 <h2 class='ui header'><a name="configuration"></a>Configuration</h2><p>This section documents the <code>gke</code> plugin configurations for <a href="/docs/usage/configuration">config.yaml</a>.</p>
-<h3 class='ui header dividing'>Required fields</h3><h4 class='ui header'><a name="plugins.gke.project_name"></a><code>plugins.gke.project_name</code></h4><p>Name of the <a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects" onclick="to('https://cloud.google.com/resource-manager/docs/creating-managing-projects', 'outbound');" class="external">project</a>
+<h3 class='ui header dividing'>Required fields</h3><h4 class='ui header'><a name="plugins.gke.project_name"></a><code>plugins.gke.project_name</code></h4><p>Name of the <a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects" onclick="to('https://cloud.google.com/resource-manager/docs/creating-managing-projects', 'outbound');" class="external" target="_blank">project</a>
 in which your GKE cluster will be deployed.</p>
 <p>Example: <code>acmecorp</code></p>
-<h4 class='ui header'><a name="plugins.gke.region_name"></a><code>plugins.gke.region_name</code></h4><p>Name of the <a href="https://cloud.google.com/compute/docs/regions-zones" onclick="to('https://cloud.google.com/compute/docs/regions-zones', 'outbound');" class="external">region</a>
+<h4 class='ui header'><a name="plugins.gke.region_name"></a><code>plugins.gke.region_name</code></h4><p>Name of the <a href="https://cloud.google.com/compute/docs/regions-zones" onclick="to('https://cloud.google.com/compute/docs/regions-zones', 'outbound');" class="external" target="_blank">region</a>
 in which your GKE cluster will be deployed.
-Your <a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks', 'outbound');" class="external">VPC network</a>
+Your <a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks', 'outbound');" class="external" target="_blank">VPC network</a>
 must support your chosen region.</p>
 <p>See the
-<a href="https://cloud.google.com/compute/docs/regions-zones" onclick="to('https://cloud.google.com/compute/docs/regions-zones', 'outbound');" class="external">available regions</a> for
+<a href="https://cloud.google.com/compute/docs/regions-zones" onclick="to('https://cloud.google.com/compute/docs/regions-zones', 'outbound');" class="external" target="_blank">available regions</a> for
 acceptable values. Do NOT include the zone suffix (e.g. <code>-a</code>, <code>-b</code>, <code>-c</code>, <code>-d</code>).</p>
 <p>Examples: <code>us-central1</code>, <code>asia-east1</code></p>
-<h4 class='ui header'><a name="plugins.gke.network_name"></a><code>plugins.gke.network_name</code></h4><p>Name of the <a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks', 'outbound');" class="external">VPC network</a>
+<h4 class='ui header'><a name="plugins.gke.network_name"></a><code>plugins.gke.network_name</code></h4><p>Name of the <a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks', 'outbound');" class="external" target="_blank">VPC network</a>
 in which your GKE cluster will be deployed.</p>
 <p>Example: <code>microbs</code></p>
-<h4 class='ui header'><a name="plugins.gke.subnetwork_name"></a><code>plugins.gke.subnetwork_name</code></h4><p>Name of the <a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks#subnet-rules" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks#subnet-rules', 'outbound');" class="external">VPC subnetwork</a>
+<h4 class='ui header'><a name="plugins.gke.subnetwork_name"></a><code>plugins.gke.subnetwork_name</code></h4><p>Name of the <a href="https://cloud.google.com/vpc/docs/create-modify-vpc-networks#subnet-rules" onclick="to('https://cloud.google.com/vpc/docs/create-modify-vpc-networks#subnet-rules', 'outbound');" class="external" target="_blank">VPC subnetwork</a>
 in which your GKE cluster will be deployed.</p>
 <p>Example: <code>microbs-us-east1</code></p>
-<h4 class='ui header'><a name="plugins.gke.service_account_name"></a><code>plugins.gke.service_account_name</code></h4><p>Name of the <a href="https://cloud.google.com/iam/docs/service-accounts" onclick="to('https://cloud.google.com/iam/docs/service-accounts', 'outbound');" class="external">service account</a>
+<h4 class='ui header'><a name="plugins.gke.service_account_name"></a><code>plugins.gke.service_account_name</code></h4><p>Name of the <a href="https://cloud.google.com/iam/docs/service-accounts" onclick="to('https://cloud.google.com/iam/docs/service-accounts', 'outbound');" class="external" target="_blank">service account</a>
 that microbs will use to authenticate interactions with GCP.</p>
 <p>Example: <code>username@acmecorp.iam.gserviceaccount.com</code></p>
-<h4 class='ui header'><a name="plugins.gke.service_account_key_path"></a><code>plugins.gke.service_account_key_path</code></h4><p>Path to the <a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys" onclick="to('https://cloud.google.com/iam/docs/creating-managing-service-account-keys', 'outbound');" class="external">service account key</a>
+<h4 class='ui header'><a name="plugins.gke.service_account_key_path"></a><code>plugins.gke.service_account_key_path</code></h4><p>Path to the <a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys" onclick="to('https://cloud.google.com/iam/docs/creating-managing-service-account-keys', 'outbound');" class="external" target="_blank">service account key</a>
 JSON file that microbs will use to authenticate interactions with GCP.</p>
 <p>Example: <code>/path/to/my/secret/key/acmecorp-999999-49d9ba2b8b6d.json</code></p>
 

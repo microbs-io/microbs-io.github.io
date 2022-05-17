@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=720013966">
-    <script src="/js/all.js?id=139359923"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=725039497">
+    <script src="/js/all.js?id=850147560"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -24,7 +24,7 @@
           'event_category': event_category,
           'event_label': uri,
           'transport_type': 'beacon',
-          'event_callback': function(){document.location = uri;}
+          'event_callback': function(){window.open(uri, '_blank')}
         });
       };
     </script></head>
@@ -197,7 +197,7 @@ plugin runs <code>kind delete cluster</code>.</p>
 </thead>
 <tbody>
 <tr>
-  <td><a href="https://kind.sigs.k8s.io/docs/user/quick-start/" onclick="to('https://kind.sigs.k8s.io/docs/user/quick-start/', 'outbound');" class="external">kind</a></td>
+  <td><a href="https://kind.sigs.k8s.io/docs/user/quick-start/" onclick="to('https://kind.sigs.k8s.io/docs/user/quick-start/', 'outbound');" class="external" target="_blank">kind</a></td>
   <td>0.12.0</td>
 </tr>
 </tbody>
