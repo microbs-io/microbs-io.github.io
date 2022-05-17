@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=269538556">
-    <script src="/js/all.js?id=392337549"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=483611233">
+    <script src="/js/all.js?id=940969977"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -204,14 +204,14 @@ The microbs CLI manages these Node.js packages using <code>npm</code>, which is 
 by the use of the <code>microbs apps</code> command.</p>
 <h2 class='ui header'><a name="project-structure"></a>Project structure</h2><h3 class='ui header dividing'><a name="project-structure.overview"></a>Overview</h3>
             <div class="code">
-              <button class="ui labeled icon button teal tiny copy" data-clipboard-target="#ae8c8267a0e1da63e">
+              <button class="ui labeled icon button teal tiny copy" data-clipboard-target="#a84253043c33ddda8">
                 <i class="icon">
                   <span style="font-size:2rem;">&#x2398</span>
                 </i>
                 Copy to clipboard
                </button>
               <code>
-                <span id="ae8c8267a0e1da63e"><div class="highlight"><pre><span></span>./plugins
+                <span id="a84253043c33ddda8"><div class="highlight"><pre><span></span>./plugins
 ./plugins/PLUGIN_NAME
 ./src
 ./src/common
@@ -236,16 +236,16 @@ package.json
             <h3 class='ui header dividing'><a name="src"></a><code>./src</code></h3><p>Contains the source code for the entire application.</p>
 <h3 class='ui header dividing'><a name="src/services"></a><code>./src/services</code></h3><p>Contains the source code for each service of the application.</p>
 <h3 class='ui header dividing'><a name="src/services/SERVICE_NAME"></a><code>./src/services/SERVICE_NAME</code></h3><p>Contains the source code for a single service.</p>
-<h3 class='ui header dividing'><a name="src/services/SERVICE_NAME/k8s"></a><code>./src/services/SERVICE_NAME/k8s</code></h3><p>Contains the Kubernetes manifests for a service. The <a href="/docs/usage/cli#setup"><code>setup</code></a>, <a href="/docs/usage/cli#rollout"><code>rollout</code></a>, and <a href="/docs/usage/cli#destroy"><code>destroy</code></a> commands invoke <code>skaffold run</code> or <code>skaffold delete</code> to apply or remove these configurations on Kubernetes. The manifests must be declared in <a href="src/skaffold.yaml" onclick="to('src/skaffold.yaml', 'outbound');" class="external" target="_blank"><code>./src/skaffold.yaml</code></a> under the <code>main</code> profile for the commands to apply them.</p>
+<h3 class='ui header dividing'><a name="src/services/SERVICE_NAME/k8s"></a><code>./src/services/SERVICE_NAME/k8s</code></h3><p>Contains the Kubernetes manifests for a service. The <a href="/docs/usage/cli#setup"><code>setup</code></a>, <a href="/docs/usage/cli#rollout"><code>rollout</code></a>, and <a href="/docs/usage/cli#destroy"><code>destroy</code></a> commands invoke <code>skaffold run</code> or <code>skaffold delete</code> to apply or remove these configurations on Kubernetes. The manifests must be declared in <a href="src/skaffold.yaml" onclick="to('src/skaffold.yaml', 'outbound');" class="external"><code>./src/skaffold.yaml</code></a> under the <code>main</code> profile for the commands to apply them.</p>
 <h3 class='ui header dividing'><a name="src/services/SERVICE_NAME/k8s/*.yaml"></a><code>./src/services/SERVICE_NAME/k8s/*.yaml</code></h3><p>Contains the configuration for one or more Kubernetes resources of the service. Usually this includes a <code>Deployment</code> and a <code>Service</code>.</p>
 <h3 class='ui header dividing'><a name="src/services/SERVICE_NAME/src"></a><code>./src/services/SERVICE_NAME/src</code></h3><p>Contains the source code for a single service.</p>
-<h3 class='ui header dividing'><a name="src/services/SERVICE_NAME/src/Dockerfile"></a><code>./src/services/SERVICE_NAME/src/Dockerfile</code></h3><p>Contains the instructions to build a Docker image for the service. The <a href="/docs/usage/cli#setup"><code>setup</code></a> and <a href="/docs/usage/cli#rollout"><code>rollout</code></a> commands invoke <code>skaffold run</code> to build these images and deploy them to Kubernetes. The Dockerfiles must be declared in <a href="src/skaffold.yaml" onclick="to('src/skaffold.yaml', 'outbound');" class="external" target="_blank"><code>./src/skaffold.yaml</code></a> under the <code>main</code> profile for the commands to build them.</p>
+<h3 class='ui header dividing'><a name="src/services/SERVICE_NAME/src/Dockerfile"></a><code>./src/services/SERVICE_NAME/src/Dockerfile</code></h3><p>Contains the instructions to build a Docker image for the service. The <a href="/docs/usage/cli#setup"><code>setup</code></a> and <a href="/docs/usage/cli#rollout"><code>rollout</code></a> commands invoke <code>skaffold run</code> to build these images and deploy them to Kubernetes. The Dockerfiles must be declared in <a href="src/skaffold.yaml" onclick="to('src/skaffold.yaml', 'outbound');" class="external"><code>./src/skaffold.yaml</code></a> under the <code>main</code> profile for the commands to build them.</p>
 <h3 class='ui header dividing'><a name="src/variants"></a><code>./src/variants</code></h3><p>Contains the source code for each variant of the application. (Functionally equivalent to <a href="#src/services" onclick="to(window.location.pathname + '#src/services', 'internal');"><code>./src/services</code></a>)</p>
 <h3 class='ui header dividing'><a name="src/variants/VARIANT_NAME"></a><code>./src/variants/VARIANT_NAME</code></h3><p>Contains the source code for a single variant. (Functionally equivalent to <a href="#src/services/SERVICE_NAME" onclick="to(window.location.pathname + '#src/services/SERVICE_NAME', 'internal');"><code>./src/services/SERVICE_NAME</code></a>)</p>
-<h3 class='ui header dividing'><a name="src/variants/VARIANT_NAME/k8s"></a><code>./src/variants/VARIANT_NAME/k8s</code></h3><p>Contains the Kubernetes manifests for a variant. The <a href="/docs/usage/cli#rollout"><code>rollout</code></a> command invokes <code>skaffold run</code> to apply or remove these configurations on Kubernetes. The manifests must be declared in <a href="src/skaffold.yaml" onclick="to('src/skaffold.yaml', 'outbound');" class="external" target="_blank"><code>./src/skaffold.yaml</code></a> under a profile that is not <code>main</code> for the commands to apply them. (Functionally equivalent to <a href="#src/services/SERVICE_NAME/k8s" onclick="to(window.location.pathname + '#src/services/SERVICE_NAME/k8s', 'internal');"><code>./src/services/SERVICE_NAME/k8s</code></a>)</p>
+<h3 class='ui header dividing'><a name="src/variants/VARIANT_NAME/k8s"></a><code>./src/variants/VARIANT_NAME/k8s</code></h3><p>Contains the Kubernetes manifests for a variant. The <a href="/docs/usage/cli#rollout"><code>rollout</code></a> command invokes <code>skaffold run</code> to apply or remove these configurations on Kubernetes. The manifests must be declared in <a href="src/skaffold.yaml" onclick="to('src/skaffold.yaml', 'outbound');" class="external"><code>./src/skaffold.yaml</code></a> under a profile that is not <code>main</code> for the commands to apply them. (Functionally equivalent to <a href="#src/services/SERVICE_NAME/k8s" onclick="to(window.location.pathname + '#src/services/SERVICE_NAME/k8s', 'internal');"><code>./src/services/SERVICE_NAME/k8s</code></a>)</p>
 <h3 class='ui header dividing'><a name="src/variants/VARIANT_NAME/k8s/*.yaml"></a><code>./src/variants/VARIANT_NAME/k8s/*.yaml</code></h3><p>Contains the configuration for one or more Kubernetes resources of the variant. (Functionally equivalent to <a href="#src/services/SERVICE_NAME/k8s/*.yaml" onclick="to(window.location.pathname + '#src/services/SERVICE_NAME/k8s/*.yaml', 'internal');"><code>./src/services/SERVICE_NAME/k8s/*.yaml</code></a>)</p>
 <h3 class='ui header dividing'><a name="src/variants/VARIANT_NAME/src"></a><code>./src/variants/VARIANT_NAME/src</code></h3><p>Contains the source code for a single variant. (Functionally equivalent to <a href="#src/services/SERVICE_NAME/src" onclick="to(window.location.pathname + '#src/services/SERVICE_NAME/src', 'internal');"><code>./src/services/SERVICE_NAME/src</code></a>)</p>
-<h3 class='ui header dividing'><a name="src/variants/VARIANT_NAME/src/Dockerfile"></a><code>./src/variants/VARIANT_NAME/src/Dockerfile</code></h3><p>Contains the instructions to build a Docker image for the variant. The <a href="/docs/usage/cli#rollout"><code>rollout</code></a> command invoke <code>skaffold run</code> to build these images and deploy them to Kubernetes. The Dockerfiles must be declared in <a href="src/skaffold.yaml" onclick="to('src/skaffold.yaml', 'outbound');" class="external" target="_blank"><code>./src/skaffold.yaml</code></a> under a profile that is not <code>main</code> for the commands to build them. (Functionally equivalent to <a href="#src/services/SERVICE_NAME/src/Dockerfile" onclick="to(window.location.pathname + '#src/services/SERVICE_NAME/src/Dockerfile', 'internal');"><code>./src/services/SERVICE_NAME/src/Dockerfile</code></a>)</p>
+<h3 class='ui header dividing'><a name="src/variants/VARIANT_NAME/src/Dockerfile"></a><code>./src/variants/VARIANT_NAME/src/Dockerfile</code></h3><p>Contains the instructions to build a Docker image for the variant. The <a href="/docs/usage/cli#rollout"><code>rollout</code></a> command invoke <code>skaffold run</code> to build these images and deploy them to Kubernetes. The Dockerfiles must be declared in <a href="src/skaffold.yaml" onclick="to('src/skaffold.yaml', 'outbound');" class="external"><code>./src/skaffold.yaml</code></a> under a profile that is not <code>main</code> for the commands to build them. (Functionally equivalent to <a href="#src/services/SERVICE_NAME/src/Dockerfile" onclick="to(window.location.pathname + '#src/services/SERVICE_NAME/src/Dockerfile', 'internal');"><code>./src/services/SERVICE_NAME/src/Dockerfile</code></a>)</p>
 <h3 class='ui header dividing'><a name="src/skaffold.yaml"></a><code>./src/skaffold.yaml</code></h3><p>Contains the configuration that <code>skaffold</code> needs to build the Docker images for the services or variants and then deploy them to Kubernetes.</p>
 <h3 class='ui header dividing'><a name="package.json"></a><code>package.json</code></h3><p>Contains metadata about the application that is required to be installed to microbs.</p>
 <h2 class='ui header'><a name="requirements"></a>App requirements</h2><p>A microbs app is a Node.js package and must be compatible with <code>npm</code>.</p>
@@ -267,14 +267,14 @@ package.json
 <a href="/apps/ecommerce"><code>ecommerce</code></a> app:</p>
 
             <div class="code">
-              <button class="ui labeled icon button teal tiny copy" data-clipboard-target="#ae85cabb2df8f033b">
+              <button class="ui labeled icon button teal tiny copy" data-clipboard-target="#a318161beba02480d">
                 <i class="icon">
                   <span style="font-size:2rem;">&#x2398</span>
                 </i>
                 Copy to clipboard
                </button>
               <code>
-                <span id="ae85cabb2df8f033b"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+                <span id="a318161beba02480d"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@microbs.io/app-ecommerce&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.1.1-alpha&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;microbs app - ecommerce&quot;</span><span class="p">,</span><span class="w"></span>

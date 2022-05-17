@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=251026672">
-    <script src="/js/all.js?id=977120289"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=469727863">
+    <script src="/js/all.js?id=903539271"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -186,10 +186,10 @@ commands with microbs.</p>
 operating systems. Linux may work, but Windows is expected <em>not</em> to work.</p>
 <h3 class='ui header dividing'>Software dependencies</h3><p><div class="ui warning message tiny"><p><a href="/docs/plugins">Plugins</a> may require additional dependencies. Be sure to read the docs for the plugins you wish to use.</p>
 </div></p>
-<p>You will need to install <a href="https://nodejs.org/en/download/" onclick="to('https://nodejs.org/en/download/', 'outbound');" class="external" target="_blank">node</a>,
-<a href="https://docs.docker.com/engine/install/" onclick="to('https://docs.docker.com/engine/install/', 'outbound');" class="external" target="_blank">docker</a>,
-<a href="https://kubernetes.io/docs/tasks/tools/" onclick="to('https://kubernetes.io/docs/tasks/tools/', 'outbound');" class="external" target="_blank">kubectl</a>, and
-<a href="https://skaffold.dev/docs/install/" onclick="to('https://skaffold.dev/docs/install/', 'outbound');" class="external" target="_blank">skaffold</a> before installing microbs.</p>
+<p>You will need to install <a href="https://nodejs.org/en/download/" onclick="to('https://nodejs.org/en/download/', 'outbound');" class="external">node</a>,
+<a href="https://docs.docker.com/engine/install/" onclick="to('https://docs.docker.com/engine/install/', 'outbound');" class="external">docker</a>,
+<a href="https://kubernetes.io/docs/tasks/tools/" onclick="to('https://kubernetes.io/docs/tasks/tools/', 'outbound');" class="external">kubectl</a>, and
+<a href="https://skaffold.dev/docs/install/" onclick="to('https://skaffold.dev/docs/install/', 'outbound');" class="external">skaffold</a> before installing microbs.</p>
 <p>microbs has been tested with the following software versions:</p>
 <table>
 <thead>
@@ -200,19 +200,19 @@ operating systems. Linux may work, but Windows is expected <em>not</em> to work.
 </thead>
 <tbody>
 <tr>
-  <td><a href="https://nodejs.org/en/download/" onclick="to('https://nodejs.org/en/download/', 'outbound');" class="external" target="_blank">node</a></td>
+  <td><a href="https://nodejs.org/en/download/" onclick="to('https://nodejs.org/en/download/', 'outbound');" class="external">node</a></td>
   <td>16.14.0</td>
 </tr>
 <tr>
-  <td><a href="https://docs.docker.com/engine/install/" onclick="to('https://docs.docker.com/engine/install/', 'outbound');" class="external" target="_blank">docker</a></td>
+  <td><a href="https://docs.docker.com/engine/install/" onclick="to('https://docs.docker.com/engine/install/', 'outbound');" class="external">docker</a></td>
   <td>20.10.12</td>
 </tr>
 <tr>
-  <td><a href="https://kubernetes.io/docs/tasks/tools/" onclick="to('https://kubernetes.io/docs/tasks/tools/', 'outbound');" class="external" target="_blank">kubectl</a></td>
+  <td><a href="https://kubernetes.io/docs/tasks/tools/" onclick="to('https://kubernetes.io/docs/tasks/tools/', 'outbound');" class="external">kubectl</a></td>
   <td>1.23.4</td>
 </tr>
 <tr>
-  <td><a href="https://skaffold.dev/docs/install/" onclick="to('https://skaffold.dev/docs/install/', 'outbound');" class="external" target="_blank">skaffold</a></td>
+  <td><a href="https://skaffold.dev/docs/install/" onclick="to('https://skaffold.dev/docs/install/', 'outbound');" class="external">skaffold</a></td>
   <td>1.36.0</td>
 </tr>
 </tbody>
@@ -220,14 +220,14 @@ operating systems. Linux may work, but Windows is expected <em>not</em> to work.
 <h2 class='ui header'><a name="step-2"></a>Step 2. Install microbs</h2><p>Run the following command:</p>
 
             <div class="code">
-              <button class="ui labeled icon button teal tiny copy" data-clipboard-target="#a449c401d1fbb3fae">
+              <button class="ui labeled icon button teal tiny copy" data-clipboard-target="#ae86b7c2d9de449b6">
                 <i class="icon">
                   <span style="font-size:2rem;">&#x2398</span>
                 </i>
                 Copy to clipboard
                </button>
               <code>
-                <span id="a449c401d1fbb3fae"><div class="highlight"><pre><span></span>curl -Ls https://microbs.io/install.js <span class="p">|</span> node
+                <span id="ae86b7c2d9de449b6"><div class="highlight"><pre><span></span>curl -Ls https://microbs.io/install.js <span class="p">|</span> node
 </pre></div>
 </span>
               </code>
@@ -237,7 +237,7 @@ operating systems. Linux may work, but Windows is expected <em>not</em> to work.
 <li><code>microbs</code> will be available as an executable file in your <code>$PATH</code></li>
 <li><code>$HOME/.microbs</code> will be created to store deployment information</li>
 <li><code>$HOME/.microbs/config.yaml</code> will be created to configure microbs</li>
-<li>All <a href="https://www.npmjs.com/~microbs.io" onclick="to('https://www.npmjs.com/~microbs.io', 'outbound');" class="external" target="_blank">official apps and plugins</a> will be installed</li>
+<li>All <a href="https://www.npmjs.com/~microbs.io" onclick="to('https://www.npmjs.com/~microbs.io', 'outbound');" class="external">official apps and plugins</a> will be installed</li>
 </ul>
 <h2 class='ui header'><a name="step-3"></a>Step 3. Configure microbs</h2><p>Open <code>$HOME/.microbs/config.yaml</code> in a text editor and complete the
 <a href="/docs/usage/configuration">configuration</a>. Don't forget to install any

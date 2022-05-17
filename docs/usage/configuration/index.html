@@ -12,8 +12,8 @@
     <meta name="twitter:title" content="microbs - Microservices Observability"/>
     <meta name="twitter:description" content="Demo, test, or learn about microservices observability."/>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
-    <link rel="stylesheet" href="/css/all.css?id=972741278">
-    <script src="/js/all.js?id=300534077"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
+    <link rel="stylesheet" href="/css/all.css?id=280907254">
+    <script src="/js/all.js?id=764505059"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-5K0NJLJTD5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -192,18 +192,18 @@ flag.</p>
 <h3 class='ui header dividing'><a name="validation"></a>Validation</h3><p>You can (and should) validate the syntax and correctness of your config file by
 running <a href="/docs/usage/cli#validate"><code>microbs validate</code></a>. The validation script
 can't provide 100% guidance, but it does a good job.</p>
-<h2 class='ui header'><a name="syntax"></a>Syntax</h2><p>The microbs config file uses <a href="https://yaml.org/spec/1.2.2/" onclick="to('https://yaml.org/spec/1.2.2/', 'outbound');" class="external" target="_blank">yaml</a> syntax.</p>
+<h2 class='ui header'><a name="syntax"></a>Syntax</h2><p>The microbs config file uses <a href="https://yaml.org/spec/1.2.2/" onclick="to('https://yaml.org/spec/1.2.2/', 'outbound');" class="external">yaml</a> syntax.</p>
 <p>When you run a command with microbs, every field and value in <code>config.yaml</code> is
 converted to an environment variable and shared with all microbs application
 services on Kubernetes. Those values are stored in a Kubernetes
-<a href="https://kubernetes.io/docs/concepts/configuration/secret/" onclick="to('https://kubernetes.io/docs/concepts/configuration/secret/', 'outbound');" class="external" target="_blank">Secret</a> object named
+<a href="https://kubernetes.io/docs/concepts/configuration/secret/" onclick="to('https://kubernetes.io/docs/concepts/configuration/secret/', 'outbound');" class="external">Secret</a> object named
 <code>microbs-secrets</code>. The field names are flattened and uppercased, and dots are
 replaced with underscores.</p>
 <p>For example, the following configuration in config.yaml...</p>
 
             <div class="code">
               <code>
-                <span id="abe2f8c47f44128cf"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"></span>
+                <span id="a9b302dc9c4198b1c"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">bar_baz.abc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xyz</span><span class="w"></span>
 </pre></div>
 </span>
@@ -213,7 +213,7 @@ replaced with underscores.</p>
 
             <div class="code">
               <code>
-                <span id="aad0769965fe3f97f"><div class="highlight"><pre><span></span><span class="nx">FOO_BAR_BAZ_XYZ</span><span class="o">=</span><span class="nx">xyz</span>
+                <span id="abf6c05d50d6398b2"><div class="highlight"><pre><span></span><span class="nx">FOO_BAR_BAZ_XYZ</span><span class="o">=</span><span class="nx">xyz</span>
 </pre></div>
 </span>
               </code>
@@ -237,7 +237,7 @@ come with microbs expect this value to be <code>4317</code>.</p>
 <h4 class='ui header'><a name="docker.registry"></a><code>docker.registry</code></h4><p>A container image registry for the application services. This is used by the
 <a href="/docs/usage/cli#setup">setup</a> and <a href="/docs/usage/cli#rollout">rollout</a> commands,
 which passes the value to <code>skaffold run --default-repo=${docker.registry}</code>. Read
-the <a href="https://skaffold.dev/docs/environment/image-registries/" onclick="to('https://skaffold.dev/docs/environment/image-registries/', 'outbound');" class="external" target="_blank">skaffold docs</a> fo
+the <a href="https://skaffold.dev/docs/environment/image-registries/" onclick="to('https://skaffold.dev/docs/environment/image-registries/', 'outbound');" class="external">skaffold docs</a> fo
 more details on the behavior of this config.</p>
 <h3 class='ui header dividing'>Plugin configs</h3><p>Each <a href="/docs/plugins">plugin</a> has its own set of configurations that are
 specified in the same config file. Refer to the documentation for each plugin
