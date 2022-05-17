@@ -76,7 +76,7 @@ The name of an installed [application](/docs/apps) to deploy.
 
 #### [](deployment.plugins.kubernetes)`deployment.plugins.kubernetes`
 
-The name of an installed [Kubernetes plugin](/docs/plugins/observability) to use.
+The name of an installed [Kubernetes plugin](/docs/plugins/kubernetes) to use.
 
 #### [](deployment.plugins.observability)`deployment.plugins.observability`
 
@@ -103,7 +103,7 @@ A description of the environment (e.g. `dev`, `test`, `prod`).
 
 #### [](deployment.plugins.alerts)`deployment.plugins.alerts`
 
-The name of an installed [alerts plugin](/docs/plugins/observability) to use.
+The name of an installed [alerts plugin](/docs/plugins/alerts) to use.
 
 #### [](docker.registry)`docker.registry`
 

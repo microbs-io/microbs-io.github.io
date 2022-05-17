@@ -35,7 +35,7 @@
           'event_category': event_category,
           'event_label': uri,
           'transport_type': 'beacon',
-          'event_callback': function(){document.location = uri;}
+          'event_callback': function(){window.open(uri, '_blank')}
         });
       };
     </script>

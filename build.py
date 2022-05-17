@@ -110,7 +110,7 @@ class MicrobsRenderer(mistune.HTMLRenderer):
             out += " title=\"%s\"" % mistune.escape(title, quote=True)
         if not link.startswith("/") and not link.startswith("#") and not link.startswith("https://microbs.io") and not link.startswith("http://microbs.io"):
             out += " onclick=\"to('%s', 'outbound');\"" % link
-            out += " class=\"external\""
+            out += " class=\"external\" target=\"_blank\""
         elif link.startswith("#"):
             out += " onclick=\"to(window.location.pathname + '%s', 'internal');\"" % link
         out += ">%s</a>" % text
